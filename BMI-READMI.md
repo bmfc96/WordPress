@@ -5,9 +5,13 @@
 *=WordPress
 
 DIR: */...
+
      */wp-includes
+
      */wp-content
+
      */wp-admin
+     
     (17 files)
 
 NAV-DIR: */... (17 files)
