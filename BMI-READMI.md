@@ -394,7 +394,93 @@ END-NAV-DIR: */...
         5. Hold required PHP version - ( $required_php_version = '5.6.20'; )
         6. Hold required MySQL version - ( $required_mysql_version = '5.0'; )
 
-7. 
+7. **wp-includes/load.php**
+    - This module are needed to load WP
+    - FUNCTIONS:
+        1. **wp_get_server_protocol()**: $protocol - Return HTTP protocol sent by server
+        2. **wp_fix_server_vars()**: void - Fix `$_SERVER` vars. for various setups
+        3. **wp_populate_basic_auth_from_authorization_header()**: void - Populates Basic Auth server details from Authorization header
+            Some server running in CGI or FastCGI mode don't pass Authorization header on to WP
+            If it's been rewritten to `HTTP_AUTHORIZATION` header,
+            fill in proper $_SERVER vars. instead
+        4. **wp_check_php_mysql_versions()** - Check for required PHP version and MySQL extension or database drop-in, dies if requirement not met
+        5. **wp_get_environment_type()**: str - Get current environment type (return string current env. type)
+            Type can be set via `WP_ENVIRONMENT_TYPE` global system variable
+            or a constant of same name
+            Possible values are 'local', 'development', 'staging', and 'production'
+            If not set, 'type' default is 'production'
+        6. **wp_favicon_request()**: void - Don't load all of WP when handling a favicon.ico request
+            Instead, send headers for a zero-length favicon and bail
+        7. **wp_maintenance()**: void - Die with maintenance message when conditions met
+            Default message can be replaced using a drop-in (maintenance.php in wp-content directory)
+        8. **wp_is_maintenance_mode()**: true|false - Check if maintenance mode is enabled 
+            Checks for a file in WP root dir. named '.maintenance'
+            This file will contain var. $upgrading,
+            set to the time the file was created.
+            If the file was created < 10 mins. ago,
+            WP is in maintenance mode
+        9. **timer_float()**: float - Get time elapsed so far during this PHP script
+            Uses REQUEST_TIME_FLOAT that appeared in PHP 5.4.0
+        10. **timer_start()**: bool always - Start WP micro-timer
+        11. **timer_stop()**: string - Get/display time from the page start to when function is called
+        12. **wp_debug_mode()**: void - Set PHP error reporting based on WP debug settings
+            CONSTANTS (3): ['WP_DEBUG', 'WP_DEBUG_DISPLAY', 'WP_DEBUG_LOG']
+            All three (3) can be defined in 'wp-config.php'
+            By default, `WP_DEBUG` and `WP_DEBUG_LOG` = false, `WP_DEBUG_DISPLAY` = true
+            if `WP_DEBUG`:
+                - all PHP notices are reported
+                - WP will display internal notices: when a deprecated WP func./func.args./file is used
+                - deprecated code may be removed from a later version
+                - strongly recommended that plugin and theme devs. use `WP_DEBUG` in dev. envs.
+            `WP_DEBUG_DISPLAY` & `WP_DEBUG_LOG` perform no function unless `WP_DEBUG` = true
+            if `WP_DEBUG_DISPLAY`:
+                - WP force errors to be displayed
+                - default is true
+                - defining as null prevents WP from changing global conf. setting
+                - defining `WP_DEBUG_DISPLAY` = false ill force errors to be hidden
+            if `WP_DEBUG_LOG`:
+                - if true : errors will be logged to `wp-content/debug.log`
+                - if valid path : errors will be logged to the specified file
+                - errors are never displayed for:
+                    1. XML-RPC
+                    2. REST
+                    3. `ms-files.php`
+                    4. AJAX requests
+        13. **wp_set_lang_dir()**: void - Set location of language directory
+            - define `WP_LANG_DIR` constant in `wp-config.php` to set directory manually
+            - language directory exists within `WP_CONTENT_DIR` ? use it : assumed language directory live in `WPINC`
+        14. **require_wp_db()**: void - Load database class file and instantiate `$wpdb` global
+        15. **wp_set_wpdb_vars()**: void - Set database table prefix and format specifiers for database table columns
+            Columns not listed here default to `%s`
+        16. **wp_using_ext_object_cache()**: bool - Toggle `$_wp_using_ext_object_cache` on and off without directly touching global
+        17. **wp_start_object_cache()**: void - Start WP object cache
+            If an object-cache.php file exists in `wp-content` directory,
+            it uses that drop-in as an external object cache
+        18. **wp_not_installed()**: void - Redirect to installer if WP not installed
+        19. **wp_get_mu_plugins()**: array[string] - Get array of must-use plugin files [absolute paths of files to include]
+        20. **wp_get_active_and_valid_plugins()**: array[string] - Get array of active and valid plugin files
+            While upgrading or installing WP, no plugins are returned
+            Default directory is `wp-content/plugins`
+            To change default directory manually, define `WP_PLUGIN_DIR` & `WP_PLUGIN_URL` in `wp-config.php`
+        21. **wp_skip_paused_plugins()**: array[string] - Filters given list of plugins, remove any paused plugins from it
+        22. **wp_get_active_and_valid_themes()**: string|array[string] - Get an array of active and valid themes.
+            While upgrading or installing WP, no themes are returned.
+        23. **wp_skip_paused_themes()**: array[string] - Filters given list of themes, remove any paused themes from it.
+        24. **wp_is_recovery_mode()**: bool - Is WP in Recovery Mode.
+            In this mode, plugins or themes that cause WSODs will be paused.
+        25. **is_protected_endpoint()**: bool - Determines whether we are currently on an endpoint that should be protected againsts WSODs.
+        26. **is_protected_ajax_action()**: bool - Determines whether we are currently handling an AJAX action that should be protected againsts WSODs.
+        27. **wp_set_internal_encoding()**: void - Set internal encoding.
+            - In most cases, default internal encoding is = `latin1` which is of no use,
+              since we are using `mb_` functions for `utf-8` strings.
+        28. **wp_magic_quotes()**: void - Add magic quotes to `$_GET`, `$_POST`, `$_COOKIE`, and `$_SERVER`
+            - Also forces `$_REQUESTS` to be `$_GET + $_POST`
+            - If `$_SERVER`, `$_COOKIE`, or `$_ENV` are needed, use those superglobals directly.
+        29. **shutdown_action_hook()**: void - Runs just before PHP shuts down execution.
+        30. **wp_clone()**: cloned obj - Copy an object.
+        31. **is_login()**: bool - Determines whether current request is for login screen.
+        32. **is_admin()**: bool - Determines whether current request is for an administrative interface page.
+        33. **is_blog_admin()**: bool - Determines whether current request is for a site's administrative interface.
 
 NAV-DIR: */wp-includes
 
