@@ -1,17 +1,17 @@
 <?php
 /**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
+ * Front to the WordPress application. THIS FILE DOESN'T DO ANYTHING, but LOADS
+ * 'wp-blog-header.php' which does and tells WordPress to LOAD the THEME.
  *
  * @package WordPress
  */
 
 /**
- * Tells WordPress to load the WordPress theme and output it.
+ * Tells WordPress to LOAD the WordPress THEME and OUTPUT it.
  *
  * @var bool
  */
 define( 'WP_USE_THEMES', true );
 
-/** Loads the WordPress Environment and Template */
-require __DIR__ . '/wp-blog-header.php';
+/** LOADS the WordPress ENVIRONMENT and TEMPLATE */
+require __DIR__ . '/wp-blog-header.php'; // var_dump(__DIR__) : string(53) "C:\Users\bmfc9\OneDrive\Desktop\Fun\cloning\WordPress"
