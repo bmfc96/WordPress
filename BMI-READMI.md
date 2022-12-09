@@ -20,6 +20,7 @@ NAV-DIR: */... (17 files)
     - FLOW:
         1. Define constant WP_USE_THEMES as true
         2. LOAD _DIR_ . '/wp-blog-header.php' (require)
+
 2. **wp-blog-header.php**
     - Loads WordPress ENVIRONMENT & TEMPLATE
     - FLOW:
@@ -29,6 +30,7 @@ NAV-DIR: */... (17 files)
             Notes:
             - ABSPATH - a constant defined in 'wp-load.php'
             - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
+
 3. **wp-load.php**
     - (Bootstrap / Self-starting process) file for:-
         1. Setting ABSPATH constant
@@ -63,6 +65,34 @@ NAV-DIR: */... (17 files)
                 9. Call wp_load_translations_early();
                 10. Die with error message... (sprintf())
                 11. Call wp_die();
+
+4. **wp-config-sample.php**
+    - Base for 'wp-config.php' which does the following configurations:
+        1. Database settings
+        2. Secret keys
+        3. Database table prefix
+        4. ABSPATH
+    - FLOW:
+        1. =#= Database settings
+        2. Define constant DB_NAME as '...'
+        3. Define constant DB_USER as '...'
+        4. Define constant DB_PASSWORD as '...'
+        5. Define constant DB_HOST as 'localhost'
+        6. Define constant DB_CHARSET as 'utf8'
+        7. Define constant DB_COLLATE as ''
+        8. =#= Authentication unique keys and salts
+        9. Define constant AUTH_KEY as '...'
+        10. Define constant SECURE_AUTH_KEY as '...'
+        11. Define constant LOGGED_IN_KEY as '...'
+        12. Define constant NONCE_KEY as '...'
+        13. Define constant AUTH_SALT as '...'
+        14. Define constant SECURE_AUTH_SALT as '...'
+        15. Define constant LOGGED_IN_SALT as '...'
+        16. Define constant NONCE_SALT as '...'
+        17. Set WordPress database table prefix
+        18. Define constant WP_DEBUG as TRUE|FALSE - TRUE to enable display of notices during dev
+        19. Define constant ABSPATH as (_DIR_ . '/') if not exist
+        20. require-once ABSPATH . 'wp-settings.php'
 
 END-NAV-DIR: */...
 
