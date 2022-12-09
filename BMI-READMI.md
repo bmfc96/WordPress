@@ -385,7 +385,17 @@ NAV-DIR: */... (17 files)
             admin-ajax.php can handle requests for users not logged in
 END-NAV-DIR: */...
 
-6. 
+6. **wp-includes/versions.php**
+    - This module is responsible on:
+        1. Contains version information of current WP release
+        2. Hold current version number for WP core - (used to bust caches and enable dev. mode for scripts when running from /src dir.) [ $wp_version = '6.2-alpha-54952' ]
+        3. Hold WP DB revision, increments when changes made to WP DB schema - ( $wp_db_version = 53496; )
+        4. Hold TinyMCE version - ( $tinymce_version = '49110-20201110'; )
+        5. Hold required PHP version - ( $required_php_version = '5.6.20'; )
+        6. Hold required MySQL version - ( $required_mysql_version = '5.0'; )
+
+7. 
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
