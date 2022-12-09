@@ -92,11 +92,300 @@ NAV-DIR: */... (17 files)
         17. Set WordPress database table prefix
         18. Define constant WP_DEBUG as TRUE|FALSE - TRUE to enable display of notices during dev
         19. Define constant ABSPATH as (_DIR_ . '/') if not exist
-        20. require-once ABSPATH . 'wp-settings.php'
+        20. require-once ABSPATH . 'wp-settings.php' - Setup WordPress vars and included files.
 
+5. **wp-settings.php**
+    - This module does the followings:
+        1. Set up and fix common variables
+        2. Include WordPress procedural and class library
+    - FLOW:
+        1. Define constant WPINC as 'wp-includes'
+        2. Get version information for current WP release (globals)
+        3. require ABSPATH . WPINC . '/version.php'
+        4. require ABSPATH . WPINC . '/load.php'
+        5. Check required PHP ver. & MySQL ext. or database drop-in (wp_check_php_mysql_versions();)
+        6. =#= Include files required for initialization
+        7. require ABSPATH . WPINC . '/class-wp-paused-extensions-storage.php'
+        8. require ABSPATH . WPINC . '/class-wp-fatal-error-handler.php'
+        9. require ABSPATH . WPINC . '/class-wp-recovery-mode-cookie-service.php'
+        10. require ABSPATH . WPINC . '/class-wp-recovery-mode-key-service.php'
+        11. require ABSPATH . WPINC . '/class-wp-recovery-mode-link-service.php'
+        12. require ABSPATH . WPINC . '/class-wp-recovery-mode-email-service.php'
+        13. require ABSPATH . WPINC . '/class-wp-recovery-mode.php'
+        14. require ABSPATH . WPINC . '/error-protection.php'
+        15. require ABSPATH . WPINC . '/default-constants.php'
+        16. require-once ABSPATH . WPINC . '/plugin.php'
+        17. $int_blog_id = 1 if not configured (for single site, multi-site default in ms-settings.php)
+        18. Set initial def. constants incl. WP_MEMORY_LIMIT, ... ( wp_initial_constants(); )
+        19. Register shutdown handler for fatal errors ASAP ( wp_register_fatal_error_handler(); )
+        20. WP calculates offsets from UTC ( date_default_timezone_set('UTC') )
+        21. Standardize $_SERVER vars. across setups ( wp_fix_server_vars(); )
+        22. Check if site in maintenance mode ( wp_maintenance(); )
+        23. Start loading timer ( timer_start(); )
+        24. Check if WP_DEBUG mode is enabled ( wp_debug_mode(); )
+        25. Check whether to load advanced-cache.php drop-in. If WP_CACHE and apply_filters() ret. TRUE and file_exists( WP_CONTENT_DIR . '/advanced-cache.php' )
+            - TRUE
+                1. include WP_CONTENT_DIR . '/advanced-cache.php'
+                2. Re-initialize hooks added manually by advanced-cache.php ( $wp_filter ? $wp_filter = WP_HOOK::build_preinitialized_hooks( $wp_filter ) )
+        26. Define WP_LANG_DIR if not set ( wp_set_lang_dir(); )
+        27. Load early WP files ...
+        28. Include wpdb class and, if present, db.php database drop-in ( require_wp_db(); )
+        29. Set database table prefix & format specifiers for database table columns
+            - $GLOBALS['table_prefix'] = $table_prefix
+            - wp_set_wpdb_vars();
+        30. Start WP object cache, or external object cache if drop-in is present ( wp_start_object_cache(); )
+        31. Attach default filters ( require ABSPATH . WPINC . '/default-filters.php' )
+        32. =#= Init. multisite if enable
+        33. If is_multisite()
+            - TRUE
+                1. require ABSPATH . WPINC . [
+                    '/class-wp-site-query.php', '/class-wp-network-query.php',
+                    '/ms-blogs.php', '/ms-settings.php'
+                ]
+        34. Else if ! defined('MULTISITE')
+            - TRUE
+                1. define ( 'MULTISITE', false )
+        35. Register shutdown func. ( register_shutdown_function('shutdown_action_hook'); )
+        36. Stop most of WP from being loaded if SHORTINIT is enabled ( SHORTINIT ? return FALSE )
+        37. Load L10n library ( require-once ABSPATH . WPINC . [
+            '/l10n.php', '/class-wp-textdomain-registry.php',
+            '/class-wp-locale.php', '/class-wp-locale-switcher.php'
+        ] )
+        38. Run installer if WP not installed ( wp_not_installed(); )
+        39. Load most of WP ( require ABSPATH . WPINC . [
+            '/class-wp-walker.php', '/class-wp-ajax-response.php', '/capabilities.php',
+            '/class-wp-roles.php', '/class-wp-role.php', '/class-wp-user.php',
+            '/class-wp-query.php', '/query.php', '/class-wp-date-query.php',
+            '/theme.php', '/class-wp-theme.php', '/class-wp-theme-json-schema.php',
+            '/class-wp-theme-json-data.php', '/class-wp-theme-json.php',
+            '/class-wp-theme-json-resolver.php', '/global-styles-and-settings.php',
+            '/class-wp-block-template.php', '/block-template-utils.php',
+            '/block-template.php', '/theme-templates.php', '/template.php',
+            '/https-detection.php', '/https-migration.php', '/class-wp-user-request.php',
+            '/user.php', '/class-wp-user-query.php', '/class-wp-session-tokens.php',
+            '/class-wp-user-meta-session-tokens.php', '/class-wp-metadata-lazyloader.php',
+            '/general-template.php', '/link-template.php', '/author-template.php',
+            '/robots-template.php', '/post.php', '/class-walker-page.php',
+            '/class-walker-page-dropdown.php', '/class-wp-post-type.php',
+            '/class-wp-post.php', '/post-template.php', '/revision.php',
+            '/post-formats.php', '/post-thumbnail-template.php', '/category.php',
+            '/class-walker-category.php', '/class-walker-category-dropdown.php',
+            '/category-template.php', '/comment.php', '/class-wp-comment.php',
+            '/class-wp-comment-query.php', '/class-walker-comment.php',
+            '/comment-template.php', '/rewrite.php', '/class-wp-rewrite.php',
+            '/feed.php', '/bookmark.php', '/bookmark-template.php', '/kses.php',
+            '/cron.php', '/deprecated.php', '/script-loader.php', '/taxonomy.php',
+            '/class-wp-taxonomy.php', '/class-wp-term.php', '/class-wp-term-query.php',
+            '/class-wp-tax-query.php', '/update.php', '/canonical.php', '/shortcodes.php',
+            '/embed.php', '/class-wp-embed.php', '/class-wp-oembed.php',
+            '/class-wp-oembed-controller.php', '/media.php', '/http.php',
+            '/class-wp-http.php', '/class-wp-http-streams.php', '/class-wp-http-curl.php',
+            '/class-wp-http-cookie.php', '/class-wp-http-encoding.php',
+            '/class-wp-http-response.php', '/class-wp-http-requests-response.php',
+            '/class-wp-http-requests-hooks.php', '/widgets.php', '/class-wp-widget.php',
+            '/class-wp-widget-factory.php', '/nav-menu-template.php', '/nav-menu.php',
+            '/admin-bar.php', '/class-wp-application-passwords.php', '/rest-api.php',
+            '/rest-api/class-wp-rest-server.php', '/rest-api/class-wp-rest-response.php',
+            '/rest-api/class-wp-rest-request.php', '/rest-api/endpoints/class-wp-rest-controller.php',
+            '/rest-api/endpoints/class-wp-rest-posts-controller.php',
+            '/rest-api/endpoints/class-wp-rest-attachments-controller.php',
+            '/rest-api/endpoints/class-wp-rest-global-styles-controller.php',
+            '/rest-api/endpoints/class-wp-rest-post-types-controller.php',
+            '/rest-api/endpoints/class-wp-rest-post-statuses-controller.php',
+            '/rest-api/endpoints/class-wp-rest-revisions-controller.php',
+            '/rest-api/endpoints/class-wp-rest-autosaves-controller.php',
+            '/rest-api/endpoints/class-wp-rest-taxonomies-controller.php',
+            '/rest-api/endpoints/class-wp-rest-terms-controller.php',
+            '/rest-api/endpoints/class-wp-rest-menu-items-controller.php',
+            '/rest-api/endpoints/class-wp-rest-menus-controller.php',
+            '/rest-api/endpoints/class-wp-rest-menu-locations-controller.php',
+            '/rest-api/endpoints/class-wp-rest-users-controller.php',
+            '/rest-api/endpoints/class-wp-rest-comments-controller.php',
+            '/rest-api/endpoints/class-wp-rest-search-controller.php',
+            '/rest-api/endpoints/class-wp-rest-blocks-controller.php',
+            '/rest-api/endpoints/class-wp-rest-block-types-controller.php',
+            '/rest-api/endpoints/class-wp-rest-block-renderer-controller.php',
+            '/rest-api/endpoints/class-wp-rest-settings-controller.php',
+            '/rest-api/endpoints/class-wp-rest-themes-controller.php',
+            '/rest-api/endpoints/class-wp-rest-plugins-controller.php',
+            '/rest-api/endpoints/class-wp-rest-block-directory-controller.php',
+            '/rest-api/endpoints/class-wp-rest-edit-site-export-controller.php',
+            '/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php',
+            '/rest-api/endpoints/class-wp-rest-block-patterns-controller.php',
+            '/rest-api/endpoints/class-wp-rest-block-pattern-categories-controller.php',
+            '/rest-api/endpoints/class-wp-rest-application-passwords-controller.php',
+            '/rest-api/endpoints/class-wp-rest-site-health-controller.php',
+            '/rest-api/endpoints/class-wp-rest-sidebars-controller.php',
+            '/rest-api/endpoints/class-wp-rest-widget-types-controller.php',
+            '/rest-api/endpoints/class-wp-rest-widgets-controller.php',
+            '/rest-api/endpoints/class-wp-rest-templates-controller.php',
+            '/rest-api/endpoints/class-wp-rest-url-details-controller.php',
+            '/rest-api/fields/class-wp-rest-meta-fields.php',
+            '/rest-api/fields/class-wp-rest-comment-meta-fields.php',
+            '/rest-api/fields/class-wp-rest-post-meta-fields.php',
+            '/rest-api/fields/class-wp-rest-term-meta-fields.php',
+            '/rest-api/fields/class-wp-rest-user-meta-fields.php',
+            '/rest-api/search/class-wp-rest-search-handler.php',
+            '/rest-api/search/class-wp-rest-post-search-handler.php',
+            '/rest-api/search/class-wp-rest-term-search-handler.php',
+            '/rest-api/search/class-wp-rest-post-format-search-handler.php',
+            '/sitemaps.php',
+            '/sitemaps/class-wp-sitemaps.php',
+            '/sitemaps/class-wp-sitemaps-index.php',
+            '/sitemaps/class-wp-sitemaps-provider.php',
+            '/sitemaps/class-wp-sitemaps-registry.php',
+            '/sitemaps/class-wp-sitemaps-renderer.php',
+            '/sitemaps/class-wp-sitemaps-stylesheet.php',
+            '/sitemaps/providers/class-wp-sitemaps-posts.php',
+            '/sitemaps/providers/class-wp-sitemaps-taxonomies.php',
+            '/sitemaps/providers/class-wp-sitemaps-users.php',
+            '/class-wp-block-editor-context.php',
+            '/class-wp-block-type.php',
+            '/class-wp-block-pattern-categories-registry.php',
+            '/class-wp-block-patterns-registry.php',
+            '/class-wp-block-styles-registry.php',
+            '/class-wp-block-type-registry.php',
+            '/class-wp-block.php',
+            '/class-wp-block-list.php',
+            '/class-wp-block-parser.php',
+            '/blocks.php',
+            '/blocks/index.php',
+            '/block-editor.php',
+            '/block-patterns.php',
+            '/class-wp-block-supports.php',
+            '/block-supports/utils.php',
+            '/block-supports/align.php',
+            '/block-supports/border.php',
+            '/block-supports/colors.php',
+            '/block-supports/custom-classname.php',
+            '/block-supports/dimensions.php',
+            '/block-supports/duotone.php',
+            '/block-supports/elements.php',
+            '/block-supports/generated-classname.php',
+            '/block-supports/layout.php',
+            '/block-supports/spacing.php',
+            '/block-supports/typography.php',
+            '/style-engine.php',
+            '/style-engine/class-wp-style-engine.php',
+            '/style-engine/class-wp-style-engine-css-declarations.php',
+            '/style-engine/class-wp-style-engine-css-rule.php',
+            '/style-engine/class-wp-style-engine-css-rules-store.php',
+            '/style-engine/class-wp-style-engine-processor.php'
+        ] )
+        40. $GLOBALS['wp_embed'] = new WP_Embed();
+        41. Instantiate WP_Textdomain_Registry obj to $GLOBALS['wp_textdomain_registry']
+        42. If is_multisite() // Load multisite-specific files
+            - TRUE
+                1. require ABSPATH . WPINC . [
+                    '/ms-functions.php',
+                    '/ms-default-filters.php',
+                    '/ms-deprecated.php'
+                ]
+        43. Define constants which rely on API to obtain default value AND define must-use plugin directory constants, which can be overridden in sunrise.php drop-in ( wp_plugin_directory_constants(); $GLOBALS['wp_plugin_paths'] = array(); )
+        44. Load must-use plugins
+                foreach ( wp_get_mu_plugins() as $mu_plugin )
+                    $_wp_plugin_file = $mu_plugin
+                    include-once $mu_plugin
+                    $mu_plugin = $_wp_plugin_file // Avoid stomping of $mu_plugin var in a plugin
+                    
+                    // Fires once a single must-use plugin has loaded
+                    do_action( 'mu_plugin_loaded', $mu_plugin )
+                unset( $mu_plugin, $_wp_plugin_file )
+        45. Load network activated plugins
+            - If is_multisite()
+                - TRUE
+                    1. foreach ( wp_get_active_network_plugins() as $network_plugin )
+                            wp_register_plugin_realpath( $network_plugin )
+
+                            $_wp_plugin_file = $network_plugin
+                            include-once $network_plugin
+                            $network_plugin = $_wp_plugin_file // Avoid stomping
+
+                            // Fires once a single network-activated plugin has loaded
+                            do_action( 'network_plugin_loaded', $network_plugin )
+                        unset( $network_plugin, $_wp_plugin_file )
+        46. Fires do_action ( 'muplugins_loaded' ) once all must-use and network-activated plugins have loaded
+        47. If is_multisite()
+            - TRUE
+                1. Call ms_cookie_constants()
+        48. Define constants after multisite is loaded - ( wp_cookie_constants(); )
+        49. Define and enforce our SSL constants - ( wp_ssl_constants(); )
+        50. Create common globals - require ABSPATH . WPINC . '/vars.php'
+        51. Make taxonomies and posts available to plugins and themes - ( create_initial_taxonomies(); create_initial_post_types(); wp_strat_scraping_edited_file_errors(); )
+        52. Register the default theme directory root - ( register_theme_directory( get_theme_root() ) )
+        53. If ! is_multisite()
+            - TRUE
+                1. Handle users requesting a recovery mode link and initiating recovery mode - ( wp_recovery_mode()->initialize(); )
+        54. Load active plugins
+                foreach ( wp_get_active_and_valid_plugins() as $plugin )
+                    wp_register_plugin_realpath( $plugin )
+
+                    $_wp_plugin_file = $plugin
+                    include-once $plugin
+                    $plugin = $_wp_plugin_file // Avoid stomping
+                    
+                    // Fires once a single activated plugin has loaded
+                    do_action( 'plugin_loaded', $plugin )
+                unset( $plugin, $_wp_plugin_file )
+        55. Load pluggable functions - ( require ABSPATH . WPINC . [
+            '/pluggable.php',
+            '/pluggable-deprecated.php'
+        ]; )
+        56. Set internal encoding - ( wp_set_internal_encoding(); )
+        57. Run wp_cache_postload() if object cache [WP_CACHE] is enabled and the function ['wp_cache_postload'] exist
+        58. do_action( 'plugins_loaded' ) - once activated plugins have loaded
+        59. Define constants which affect functionality if not defined - ( wp_functionality_constants(); )
+        60. Add magic quotes and setup $_REQUEST ( $_GET + $_POST ) - ( wp_magic_quotes(); )
+        61. do_action( 'sanitize_comment_cookies' ) - Fires when comment cookies are sanitized
+        62. Get WP Query object - ( $GLOBALS['wp_the_query'] = new WP_Query(); )
+        63. Hold reference to WP Query object - ( $GLOBALS['wp_query'] = $GLOBALS['wp_the_query']; )
+        64. Hold WP Rewrite object for creating pretty URLs - ( $GLOBALS['wp_rewrite'] = new WP_Rewrite(); )
+        65. Get WP object - ( $GLOBALS['wp'] = new WP(); )
+        66. Get WP Widget Factory object - ( $GLOBALS['wp_widget_factory'] = new WP_Widget_Factory(); )
+        67. Get WP Roles (User Roles) - ( $GLOBALS['wp_roles'] = new WP_Roles(); )
+        68. do_action( 'setup_theme' ) - Fires before the theme is loaded
+        69. Define template related constants - ( wp_templating_constants(); )
+        70. Load default text localization domain - ( 
+            load_default_textdomain()
+            $locale = get_locale()
+            $locale_file = WP_LANG_DIR . "/$locale.php"
+            IF [ 0 === validate_file( $locale ) ] && is_readable( $locale_file )
+                TRUE
+                    require $locale_file
+            unset( $locale_file )
+         )
+        71. Get WP Locale object [for loading locale domain date and various strings] - ( $GLOBALS['wp_locale'] = new WP_Locale(); )
+        72. Get WP Locale Switcher object for switching locales and init - ( $GLOBALS['wp_locale_switcher'] = new WP_Locale_Switcher(); GLOBALS['wp_locale_switcher']->init(); )
+        73. Load functions for active theme, both parent and child theme if applicable
+                foreach ( wp_get_active_and_valid_themes() as $theme )
+                    file_exists( $theme . '/functions.php' ) ? include $theme . '/functions.php'
+                unset( $theme )
+        74. do_action( 'after_setup_theme' ) - Fires after theme loaded
+        75. Create instance of WP_Site_Health so that Cron events may fire - (
+                if ! class_exists( 'WP_Site_Health' ) ? require-once ABSPATH . 'wp-admin/includes/class-wp-site-health.php'
+                WP_Site_Health::get_instance()
+            )
+        76. Set up current user - ( $GLOBALS['wp']->init(); )
+        77. do_action( 'init' ) - Fires after WP finished loading before any headers are sent
+            Most of WP is loaded at this stage, user is authenticated.
+            WP continues to load 'init' hook,  and many plugins instantiate
+            themselves on it for all sorts of reasons
+            To plug an action once WP is loaded, use 'wp_loaded' hook
+        78. Check site status
+            if is_multisite()
+                TRUE
+                    $file = ms_site_check()
+                    if true !== $file
+                        require $file
+                        die()
+                    unset( $file )
+        79. do_action( 'wp_loaded' ) - Fired once WP, all plugins, and theme are fully loaded
+            and instantiated.
+            AJAX requests should use wp-admin/admin-ajax.php
+            admin-ajax.php can handle requests for users not logged in
 END-NAV-DIR: */...
 
-
+6. 
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
