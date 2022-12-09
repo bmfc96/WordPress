@@ -1,6 +1,6 @@
 <?php
 /**
- * Front to the WordPress application. THIS FILE DOESN'T DO ANYTHING, but LOADS
+ * Front to the WordPress application. THIS FILE DOESN'T DO ANYTHING, but LOAD
  * 'wp-blog-header.php' which does and tells WordPress to LOAD the THEME.
  *
  * @package WordPress
