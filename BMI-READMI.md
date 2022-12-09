@@ -15,12 +15,12 @@ DIR: */...
     (17 files)
 
 NAV-DIR: */... (17 files)
-1. index.php
+1. **index.php**
     - Front to application, LOAD 'wp-blog-header.php'
     - FLOW:
         1. Define constant WP_USE_THEMES as true
         2. LOAD _DIR_ . '/wp-blog-header.php' (require)
-2. wp-blog-header.php
+2. **wp-blog-header.php**
     - Loads WordPress ENVIRONMENT & TEMPLATE
     - FLOW:
         1. Load WordPress library (wp-load.php - require-once - _DIR_)
@@ -29,7 +29,7 @@ NAV-DIR: */... (17 files)
             Notes:
             - ABSPATH - a constant defined in 'wp-load.php'
             - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
-3. wp-load.php
+3. **wp-load.php**
     - (Bootstrap / Self-starting process) file for:-
         1. Setting ABSPATH constant
         2. Loading 'wp-config.php' (which load 'wp-settings.php' which will set up the WordPress environment)
