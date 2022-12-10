@@ -776,7 +776,50 @@ END-NAV-DIR: */...
     - Network API: WP_Network_Query class (Core class used for querying networks.)
     - This module contains `WP_Network_Query` class definition
 
-
+21. **`wp-includes/ms-blogs.php`**
+    - Site/blog functions that work with the blogs table and related data.
+    - FLOW:
+        1. require-once ABSPATH . WPINC . '/ms-site.php'
+        2. require-once ABSPATH . WPINC . '/ms-network.php'
+    - This module contains the following functions:
+        1. **`wpmu_update_blogs_date()`** - Update the last_updated field for the current site.
+        2. **`get_blogaddress_by_id( $blog_id )`** - Get a full blog URL, given a blog ID.
+        3. **`get_blogaddress_by_name( $blogname )`** - Get a full blog URL, given a blog name.
+        4. **`get_id_from_blogname( $slug )`** - Get a site's ID given its slug (subdomain or directory).
+        5. **`get_blog_details( $fields = null, $get_all = true )`** - Retrieve the details for a blog from the blogs table and blog options.
+        6. **`refresh_blog_details( $blog_id = 0 )`** - Clear the blog details cache.
+        7. **`update_blog_details( $blog_id, $details = array() )`** - Update the details for a blog. Updates the blogs table for a given blog ID.
+        8. **`clean_site_details_cache( $site_id = 0 )`** - Cleans the site details cache for a site.
+        9. **`get_blog_option( $id, $option, $default_value = false )`** - Retrieve option value for a given blog id based on name of option.
+            - if the option does not exist or does not have a value, then the return value will be false.
+            - this is useful to check whether you need to install an option and is commonly used during installation of plugin options and to test whether upgrading is required.
+            - if the option was serialized then it will be unserialized when it is returned.
+        10. **`add_blog_option( $id, $option, $value )`** - Add a new option for a given blog ID.
+            - no need to serialize values.
+            - if value needs to be serialized, then it will be serialized before it is inserted into the database.
+            - remember, resources can not be serialized or added as an option.
+            - can create options without values and then update the values later.
+            - existing options will not be updated and checks are performed to ensure that you (me) aren't adding a protected WordPress option.
+            - care should be taken to not name options the same as the ones which are protected.
+        11. **`delete_blog_option( $id, $option )`** - Removes option by name for a given blog ID. Prevents removal of protected WordPress options.
+        12. **`update_blog_option( $id, $option, $value, $deprecated = null )`** - Update an option for a particular blog.
+        13. **`switch_to_blog( $new_blog_id, $deprecated = null )`** - Switch the current blog.
+            - useful if you need to pull posts, or other information, from other blogs.
+            - can switch back afterwards using `restore_current_blog()`
+            - `plugins` are not switched.
+        14. **`restore_current_blog()`** - Restore the current blog, after calling `switch_to_blog()`.
+        15. **`wp_switch_roles_and_user( $new_site_id, $old_site_id )`** - Switches the initialized roles and current user capabilities to another site.
+        16. **`ms_is_switched()`** - Determines if `switch_to_blog()` is in effect.
+        17. **`is_archived( $id )`** - Check if a particular blog is archived.
+        18. **`update_archived( $id, $archived )`** - Update the `archived` status of a particular blog.
+        19. **`update_blog_status( $blog_id, $pref, $value, $deprecated = null )`** - Update a blog details field.
+        20. **`get_blog_status( $id, $pref )`** - Get a blog details field.
+        21. **`get_last_updated( $deprecated = '', $start = 0, $quantity = 40 )`** - Get a list of most recently updated blogs.
+        22. `_update_blog_date_on_post_publish( $new_status, $old_status, $post )`** -** Handler for updating the site's last updated date when a post is published or an already published post is changed.
+        23. **`_update_blog_date_on_post_delete( $post_id )`** - Handler for updating the current site's last updated date when a published post is deleted.
+        24. **`_update_posts_count_on_delete( $post_id )`** - Handler for updating the current site's posts count when a post is deleted.
+        25. `_update_posts_count_on_transition_post_status( $new_status, $old_status, **$post = null )`** - Handler for updating the current site's posts count when a post status changes.
+        26. **`wp_count_sites( $network_id = null )`** - Count number of sites grouped by site status.
 
 NAV-DIR: */wp-includes
 
