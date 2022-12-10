@@ -828,8 +828,8 @@ END-NAV-DIR: */...
     - FLOW:
         1. declare global on Objects representing the current network and current site.
 
-            @global WP_Network $current_site The current network.
-            @global object     $current_blog The current site.
+                @global WP_Network $current_site The current network.
+                @global object     $current_blog The current site.
 
 NAV-DIR: */wp-includes
 
