@@ -1044,7 +1044,56 @@ END-NAV-DIR: */...
     - this module contains `WP_Ajax_Response` class definition
     - send XML response back to Ajax request
 
-29. 
+29. **`wp-includes/capabilities.php`**
+    - Core User Role & Capabilities API
+    - this module contains the following functions:
+        1. **`map_meta_cap( $cap, $user_id, ...$args )`** - maps a capability to the primitive capabilities required of the given user to satisfy the capability being checked.
+            - accepts and ID of an object to map against if the capability is a meta capability.
+            - meta capabilities such as `edit_post` and `edit_user` are capabilities used by this function to map to primitive capabilities that a user or role requires, such as `edit_posts` and `edit_others_posts`.
+            - does not check whether the user has the required capabilities.
+            - just return what the required capabilities are.
+        2. **`current_user_can( $capability, ...$args )`** - return whether current user has the specified capability.
+            - accepts an ID of an object to check against if the capability is a meta capability.
+            - meta capabilities such as `edit_post` and `edit_user` are capabilities used by the `map_meta_cap()` function to map to primitive capabilities that a user or role has, such as `edit_posts` and `edit_others_posts`.
+            - while checking against particular roles in place of a capability is supported in part, this practice is discourage as it may produce unreliable results.
+            - will always return true if the current user is a super admin, unless specifically denied.
+        3. **`current_user_can_for_blog( $blog_id, $capability, ...$args )`** - return whether the current user has the specified capability for a given site.
+            - accepts an ID of an object to check against if the capability is a meta capability.
+            - meta capabilities such as `edit_post` and `edit_user` are capabilities used by the `map_meta_cap()` function to map to primitive capabilities that a user or role has, such as `edit_posts` and `edit_others_posts`.
+        4. **`author_can( $post, $capability, ...$args )`** - return whether the author of the supplied post has the specified capability.
+            - accepts an ID of an object to check against if the capability is a meta capability
+            - meta capabilities such as `edit_post` and `edit_user` are capabilities used by the `map_meta_cap()` to map to primitive capabilities that a user or role has, such as `edit_posts` and `edit_others_posts`.
+        5. **`user_can( $user, $capability, ...$args )`** - return whether a particular user has the specified capability.
+            - accepts an ID of an object to check against if the capability is a meta capability
+            - meta capabilities such as `edit_post` and `edit_user` are capabilities used by the `map_meta_cap()` to map to primitive capabilities that a user or role has, such as `edit_posts` and `edit_others_posts`.
+        6. **`wp_roles()`** - retrieves the global `WP_Roles` instance and instantiates it if necessary.
+        7. **`get_role( $role )`** - retrieves role object.
+        8. **`add_role( $role, $display_name, $capabilities = array() )`** - adds a role, if it does note exist.
+        9. **`remove_role( $role )`** - removes a role, if it exists.
+        10. **`get_super_admins()`** - retrieves a list of super admins.
+        11. **`is_super_admin( $user_id = false )`** - determines whether user is a site admin.
+        12. **`grant_super_admin( $user_id )`** - grants Super Admin privileges.
+        13. **`revoke_super_admin( $user_id )`** - revokes Super Admin privileges.
+        14. **`wp_maybe_grant_install_languages_cap( $allcaps )`** - filters the user capabilities to grant the `install_languages` capability as necessary.
+            - a user must have at least one out of the `update_core`, `install_plugins`, and `install_themes` capabilities to qualify for `install_languages`.
+        15. **`wp_maybe_grant_resume_extensions_caps( $allcaps )`** - filters the user capabilities to grant the `resume_plugins` and `resume_themes` capabilities as necessary.
+        16. **`wp_maybe_grant_site_health_caps( $allcaps, $caps, $args, $user )`** - filters the user capabilities to grant the `view_site_health_checks` capabilities as necessary.
+    - FLOW:
+        1. =##= Above functions definition
+        2. return
+        3. Dummy gettext calls to get strings in the catalog.
+
+                    /* translators: User role for administrators. */
+                    _x( 'Administrator', 'User role' );
+                    /* translators: User role for editors. */
+                    _x( 'Editor', 'User role' );
+                    /* translators: User role for authors. */
+                    _x( 'Author', 'User role' );
+                    /* translators: User role for contributors. */
+                    _x( 'Contributor', 'User role' );
+                    /* translators: User role for subscribers. */
+                    _x( 'Subscriber', 'User role' );
+
 
 NAV-DIR: */wp-includes
 
