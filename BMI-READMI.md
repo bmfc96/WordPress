@@ -561,6 +561,16 @@ END-NAV-DIR: */...
         5. **wp_is_fatal_error_handler_enabled()**: bool - Checks whether fatal error handler is enabled.
         6. **wp_recovery_mode()**: WP_Recovery_Mode - Access WP Recovery Mode instance.
 
+16. **wp-includes/default-constants.php**
+    - This module defines constants and global variables that can be overridden, generally in `wp-config.php`
+    - This module contains the following functions:
+        1. **wp_initial_constants()**: void - Defines initial WP constants.
+        2. **wp_plugin_directory_constants()**: void - Defines plugin directory WP constants.
+        3. **wp_cookie_constants()**: void - Defines cookie-related WP constants.
+        4. **wp_ssl_constants()**: void - Defines SSL-related WP constants.
+        5. **wp_functionality_constants()**: void - Defines functionality-related WP constants.
+        6. **wp_templating_constants()**: void - Defines templating-related WP constants.
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
