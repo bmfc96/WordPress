@@ -571,6 +571,110 @@ END-NAV-DIR: */...
         5. **wp_functionality_constants()**: void - Defines functionality-related WP constants.
         6. **wp_templating_constants()**: void - Defines templating-related WP constants.
 
+17. **wp-includes/plugin.php**
+    - Notes:
+        1. The plugin API is located in this file ( which allows for creating actions & filters and hooking functions & methods )
+        2. The functions or methods will then be run when the action or filter is called
+        3. The API callback examples reference functions, but can be methods of classes
+        4. To hook methods, need to pass an array one of two ways
+        5. This file should have no external dependencies
+    - FLOW:
+        1. Initialize filter globals
+                require __DIR__ . '/class-wp-hook.php'
+                global $wp_filter
+                global $wp_actions
+                global $wp_filters
+                global $wp_current_filter
+                $wp_filter = $wp_filter ? WP_Hook::build_preinitialized_hooks( $wp_filter ) : array()
+                $wp_actions = ! isset( $wp_actions ) ? array()
+                $wp_filters = ! isset( $wp_filters ) ? array()
+                $wp_current_filter = ! isset( $wp_current_filter ) ? array()
+    - This module contains the following functions:
+        1. **add_filter( $hook_name, $callback, $priority = 10, $accepted_args = 1 )** - Adds a callback function to a filter hook.
+            - WP offers filter hooks to allow plugins to modify various types of internal data at runtime.
+            - A plugin can modify data by binding a callback to a filter hook.
+            - When the filter is later applied, each bound callback is run in order of priority, and given the opportunity to modify a value by returning a new value.
+        2. **apply_filters( $hook_name, $value, ...$args )** - Calls the callback functions that have been added to a filter hook.
+            - This function invokes all functions attached to filter hook `$hook_name`.
+            - It is possible to create new filter hooks by simply calling this function, specifying name of new hook using `$hook_name` parameter.
+            - This function allows for multiple additional arguments to be passed to hooks.
+        3. **apply_filters_ref_array( $hook_name, $args )** - Calls the callback functions that have been added to a filter hook, specifying arguments in an array.
+        4. **has_filter( $hook_name, $callback = false )** - Checks if any filter has been registered for a hook.
+            - when using `$callback` argument, this function may return a non-boolean value that evaluate to false (e.g. 0), so use the `===` operator for testing the return value.
+        5. **remove_filter( $hook_name, $callback, $priority = 10 )** - Removes a callback function from a filter hook.
+            - this can be used to remove default functions attached to a specific filter hook and possibly replace them with a substitute.
+            - to remove a hook, the `$callback` and `$priority` arguments must match when the hook was added. This goes for both filters and actions. No warning will be given on removal failure.
+        6. **remove_all_filters( $hook_name, $priority = false )** - Removes all callback functions from a filter hook.
+        7. **current_filter()** - Get name of current filter hook.
+        8. **doing_filter( $hook_name = null )** - Return whether or not a filter hook is currently being processed.
+            - only return the most recent filter being executed.
+            - `did_filter()` return the number of times a filter has been applied during current request.
+            - allows detection for any filter currently being executed to be verified.
+        9. **did_filter( $hook_name )** - Get number of times a filter has been applied during current request.
+        10. **add_action( $hook_name, $callback, $priority = 10, $accepted_args = 1 )** - Adds a callback function to an action hook.
+            - actions are the hooks that WP core launches at specific points during execution, or when specific events occur.
+            - plugins can specify that one or more of its PHP functions are executed at these points, using the Action API.
+        11. **do_action( $hook_name, ...$arg )** - Calls the callback functions that have been added to an action hook.
+            - invokes all functions attached to action hook `$hook_name`.
+            - possible to create new action hooks by simple calling this function, specifying name of new hook using `$hook_name` parameter.
+            - can pass extra args. to hooks, much like with `apply_filters()`
+        12. **do_action_ref_array( $hook_name, $args )** - Calls the callback functions that have been added to an action hook, specifying arguments in an array.
+        13. **has_action( $hook_name, $callback = false )** - Checks if any action has been registered for a hook.
+            - when using `$callback` argument, this function may return a non-boolean value that evaluates to false (e.g. 0), so use the `===` operator for testing the return value.
+        14. **remove_action( $hook_name, $callback, $priority = 10 )** - Removes a callback function from an action hook.
+            - can be used to remove default functions attached to a specific action hook and possibly replace them with a substitute.
+            - to remove a hook, the `$callback` and `$priority` arguments must match when the hook was added. This goes for both filters and actions. No warning will be given on removal failure.
+        15. **remove_all_actions( $hook_name, $priority = false )** - Removes all of the callback functions from an action hook.
+        16. **current_action()** - Get name of current action hook.
+        17. **doing_action( $hook_name = null )** - Return whether or not an action hook is currently being processed.
+            - `current_action()` only return the most recent action being executed.
+            - `did_action()` return number of times an action has been fired during current request.
+            - allows detection for any action currently being executed [*] to be verified.
+                WHERE::( * = regardless of whether it's the most recent action to fire, in case of hooks called from hook callbacks )
+        18. **did_action( $hook_name )** - Get number of times an action has been fired during current request.
+        19. **apply_filters_deprecated( $hook_name, $args, $version, $replacement = '', $message = '' )** - Fires functions attached to a deprecated filter hook.
+            - when a filter hook is deprecated, the `apply_filters()` call is replaced with `apply_filters_deprecated()`, which triggers a deprecation notice and then fires the original filter hook.
+            - value and extra arguments paseed to the original `apply_filters()` call must be passed here to `$args` as an array.
+        20. **do_action_deprecated( $hook_name, $args, $version, $replacement = '', $message = '' )** - Fires functions attached to a deprecated action hook.
+            - when an action hook is deprecated, the `do_action()` call is replaced with `do_action_deprecated()`, which triggers a deprecation notice then fires the original hook.
+        21. =#= Functions for handling plugins.
+        22. **plugin_basename( $file )** - Get basename of a plugin.
+            - extracts the name of a plugin from its filename.
+        23. **wp_register_plugin_realpath( $file )** - Register a plugin's real path.
+            - used in `plugin_basename()` to resolve symlinked paths.
+        24. **plugin_dir_url( $file )** - Get URL directory path (with trailing slash) for the plugin __FILE__ passed in.
+        25. **register_activation_hook( $file, $callback )** - Set activation hook for a plugin.
+            - when a plugin is activated, action `activate_PLUGINNAME` hook is called.
+            - in the name of hook above, `PLUGINNAME` is replaced with name of the plugin, including optional subdirectory.
+            (e.g. when the plugin is located in `wp-content/plugins/sampleplugin/sample.php`, then name of this hook will become `activate_sampleplugin/sample.php`)
+            - when plugin consists of only one file and is (by default) located at `wp-content/plugins/sample.php` the name of this hook will be `activate_sample.php`.
+        26. **register_deactivation_hook( $file, $callback )** - Sets deactivation hook for a plugin.
+            - when a plugin is deactivated, action `deactivate_PLUGINNAME` hook is called.
+            - in the name of hook above, `PLUGINNAME` is replaced with name of the plugin, including optional subdirectory.
+            (e.g. when the plugin is located in `wp-content/plugins/sampleplugin/sample.php`, then the name of this hook will become `deactivate_sampleplugin/sample.php`)`.
+            - when plugin consists of only one file and is (by default) located at `wp-content/plugins/sample.php` the name of this hook will be `deactivate_sample.php``.
+        27. **register_uninstall_hook( $file, $callback )** - Sets uninstallation hook for a plugin.
+            - register uninstall hook that will be called when user clicks on uninstall link that calls for plugin to uninstall itself.
+            - link won't be active unless the plugin hooks into the action.
+            - plugin should not run arbitrary code outside of functions, when registering uninstall hook.
+            - in order to run using the hook, plugin will have to be included
+            (e.g. any code laying outside of a function will be run during the uninstallation process.)
+            - plugin should not hinder uninstallation process.
+            - if the plugin can not be written without running code within the plugin, then the plugin should create a file named 'uninstall.php' in the base plugin folder.
+            - this file will be called, if it exists, during the uninstallation process bypassing the uninstall hook.
+            - the plugin, when using the `uninstall.php` should always check for the `WP_UNINSTALL_PLUGIN` constant, before executing.
+        28. **_wp_call_all_hook( $args )** - Calls the `all` hook, which will process the functions hooked into it.
+            - `all` hook passes all of the arguments or parameters that were used for the hook, which this function was called for.
+            - used internally for `apply_filters()`, `do_action()`, and `do_action_ref_array()` and is not meant to be used from outside those functions.
+            - does not check for the existence of the all hook, so it will fail unless the all hook exists prior to this function call.
+        29. **_wp_filter_build_unique_id( $hook_name, $callback, $priority )** - Builds Unique ID for storage and retrieval.
+            - old way to serialize the callback caused issues and this function is the solution.
+            - works by checking for objects and creating a new property in the class to keep track of the object and new objects of the same class that need to be added.
+            - allows for the removal of actions and filters for objects after they change class properties.
+            - possible to include the property `$wp_filter_id` in your class and set it to `null` or a number to bypass the workaround.
+            - however this will prevent you from adding new classes and any new classes will overwrite the previous hook by the same class.
+            - functions and static method callbacks are just returned as strings and shouldn't have any speed penalty.
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
