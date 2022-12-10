@@ -1117,7 +1117,11 @@ END-NAV-DIR: */...
     - User API: WP_User class (Core class used to implement the `WP_User` object.)
     - this module contains `WP_User` class definition
 
-33. 
+33. **`wp-includes/class-wp-query.php`**
+    - Query API: WP_Query class (WordPress Query class.)
+    - this module contains `WP_Query` class definition
+
+34. 
 
 NAV-DIR: */wp-includes
 
