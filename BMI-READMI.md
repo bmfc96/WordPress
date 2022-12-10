@@ -830,6 +830,37 @@ END-NAV-DIR: */...
 
                 @global WP_Network $current_site The current network.
                 @global object     $current_blog The current site.
+                @global string     $domain       Deprecated. The domain of the site found on load.
+                                                 Use `get_site()->domain` instead.
+                @global string     $path         Deprecated. The path of the site found on load.
+                                                 Use `get_site()->path` instead.
+                @global int        $site_id      Deprecated. The ID of the network found on load.
+                                                 Use `get_current_network_id()` instead.
+                @global bool       $public       Deprecated. Whether the site found on load is public.
+                                                 Use `get_site()->public` instead.
+                
+                global $current_site, $current_blog, $domain, $path, $site_id, $public;
+
+        2. WP_Network class - ( require-once ABSPATH . WPINC . `/class-wp-network.php` )
+        3. WP_Site class - ( require-once ABSPATH . WPINC . `/class-wp-site.php` )
+        4. Multisite loader - ( require-once ABSPATH . WPINC . `/ms-load.php` )
+        5. Default Multisite constant - ( require-once ABSPATH . WPINC . `/ms-default-constants.php` )
+        6. defined( `SUNRISE` ) ? include-once WP_CONTENT_DIR . `/sunrise.php`
+        7. Check for and define `SUBDOMAIN_INSTALL` and the deprecated VHOST constants. - ( ms_subdomain_constants(); )
+        8. if current network or site objects have not been populated in the global scope through something like `sunrise.php`, run closure block.
+        9. Set database prefix - can be set in sunrise.php
+        10. Need to init cache agin after `blog_id` is set.
+
+                    wp_start_object_cache();
+
+                    $current_site = ! $current_site instanceof WP_Network ? new WP_Network( $current_site ):;
+                    $current_blog = ! $current_blog instanceof WP_Site ? new WP_Site( $current_blog ):;
+
+        11. Define upload directory constants.
+
+                    ms_upload_constants();
+
+        12. do_action( 'ms_loaded' ) - Fires after the current site and network have been detected and loaded in multisite's bootstrap.
 
 NAV-DIR: */wp-includes
 
