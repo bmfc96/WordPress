@@ -1417,7 +1417,14 @@ END-NAV-DIR: */...
         4. **`wp_get_global_styles_svg_filters()`** - Returns a string containing the SVGs to be referenced as filters (duotone).
         5. **`wp_get_global_styles_for_blocks()`** - Adds global style rules to the inline style for each block.
 
-43. ...
+43. **`wp-includes/class-wp-block-template.php`**
+    - Blocks API: WP_Block_Template class
+    - @package WordPress
+    - @since 5.8.0
+    - class representing a block template.
+    - this module contains `WP_Block_Template` class definition
+
+44. ...
 
 
 NAV-DIR: */wp-includes
