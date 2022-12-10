@@ -1375,10 +1375,20 @@ END-NAV-DIR: */...
         88. **`_add_default_theme_supports()`** - Adds default theme supports for block themes when the `setup_theme` action fires.
 
 37. **`wp-includes/class-wp-theme.php`**
-    - WP_Theme Class
+    - WP_Theme class
     - this module contains final class `WP_Theme` implements `ArrayAccess` definition
 
-38. ...
+38. **`wp-includes/class-wp-theme-json-schema.php`**
+    - WP_Theme_JSON_Schema class
+    - class that migrates a given `theme.json` structure to the latest schema.
+    - this class is for internal core usage and is not supposed to be used by extenders (plugins and/or themes).
+    - this is a low-level API that may need to do breaking changes
+    - please, use `get_global_settings`, `get_global_styles`, and `get_global_stylesheet` instead.
+    - this module contains `wP_Theme_JSON_Schema` class definition
+
+39. ...
+
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
