@@ -1474,7 +1474,25 @@ END-NAV-DIR: */...
         25. **`get_template_hierarchy( $slug, $is_custom = false, $template_prefix = '' )`** - Gets the template hierarchy for the given template slug to be created.
             - always add `index` as the last fallback template.
 
-45. ...
+45. **`wp-includes/block-template.php`**
+    - Block template loader functions
+    - @package WordPress
+    - this module contains the following functions:
+        1. **`_add_template_loader_filters()`** - Adds necessary filters to use `wp_template` posts instead of theme template files.
+        2. **`locate_block_template( $template, $type, array $templates )`** - Finds a block template with equal or higher specificity than a given PHP template file.
+            - internally, this communicates the block content that needs to be used by the template canvas through a global variable.
+        3. **`resolve_block_template( $template_type, $template_hierarchy, $fallback_template )`** - Returns the correct `wp_template` to render for the request template type.
+        4. **`_block_template_render_title_tag()`** - Displays title tag with content, regardless of whether theme has title-tag support.
+        5. **`get_the_block_template_html()`** - Returns the markup for the current template.
+        6. **`_block_template_viewport_meta_tag()`** - Renders a `viewport` meta tag.
+            - this is hooked into `wp_head` to decouple its output from the default template canvas.
+        7. **`_strip_template_file_suffix( $template_file )`** - Strips .php or .html suffix from template file names.
+        8. **`_block_template_render_without_post_block_context( $context )`** - Removes post details from block context when rendering a block template.
+        9. **`_resolve_template_for_new_post( $wp_query )`** - Sets the current `WP_Query` to return auto-draft posts.
+            - the auto-draft status indicates a new post, so allow the `WP_Query` instance to return an auto-draft post for template resolution when editing a new post.
+        10. **`_resolve_home_block_template()`** - Returns the correct template for the site's home page.
+
+46. ...
 
 
 NAV-DIR: */wp-includes
