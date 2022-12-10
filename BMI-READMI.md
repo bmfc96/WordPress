@@ -524,6 +524,13 @@ END-NAV-DIR: */...
     - Error Protection API: WP_Paused_Extensions_Storage class (Core class used for storing paused extensions.)
     - This module contains WP_Paused_Extensions_Storage class definition
 
+9. **wp-includes/class-wp-fatal-error-handler.php**
+    - Error Protection API: WP_Fatal_Error_Handler class (Core class used as the default shutdown handler for fatal errors.)
+    - A drop-in `fatal-error-handler.php` can be used to override the instance of this class and use a custom implementation for the fatal error handler that WP registers.
+    - The custom class should extend this class and can override its methods individually as necessary.
+    - The file must return the instance of the class that should be registered.
+    - This module contains `WP_Fatal_Error_Handler` class definition
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
