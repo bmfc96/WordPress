@@ -551,6 +551,16 @@ END-NAV-DIR: */...
     - Error Protection API: WP_Recovery_Mode class (Core class used to implement Recovery Mode.)
     - This module contains `WP_Recovery_Mode` class definition
 
+15. **wp-includes/error-protection.php**
+    - Error Protection API: Functions
+    - This module contains the following functions:
+        1. **wp_paused_plugins()**: WP_Paused_Extensions_Storage - Get the instance for storing paused plugins.
+        2. **wp_paused_themes()**: WP_Paused_Extensions_Storage - Get the instance for storing paused extensions.
+        3. **wp_get_extension_error_description( $error )**: string - Get a human readable description of an extension's error.
+        4. **wp_register_fatal_error_handler()**: void - Registers shutdown handler for fatal errors.
+        5. **wp_is_fatal_error_handler_enabled()**: bool - Checks whether fatal error handler is enabled.
+        6. **wp_recovery_mode()**: WP_Recovery_Mode - Access WP Recovery Mode instance.
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
