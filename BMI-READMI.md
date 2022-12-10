@@ -1391,7 +1391,15 @@ END-NAV-DIR: */...
     - class to provide access to update a `theme.json` structure.
     - this module contains `WP_Theme_JSON_Data` class definition
 
-40. ...
+40. **`wp-includes/class-wp-theme-json.php`**
+    - WP_Theme_JSON class
+    - class that encapsulates the processing of structures that adhere to the `theme.json` spec.
+    - this class is for internal core usage and is not supposed to be used by extenders (plugins and/or themes).
+    - this is a low-level API that may need to do breaking changes.
+    - please, use `get_global_settings`, `get_global_styles`, and `get_global_stylesheet` instead.
+    - this module contains `WP_Theme_JSON` class definition
+
+41. ...
 
 
 NAV-DIR: */wp-includes
