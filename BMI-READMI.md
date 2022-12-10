@@ -15,13 +15,13 @@ DIR: */...
     (17 files)
 
 NAV-DIR: */... (17 files)
-1. **index.php**
+1. **`index.php`**
     - Front to application, LOAD 'wp-blog-header.php'
     - FLOW:
         1. Define constant WP_USE_THEMES as true
         2. LOAD _DIR_ . '/wp-blog-header.php' (require)
 
-2. **wp-blog-header.php**
+2. **`wp-blog-header.php`**
     - Loads WordPress ENVIRONMENT & TEMPLATE
     - FLOW:
         1. Load WordPress library (wp-load.php - require-once - _DIR_)
@@ -31,7 +31,7 @@ NAV-DIR: */... (17 files)
             - ABSPATH - a constant defined in 'wp-load.php'
             - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
 
-3. **wp-load.php**
+3. **`wp-load.php`**
     - (Bootstrap / Self-starting process) file for:-
         1. Setting ABSPATH constant
         2. Loading 'wp-config.php' (which load 'wp-settings.php' which will set up the WordPress environment)
@@ -66,7 +66,7 @@ NAV-DIR: */... (17 files)
                 10. Die with error message... (sprintf())
                 11. Call wp_die();
 
-4. **wp-config-sample.php**
+4. **`wp-config-sample.php`**
     - Base for 'wp-config.php' which does the following configurations:
         1. Database settings
         2. Secret keys
@@ -94,7 +94,7 @@ NAV-DIR: */... (17 files)
         19. Define constant ABSPATH as (_DIR_ . '/') if not exist
         20. require-once ABSPATH . 'wp-settings.php' - Setup WordPress vars and included files.
 
-5. **wp-settings.php**
+5. **`wp-settings.php`**
     - This module does the followings:
         1. Set up and fix common variables
         2. Include WordPress procedural and class library
@@ -387,7 +387,7 @@ NAV-DIR: */... (17 files)
             admin-ajax.php can handle requests for users not logged in
 END-NAV-DIR: */...
 
-6. **wp-includes/versions.php**
+6. **`wp-includes/versions.php`**
     - This module is responsible on:
         1. Contains version information of current WP release
         2. Hold current version number for WP core - (used to bust caches and enable dev. mode for scripts when running from /src dir.) [ $wp_version = '6.2-alpha-54952' ]
@@ -396,36 +396,36 @@ END-NAV-DIR: */...
         5. Hold required PHP version - ( $required_php_version = '5.6.20'; )
         6. Hold required MySQL version - ( $required_mysql_version = '5.0'; )
 
-7. **wp-includes/load.php**
+7. **`wp-includes/load.php`**
     - This module are needed to load WP
     - FUNCTIONS:
-        1. **wp_get_server_protocol()**: $protocol - Return HTTP protocol sent by server
-        2. **wp_fix_server_vars()**: void - Fix `$_SERVER` vars. for various setups
-        3. **wp_populate_basic_auth_from_authorization_header()**: void - Populates Basic Auth server details from Authorization header
+        1. **`wp_get_server_protocol()`**: $protocol - Return HTTP protocol sent by server
+        2. **`wp_fix_server_vars()`**: void - Fix `$_SERVER` vars. for various setups
+        3. **`wp_populate_basic_auth_from_authorization_header()`**: void - Populates Basic Auth server details from Authorization header
             Some server running in CGI or FastCGI mode don't pass Authorization header on to WP
             If it's been rewritten to `HTTP_AUTHORIZATION` header,
             fill in proper $_SERVER vars. instead
-        4. **wp_check_php_mysql_versions()** - Check for required PHP version and MySQL extension or database drop-in, dies if requirement not met
-        5. **wp_get_environment_type()**: str - Get current environment type (return string current env. type)
+        4. **`wp_check_php_mysql_versions()`** - Check for required PHP version and MySQL extension or database drop-in, dies if requirement not met
+        5. **`wp_get_environment_type()`**: str - Get current environment type (return string current env. type)
             Type can be set via `WP_ENVIRONMENT_TYPE` global system variable
             or a constant of same name
             Possible values are 'local', 'development', 'staging', and 'production'
             If not set, 'type' default is 'production'
-        6. **wp_favicon_request()**: void - Don't load all of WP when handling a favicon.ico request
+        6. **`wp_favicon_request()`**: void - Don't load all of WP when handling a favicon.ico request
             Instead, send headers for a zero-length favicon and bail
-        7. **wp_maintenance()**: void - Die with maintenance message when conditions met
+        7. **`wp_maintenance()`**: void - Die with maintenance message when conditions met
             Default message can be replaced using a drop-in (maintenance.php in wp-content directory)
-        8. **wp_is_maintenance_mode()**: true|false - Check if maintenance mode is enabled 
+        8. **`wp_is_maintenance_mode()`**: true|false - Check if maintenance mode is enabled 
             Checks for a file in WP root dir. named '.maintenance'
             This file will contain var. $upgrading,
             set to the time the file was created.
             If the file was created < 10 mins. ago,
             WP is in maintenance mode
-        9. **timer_float()**: float - Get time elapsed so far during this PHP script
+        9. **`timer_float()`**: float - Get time elapsed so far during this PHP script
             Uses REQUEST_TIME_FLOAT that appeared in PHP 5.4.0
-        10. **timer_start()**: bool always - Start WP micro-timer
-        11. **timer_stop()**: string - Get/display time from the page start to when function is called
-        12. **wp_debug_mode()**: void - Set PHP error reporting based on WP debug settings
+        10. **`timer_start()`**: bool always - Start WP micro-timer
+        11. **`timer_stop()`**: string - Get/display time from the page start to when function is called
+        12. **`wp_debug_mode()`**: void - Set PHP error reporting based on WP debug settings
             CONSTANTS (3): ['WP_DEBUG', 'WP_DEBUG_DISPLAY', 'WP_DEBUG_LOG']
             All three (3) can be defined in 'wp-config.php'
             By default, `WP_DEBUG` and `WP_DEBUG_LOG` = false, `WP_DEBUG_DISPLAY` = true
@@ -448,11 +448,11 @@ END-NAV-DIR: */...
                     2. REST
                     3. `ms-files.php`
                     4. AJAX requests
-        13. **wp_set_lang_dir()**: void - Set location of language directory
+        13. **`wp_set_lang_dir()`**: void - Set location of language directory
             - define `WP_LANG_DIR` constant in `wp-config.php` to set directory manually
             - language directory exists within `WP_CONTENT_DIR` ? use it : assumed language directory live in `WPINC`
-        14. **require_wp_db()**: void - Load database class file and instantiate `$wpdb` global
-        15. **wp_set_wpdb_vars()**: void - Set database table prefix and format specifiers for database table columns
+        14. **`require_wp_db()`**: void - Load database class file and instantiate `$wpdb` global
+        15. **`wp_set_wpdb_vars()`**: void - Set database table prefix and format specifiers for database table columns
             Columns not listed here default to `%s`
         16. **wp_using_ext_object_cache()**: bool - Toggle `$_wp_using_ext_object_cache` on and off without directly touching global
         17. **wp_start_object_cache()**: void - Start WP object cache
@@ -820,6 +820,16 @@ END-NAV-DIR: */...
         24. **`_update_posts_count_on_delete( $post_id )`** - Handler for updating the current site's posts count when a post is deleted.
         25. `_update_posts_count_on_transition_post_status( $new_status, $old_status, **$post = null )`** - Handler for updating the current site's posts count when a post status changes.
         26. **`wp_count_sites( $network_id = null )`** - Count number of sites grouped by site status.
+
+22. **`wp-includes/ms-settings.php`**
+    - NOTES:
+        - used to set up and fix common variables and include the Multisite procedural and class library.
+        - allows for some configuration in `wp-config.php` (see `ms-default-constants.php`)
+    - FLOW:
+        1. declare global on Objects representing the current network and current site.
+
+            @global WP_Network $current_site The current network.
+            @global object     $current_blog The current site.
 
 NAV-DIR: */wp-includes
 
