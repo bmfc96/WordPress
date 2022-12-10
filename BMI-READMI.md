@@ -4,7 +4,7 @@
 
 *=WordPress
 
-DIR:
+### DIR:
 
     */...
 
@@ -16,7 +16,7 @@ DIR:
      
     (17 files)
 
-NAV-DIR: */... (17 files)
+#### NAV-DIR: */... (17 files)
 1. **`index.php`**
     - Front to application, LOAD 'wp-blog-header.php'
     - FLOW:
@@ -1424,7 +1424,57 @@ END-NAV-DIR: */...
     - class representing a block template.
     - this module contains `WP_Block_Template` class definition
 
-44. ...
+44. **`wp-includes/block-template-utils.php`**
+    - Utilities used to fetch and create templates and template parts.
+    - @package WordPress
+    - @since 5.8.0
+    - FLOW:
+        1. Define constants for supported `wp_template_part_area` taxonomy.
+
+                if ( ! defined('WP_TEMPLATE_PART_AREA_HEADER') ) {
+                    define('WP_TEMPLATE_PART_AREA_HEADER', 'header');
+                }
+                if ( ! defined('WP_TEMPLATE_PART_AREA_FOOTER') ) {
+                    define('WP_TEMPLATE_PART_AREA_FOOTER', 'footer');
+                }
+                if ( ! defined('WP_TEMPLATE_PART_AREA_SIDEBAR') ) {
+                    define('WP_TEMPLATE_PART_AREA_SIDEBAR', 'sidebar');
+                }
+                if ( ! defined('WP_TEMPLATE_PART_AREA_UNCATEGORIZED') ) {
+                    define('WP_TEMPLATE_PART_AREA_UNCATEGORIZED', 'uncategorized');
+                }
+    - this module contains the following functions:
+        1. **`get_block_theme_folders( $theme_stylesheet = null )`** - For backward compatibility reasons, block themes might be using block-templates or block-template-parts, this function ensures we fallback to these folders properly.
+        2. **`get_allowed_block_template_part_areas()`** - Returns a filtered list of allowed area values for template parts.
+        3. **`get_default_block_template_types()`** - Returns a filtered list of default template types, containing their localized titles and descriptions.
+        4. **`_filter_block_template_part_area( $type )`** - Checks whether the input `area` is a supported value.
+            - returns the input if supported, otherwise returns the `uncategorized` value.
+        5. **`_get_block_templates_paths( $base_directory )`** - Finds all nested template part file paths in a theme's directory.
+        6. **`_get_block_template_file( $template_type, $slug )`** - Retrieves the template file from the theme for a given slug.
+        7. **`_get_block_templates_files( $template_type )`** - Retrieves the template files from the theme.
+        8. **`_add_block_template_info( $template_item )`** - Attempts to add custom template information to the template item.
+        9. **`_add_block_template_part_area_info( $template_info )`** - Attempts to add the template part's area information to the input template.
+        10. **`_flatten_blocks( &$blocks )`** - Returns an array containing the references of the passed blocks and their inner blocks.
+        11. **`_inject_theme_attribute_in_block_template_content( $template_content )`** - Parses `wp_template` content and injects the active theme's stylesheet as a theme attribute into each `wp_template_part`.
+        12. **`_remove_theme_attribute_in_block_template_content( $template_content )`** - Parses a block template and removes the theme attribute from each template part.
+        13. **`_build_block_template_result_from_file( $template_file, $template_type )`** - Builds a unified template object based on a theme file.
+        14. **`_wp_build_title_and_description_for_single_post_type_block_template( $post_type, $slug, WP_Block_Template $template )`** - Builds the title and description of a post-specific template based on the underlying referenced post.
+            - mutates the underlying template object.
+        15. **`_wp_build_title_and_description_for_taxonomy_block_template( $taxonomy, $slug, WP_Block_Template $template )`** - Builds the title and description of a taxonomy-specific template based on the underlying entity referenced.
+            - mutates the underlying template object.
+        16. **`_build_block_template_result_from_post( $post )`** - Builds a unified template object based on a post Object.
+        17. **`get_block_templates( $query = array(), $template_type = 'wp_template' )`** - Retrieves a list of unified template objects based on a query.
+        18. **`get_block_template( $id, $template_type = 'wp_template' )`** - Retrieves a single unified template object using its id.
+        19. **`get_block_file_template( $id, $template_type = 'wp_template' )`** - Retrieves a unified template object based on a theme file.
+        20. **`block_template_part( $part )`** - Prints a block template part.
+        21. **`block_header_area()`** - Prints the header block template part.
+        22. **`block_footer_area()`** - Prints the footer block template part.
+        23. **`wp_is_theme_directory_ignored( $path )`** - Determines whether a theme directory should be ignored during export.
+        24. **`wp_generate_block_templates_export_file()`** - Creates an export of the current templates and template parts from the site editor at the specified path in a ZIP file.
+        25. **`get_template_hierarchy( $slug, $is_custom = false, $template_prefix = '' )`** - Gets the template hierarchy for the given template slug to be created.
+            - always add `index` as the last fallback template.
+
+45. ...
 
 
 NAV-DIR: */wp-includes
