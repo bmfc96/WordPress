@@ -772,6 +772,10 @@ END-NAV-DIR: */...
     - Site API: WP_Site_Query class (Core class used for querying sites.)
     - This module contains `WP_Site_Query` class definition
 
+20. **`wp-includes/class-wp-network-query.php`**
+    - Network API: WP_Network_Query class (Core class used for querying networks.)
+    - This module contains `WP_Network_Query` class definition
+
 
 
 NAV-DIR: */wp-includes
