@@ -531,6 +531,10 @@ END-NAV-DIR: */...
     - The file must return the instance of the class that should be registered.
     - This module contains `WP_Fatal_Error_Handler` class definition
 
+10. **wp-includes/class-wp-recovery-mode-cookie-service.php**
+    - Error Protection API: WP_Recovery_Mode_Cookie_Service class (Core class used to set, validate, and clear cookies that identify a Recovery Mode session.)
+    - This module contains final `WP_Recovery_Mode_Cookie_Service` class definition
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
