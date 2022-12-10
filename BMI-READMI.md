@@ -1033,7 +1033,14 @@ END-NAV-DIR: */...
     - Locale API: WP_Locale_Switcher class (Core class used for switching locales.)
     - this module contains `WP_Locale_Switcher` class definition
 
-27. 
+27. **`wp-includes/class-wp-walker.php`**
+    - this module contains `Walker` class definition
+    - a class for displaying various tree-like structures.
+    - extend the `Walker` class to use it
+    - child classes do not need to implement all of the abstract method in the class
+    - child only needs to implement the methods that are needed
+
+28. 
 
 NAV-DIR: */wp-includes
 
