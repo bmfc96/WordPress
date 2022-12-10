@@ -1207,6 +1207,15 @@ END-NAV-DIR: */...
         49. **`setup_postdata( $post )`** - Set up global post data.
         50. **`generate_postdata( $post )`** - Generates post data.
 
+35. **`wp-includes/class-wp-date-query.php`**
+    - class for generating SQL clauses that filter a primary query according to date.
+    - `WP_Date_Query` is a helper that allows primary query classes, such as `WP_Query`, to filter their results by date columns, by generating `WHERE` subclauses to be attached to the primary SQL query string.
+    - attempting to filter by an invalid date value (e.g. month = 13) will generate SQL that will return **no results**.
+    - in these cases, a `_doing_it_wrong()` error notice is also thrown.
+    - See `WP_Date_Query::validate_date_values()`.
+    - this module contains `WP_Date_Query` class definition
+
+36. ...
 
 NAV-DIR: */wp-includes
 
