@@ -969,7 +969,11 @@ END-NAV-DIR: */...
     - Locale API: WP_Locale class (Core class used to store translated data for a locale.)
     - this module contains `WP_Locale` class definition
 
-26. 
+26. **`wp-includes/class-wp-locale-switcher.php`**
+    - Locale API: WP_Locale_Switcher class (Core class used for switching locales.)
+    - this module contains `WP_Locale_Switcher` class definition
+
+27. 
 
 NAV-DIR: */wp-includes
 
