@@ -1121,7 +1121,92 @@ END-NAV-DIR: */...
     - Query API: WP_Query class (WordPress Query class.)
     - this module contains `WP_Query` class definition
 
-34. 
+34. **`wp-includes/query.php`**
+    - WordPress Query API
+    - Notes:
+        - the query API attempts to get which part of WordPress the user is on
+        - it also provides functionality for getting URL query information
+    - this module contains the following functions:
+        1. **`get_query_var( $var, $default = '' )`** - Retrieves the value of a query variable in the `WP_Query` class.
+        2. **`get_queried_object()`** - Retrieves the currently queried object.
+            - wrapper for `WP_Query::get_queried_object()`
+        3. **`get_queried_object_id()`** - Retrieves the ID of the currently queried object.
+            - wrapper for `WP_Query::get_queried_object_id()`
+        4. **`set_query_var( $var, $value )`** - Sets the value of a query variable in the `WP_Query` class.
+        5. **`query_posts( $query )`** - Sets up The Loop with query parameters.
+            - this function will **completely override** the main query and isn't intended for use by plugins or themes.
+            - its overly-simplistic approach to modifying the main query can be problematic and should be avoided wherever possible.
+            - in most cases, there are better, more performant options for modifying the main query such as via the action within `WP_Query`.
+            - this **must not be used** within the **WordPress Loop**.
+        6. **`wp_reset_query()`** - Destroys the previous query and sets up a new query.
+            - this should be used **after** `query_posts()` and **before another** `query_posts()`.
+            - this will remove **obscure bugs** that occur when the previous `WP_Query` object is not destroyed properly before another is set up.
+        7. **`wp_reset_postdata()`** - After looping through a separate query, this function restores the `$post` global to the current post in the main query.
+        8. =##= **Query type checks**.
+        9. **`is_archive()`** - Determines whether the query is for an existing archive page.
+            - archive pages include category, tag, author, date, custom post type, and custom taxonomy based archives.
+        10. **`is_post_type_archive( $post_types = '' )`** - Determines whether the query is for an existing post type archive page.
+        11. **`is_attachment( $attachment = '' )`** - Determines whether the query is for an existing attachment page.
+        12. **`is_author( $author = '' )`** - Determines whether the query is for an existing author archive page.
+            - if the `$author` parameter is specified, this function will additionally check if the query is for one of the authors specified.
+        13. **`is_category( $category = '' )`** - Determines whether the query is for an existing category archive page.
+            - if the `$category` parameter is specified, this function will additionally check if the query is for one of the categories specified.
+        14. **`is_tag( $tag = '' )`** - Determines whether the query is for an existing tag archive page.
+            - if the `$tag` parameter is specified, this function will additionally check if the query is for one of the tags specified.
+        15. **`is_tax( $taxonomy = '', $term = '' )`** - Determines whether the query is for an existing custom taxonomy archive page.
+            - if the `$taxonomy` parameter is specified, this function will additionally check if the query is for that specific `$taxonomy`.
+            - if the `$term` parameter is specified in addition to the `$taxonomy` parameter, this function will additionally check if the query is for one of the terms specified.
+        16. **`is_date()`** - Determines whether the query is for an existing date archive.
+        17. **`is_day()`** - Determines whether the query is for an existing day archive.
+            - a conditional check to test whether the page is a date-based archive page displaying posts for the current day.
+        18. **`is_feed( $feeds = '' )`** - Determines whether the query is for a feed.
+        19. **`is_comment_feed()`** - Is the query for a comments feed?
+        20. **`is_front_page()`** - Determines whether the query is for the front page of the site.
+            - this is for what is displayed at your site's main URL.
+            - depends on the site's` "Front page displays" Reading Settings 'show_on_front' and 'page_on_front'.
+            - if you set a static page for the front page of your site, this function will return true when viewing that page.
+            - otherwise the same as `is_home()`.
+        21. **`is_home()`** - Determines whether the query is for the blog homepage.
+            - the blog homepage is the page that shows the time-based blog content of the site.
+            - `is_home()` is dependent on the site's "Front page displays" Reading Settings 'show_on_front' and 'page_for_posts'.
+            - if a static page is set for the front page of the site, this function will return true only on the page you set as the "Posts page".
+        22. **`is_privacy_policy()`** - Determines whether the query is for the Privacy Policy page.
+            - the Privacy Policy page is the page that shows the Privacy Policy content of the site.
+            - `is_privacy_policy()` is dependent on the site's "Change your Privacy Policy page" Privacy Settings 'wp_page_for_privacy_policy'.
+            - this function will return true only on the page you set as the "Privacy Policy page".
+        23. **`is_month()`** - Determines whether the query is for an existing month archive.
+        24. **`is_page( $page = '' )`** - Determines whether the query is for an existing single page.
+            - if the `$page` parameter is specified, this function will additionally check if the query is for one of the pages specified.
+        25. **`is_paged()`** - Determines whether the query is for a paged result and not for the first page.
+        26. **`is_preview()`** - Determines whether the query is for a post or page preview.
+        27. **`is_robots()`** - Is the query for the robots.txt file?
+        28. **`is_favicon()`** - Is the query for the favicon.ico file?
+        29. **`is_search()`** - Determines whether the query is for a search.
+        30. **`is_single( $post = '' )`** - Determines whether the query is for an existing single post.
+            - works for any post type, except attachments and pages
+            - if the `$post` parameter is specified, this function will additionally check if the query is for one of the Posts specified.
+        31. **`is_singular( $post_types = '' )`** - Determines whether the query is for an existing single post of any post type (post, attachment, page, custom post types).
+            - if the `$post_types` parameter is specified, this function will additionally check if the query is for one of the Posts Types specified.
+        32. **`is_time()`** - Determines whether the query is for a specific time.
+        33. **`is_trackback()`** - Determines whether the query is for a trackback endpoint call.
+        34. **`is_year()`** - Determines whether the query is for an existing year archive.
+        35. **`is_404()`** - Determines whether the query has resulted in a 404 (returns no results).
+        36. **`is_embed()`** - Is the query for an embedded post?
+        37. **`is_main_query()`** - Determines whether the query is the main query.
+        38. =##= The Loop. Post loop control.
+        39. **`have_posts()`** - Determines whether current WordPress query has posts to loop over.
+        40. **`in_the_loop()`** - Determines whether the caller is in the Loop.
+        41. **`rewind_posts()`** - Rewind the loop posts.
+        42. **`the_post()`** - Iterate the post index in the loop.
+        43. =##= Comments loop.
+        44. **`have_comments()`** - Determines whether current WordPress query has comments to loop over.
+        45. **`the_comment()`** - Iterate comment index in the comment loop.
+        46. **`wp_old_slug_redirect()`** - Redirect old slugs to the correct permalink.
+        47. **`_find_post_by_old_slug( $post_type )`** - Find the post ID for redirecting an old slug.
+        48. **`_find_post_by_old_date( $post_type )`** - Find the post ID for redirecting an old date.
+        49. **`setup_postdata( $post )`** - Set up global post data.
+        50. **`generate_postdata( $post )`** - Generates post data.
+
 
 NAV-DIR: */wp-includes
 
