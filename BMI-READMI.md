@@ -1374,6 +1374,11 @@ END-NAV-DIR: */...
             - alias of `WP_Theme_JSON::get_element_class_name`.
         88. **`_add_default_theme_supports()`** - Adds default theme supports for block themes when the `setup_theme` action fires.
 
+37. **`wp-includes/class-wp-theme.php`**
+    - WP_Theme Class
+    - this module contains final class `WP_Theme` implements `ArrayAccess` definition
+
+38. ...
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
