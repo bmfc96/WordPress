@@ -105,15 +105,17 @@ NAV-DIR: */... (17 files)
         4. require ABSPATH . WPINC . '/load.php'
         5. Check required PHP ver. & MySQL ext. or database drop-in (wp_check_php_mysql_versions();)
         6. =#= Include files required for initialization
-        7. require ABSPATH . WPINC . '/class-wp-paused-extensions-storage.php'
-        8. require ABSPATH . WPINC . '/class-wp-fatal-error-handler.php'
-        9. require ABSPATH . WPINC . '/class-wp-recovery-mode-cookie-service.php'
-        10. require ABSPATH . WPINC . '/class-wp-recovery-mode-key-service.php'
-        11. require ABSPATH . WPINC . '/class-wp-recovery-mode-link-service.php'
-        12. require ABSPATH . WPINC . '/class-wp-recovery-mode-email-service.php'
-        13. require ABSPATH . WPINC . '/class-wp-recovery-mode.php'
-        14. require ABSPATH . WPINC . '/error-protection.php'
-        15. require ABSPATH . WPINC . '/default-constants.php'
+        7. require ABSPATH . WPINC . [
+            '/class-wp-paused-extensions-storage.php',
+            '/class-wp-fatal-error-handler.php',
+            '/class-wp-recovery-mode-cookie-service.php',
+            '/class-wp-recovery-mode-key-service.php',
+            '/class-wp-recovery-mode-link-service.php',
+            '/class-wp-recovery-mode-email-service.php',
+            '/class-wp-recovery-mode.php',
+            '/error-protection.php',
+            '/default-constants.php',
+        ]
         16. require-once ABSPATH . WPINC . '/plugin.php'
         17. $int_blog_id = 1 if not configured (for single site, multi-site default in ms-settings.php)
         18. Set initial def. constants incl. WP_MEMORY_LIMIT, ... ( wp_initial_constants(); )
@@ -518,7 +520,9 @@ END-NAV-DIR: */...
             - In a future release, this evaluation may be made more robust.
             - Currently, this is only used by Application Password to prevent a conflict since it also utilizes Basic Auth.
 
-8. 
+8. **wp-includes/class-wp-paused-extensions-storage.php**
+    - Error Protection API: WP_Paused_Extensions_Storage class (Core class used for storing paused extensions.)
+    - This module contains WP_Paused_Extensions_Storage class definition
 
 NAV-DIR: */wp-includes
 
