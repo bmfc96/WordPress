@@ -675,6 +675,98 @@ END-NAV-DIR: */...
             - however this will prevent you from adding new classes and any new classes will overwrite the previous hook by the same class.
             - functions and static method callbacks are just returned as strings and shouldn't have any speed penalty.
 
+18. **`wp-includes/default-filters.php`**
+    - Notes:
+        - sets up the default filters and actions for most of the WP hooks.
+        - if need to remove a default hook, this file will give the priority to use for removing the hook.
+        - not all of the default hook are found in this file.
+        (e.g. administration-related hooks are located in `wp-admin/includes/admin-filters.php`)
+        - if a hook should only be called from a specific context (admin area, multisite envs. ...), move it to a more appropriate file instead.
+    - FLOW:
+        1. Strip, trim, kses, special chars for string saves.
+        2. Strip, kses, special chars for string display.
+        3. Kses only for textarea saves.
+        4. Kses only for textarea admin displays.
+        5. Email saves.
+        6. Email admin display.
+        7. Save URL.
+        8. Display URL.
+        9. Slugs.
+        10. Keys.
+        11. Mime types.
+        12. Meta.
+        13. Counts.
+        14. Post meta.
+        15. Term meta.
+        16. Comment meta.
+        17. Places to balance tags on input.
+        18. Add proper rel values for links with target.
+        19. Format strings for display.
+        20. Format WordPress.
+        21. Format titles.
+        22. Format text area for display.
+        23. Format for RSS.
+        24. Pre save hierarchy.
+        25. Display filters.
+        26. RSS filters.
+        27. Email filters.
+        28. Robots filters.
+        29. Mark site as no longer fresh.
+        30. Misc filters.
+        31. REST API filters.
+        32. Actions.
+        33. Login actions.
+        34. Feed generator tags.
+        35. Feed Site Icon.
+        36. WP Cron.
+        37. HTTPS detection.
+        38. HTTPS migration.
+        39. 2 Actions 2 Furious.
+        40. Create a revision whenever a post is updated.
+        41. Privacy.
+        42. Cron tasks.
+        43. Navigation menu actions.
+        44. Post Thumbnail CSS class filtering.
+        45. Redirect old slugs.
+        46. Redirect old dates.
+        47. Nonce check for post previews.
+        48. Output JS to reset window.name for previews.
+        49. Timezone.
+        50. If the upgrade hasn't run yet, assume link manager is used.
+        51. =#= support auto-embedding
+        52. Default settings for heartbeat.
+        53. Check if the user is logged out.
+        54. Default authentication filters.
+        55. Split term updates.
+        56. Comment type updates.
+        57. Email notifications.
+        58. REST API actions.
+        59. Sitemaps actions.
+        60. =##= Filters formerly mixed into `wp-includes`.
+        61. Theme.
+        62. Calendar widget cache.
+        63. Author.
+        64. Post.
+        65. Post Formats.
+        66. KSES.
+        67. Script Loader.
+        68. Global styles can be enqueued in both the header and the footer.
+        69. Block supports, and other styles parsed and stored in the Style Engine.
+        70. SVG filters like duotone have to be loaded at the beginning of the body in both admin and the front-end.
+        71. Disable `Post Attributes` for `wp_navigation` post type. The attributes are also conditionally enabled when a site has custom templates. Block Theme templates can be available for every post type.
+        72. Taxonomy.
+        73. Canonical.
+        74. Shortcodes.
+        75. Media.
+        76. Nav menu.
+        77. Widgets.
+        78. Admin Bar.
+        79. Former admin filters that can also be hooked on the front end.
+        80. Embeds.
+        81. Capabilities.
+        82. Block templates post type and rendering.
+        83. Fluid typography.
+        84. User preferences.
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
