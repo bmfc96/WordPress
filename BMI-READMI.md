@@ -663,7 +663,7 @@ END-NAV-DIR: */...
             - if the plugin can not be written without running code within the plugin, then the plugin should create a file named 'uninstall.php' in the base plugin folder.
             - this file will be called, if it exists, during the uninstallation process bypassing the uninstall hook.
             - the plugin, when using the `uninstall.php` should always check for the `WP_UNINSTALL_PLUGIN` constant, before executing.
-        28. `**_wp_call_all_hook( $args )**` - Calls the `all` hook, which will process the functions hooked into it.
+        28. **`_wp_call_all_hook( $args )`** - Calls the `all` hook, which will process the functions hooked into it.
             - `all` hook passes all of the arguments or parameters that were used for the hook, which this function was called for.
             - used internally for `apply_filters()`, `do_action()`, and `do_action_ref_array()` and is not meant to be used from outside those functions.
             - does not check for the existence of the all hook, so it will fail unless the all hook exists prior to this function call.
