@@ -1113,7 +1113,12 @@ END-NAV-DIR: */...
     - User API: WP_Role class (Core class used to extend the user roles API.)
     - this module contains `WP_Role` class definition
 
-32. 
+32. **`wp-includes/class-wp-user.php`**
+    - User API: WP_User class (Core class used to implement the `WP_User` object.)
+    - this module contains `WP_User` class definition
+
+33. 
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
