@@ -1399,7 +1399,15 @@ END-NAV-DIR: */...
     - please, use `get_global_settings`, `get_global_styles`, and `get_global_stylesheet` instead.
     - this module contains `WP_Theme_JSON` class definition
 
-41. ...
+41. **`wp-includes/class-wp-theme-json-resolver.php`**
+    - WP_Theme_JSON_Resolver class
+    - class that abstracts the processing of the different data sources for site-level config and offers an API to work with them.
+    - this class is for internal core usage and is not supposed to be used by extenders (plugins and/or themes).
+    - this is a low-level API that may need to do breaking changes.
+    - please, use `get_global_settings`, `get_global_styles`, and `get_global_stylesheet` instead.
+    - this module contains `WP_Theme_JSON_Resolver` class definition
+
+42. 
 
 
 NAV-DIR: */wp-includes
