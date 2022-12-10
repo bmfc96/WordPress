@@ -543,7 +543,9 @@ END-NAV-DIR: */...
     - Error Protection API: WP_Recovery_Mode_Link_Handler class (Core class used to generate and handle recovery mode links.)
     - This module contains `WP_Recovery_Mode_Link_Service` class definition
 
-
+13. **wp-includes/class-wp-recovery-mode-email-service.php**
+    - Error Protection API: WP_Recovery_Mode_Email_Link class (Core class used to send an email with a link to begin Recovery Mode.)
+    - This module contains final `WP_Recovery_Mode_Email_Service` class definition
 
 NAV-DIR: */wp-includes
 
