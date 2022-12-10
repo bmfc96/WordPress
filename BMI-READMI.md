@@ -1108,6 +1108,12 @@ END-NAV-DIR: */...
             )
 
     - this module contains `WP_Roles` class definition
+
+31. **`wp-includes/class-wp-role.php`**
+    - User API: WP_Role class (Core class used to extend the user roles API.)
+    - this module contains `WP_Role` class definition
+
+32. 
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
