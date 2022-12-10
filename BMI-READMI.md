@@ -1040,7 +1040,11 @@ END-NAV-DIR: */...
     - child classes do not need to implement all of the abstract method in the class
     - child only needs to implement the methods that are needed
 
-28. 
+28. **`wp-includes/class-wp-ajax-response.php`**
+    - this module contains `WP_Ajax_Response` class definition
+    - send XML response back to Ajax request
+
+29. 
 
 NAV-DIR: */wp-includes
 
