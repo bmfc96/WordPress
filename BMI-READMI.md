@@ -582,38 +582,38 @@ END-NAV-DIR: */...
             - In a future release, this evaluation may be made more robust.
             - Currently, this is only used by Application Password to prevent a conflict since it also utilizes Basic Auth.
 
-8. **wp-includes/class-wp-paused-extensions-storage.php**
+8. **`wp-includes/class-wp-paused-extensions-storage.php`**
     - Error Protection API: WP_Paused_Extensions_Storage class (Core class used for storing paused extensions.)
     - This module contains WP_Paused_Extensions_Storage class definition
 
-9. **wp-includes/class-wp-fatal-error-handler.php**
+9. **`wp-includes/class-wp-fatal-error-handler.php`**
     - Error Protection API: WP_Fatal_Error_Handler class (Core class used as the default shutdown handler for fatal errors.)
     - A drop-in `fatal-error-handler.php` can be used to override the instance of this class and use a custom implementation for the fatal error handler that WP registers.
     - The custom class should extend this class and can override its methods individually as necessary.
     - The file must return the instance of the class that should be registered.
     - This module contains `WP_Fatal_Error_Handler` class definition
 
-10. **wp-includes/class-wp-recovery-mode-cookie-service.php**
+10. **`wp-includes/class-wp-recovery-mode-cookie-service.php`**
     - Error Protection API: WP_Recovery_Mode_Cookie_Service class (Core class used to set, validate, and clear cookies that identify a Recovery Mode session.)
     - This module contains final `WP_Recovery_Mode_Cookie_Service` class definition
 
-11. **wp-includes/class-wp-recovery-mode-key-service.php**
+11. **`wp-includes/class-wp-recovery-mode-key-service.php`**
     - Error Protection API: WP_Recovery_Mode_Key_Service class (Core class used to generate and validate keys used to enter Recovery Mode.)
     - This module contains final `WP_Recovery_Mode_Key_Service` class definition
 
-12. **wp-includes/class-wp-recovery-mode-link-service.php**
+12. **`wp-includes/class-wp-recovery-mode-link-service.php`**
     - Error Protection API: WP_Recovery_Mode_Link_Handler class (Core class used to generate and handle recovery mode links.)
     - This module contains `WP_Recovery_Mode_Link_Service` class definition
 
-13. **wp-includes/class-wp-recovery-mode-email-service.php**
+13. **`wp-includes/class-wp-recovery-mode-email-service.php`**
     - Error Protection API: WP_Recovery_Mode_Email_Link class (Core class used to send an email with a link to begin Recovery Mode.)
     - This module contains final `WP_Recovery_Mode_Email_Service` class definition
 
-14. **wp-includes/class-wp-recovery-mode.php**
+14. **`wp-includes/class-wp-recovery-mode.php`**
     - Error Protection API: WP_Recovery_Mode class (Core class used to implement Recovery Mode.)
     - This module contains `WP_Recovery_Mode` class definition
 
-15. **wp-includes/error-protection.php**
+15. **`wp-includes/error-protection.php`**
     - Error Protection API: Functions
     - This module contains the following functions:
         1. **wp_paused_plugins()**: WP_Paused_Extensions_Storage - Get the instance for storing paused plugins.
@@ -623,7 +623,7 @@ END-NAV-DIR: */...
         5. **wp_is_fatal_error_handler_enabled()**: bool - Checks whether fatal error handler is enabled.
         6. **wp_recovery_mode()**: WP_Recovery_Mode - Access WP Recovery Mode instance.
 
-16. **wp-includes/default-constants.php**
+16. **`wp-includes/default-constants.php`**
     - This module defines constants and global variables that can be overridden, generally in `wp-config.php`
     - This module contains the following functions:
         1. **wp_initial_constants()**: void - Defines initial WP constants.
@@ -633,7 +633,7 @@ END-NAV-DIR: */...
         5. **wp_functionality_constants()**: void - Defines functionality-related WP constants.
         6. **wp_templating_constants()**: void - Defines templating-related WP constants.
 
-17. **wp-includes/plugin.php**
+17. **`wp-includes/plugin.php`**
     - Notes:
         1. The plugin API is located in this file ( which allows for creating actions & filters and hooking functions & methods )
         2. The functions or methods will then be run when the action or filter is called
@@ -1215,7 +1215,164 @@ END-NAV-DIR: */...
     - See `WP_Date_Query::validate_date_values()`.
     - this module contains `WP_Date_Query` class definition
 
-36. ...
+36. **`wp-includes/theme.php`**
+    - Theme, template, and stylesheet functions.
+    - @package WordPress @subpackage Theme
+    - this module contains the following functions:
+        1. **`wp_get_themes( $args = array() )`** - Returns an array of `WP_Theme` objects based on the arguments.
+            - despite advances over `get_themes()`, this function is quite expensive, and grows linearly with additional themes.
+            - stick to `wp_get_theme()` if possible.
+        2. **`wp_get_theme( $stylesheet = '', $theme_root = '' )`** - Gets a `WP_Theme` object for a theme.
+        3. **`wp_clean_themes_cache( $clear_update_cache = true )`** - Clears the cache held by `get_theme_roots()` and `WP_Theme`.
+        4. **`is_child_theme()`** - Whether a child theme is in use.
+        5. **`get_stylesheet()`** - Retrieves name of the current stylesheet.
+            - the theme name that is currently set as the front end theme.
+            - for all intents and purposes, the template name and the stylesheet name are going to be the same for most cases.
+        6. **`get_stylesheet_directory()`** - Retrieves stylesheet directory path for the active theme.
+        7. **`get_stylesheet_directory_uri()`** - Retrieves stylesheet directory URI for the active theme.
+        8. **`get_stylesheet_uri()`** - Retrieves stylesheet URI for the active theme.
+            - the stylesheet file name is `style.css` which is appended to the stylesheet directory URI path.
+            - see `get_stylesheet_directory_uri()`.
+        9. **`get_locale_stylesheet_uri()`** - Retrieves the localized stylesheet URI.
+            - the stylesheet directory for the localized stylesheet files are located, by default, in the base theme directory.
+            - the name of the locale file will be the locale followed by '.css'.
+            - if that does not exist, then the text direction stylesheet will be checked for existence, for example `ltr.css`.
+            - the theme may change the location of the stylesheet directory by either using the `stylesheet_directory_uri` or `locale_stylesheet_uri` filters.
+            - if you (me) want to change the location of the stylesheet files for the entire WordPress workflow, then change the former.
+            - if you (me) just have the locale in a separate folder, then change the latter.
+        10. **`get_template()`** - Retrieves name of the active theme.
+        11. **`get_template_directory()`** - Retrieves template directory path for the active theme.
+        12. **`get_template_directory_uri()`** - Retrieves template directory URI for the active theme.
+        13. **`get_theme_roots()`** - Retrieves theme roots.
+        14. **`register_theme_directory( $directory )`** - Registers a directory that contains themes.
+        15. **`search_theme_directories( $force = false )`** - Searches all registered theme directories for complete and valid themes.
+        16. **`get_theme_root( $stylesheet_or_template = '' )`** - Retrieves path to themes directory.
+            - does not have trailing slash.
+        17. **`get_theme_root_uri( $stylesheet_or_template = '', $theme_root = '' )`** - Retrieves URI for themes directory.
+            - does not have trailing slash.
+        18. **`get_raw_theme_root( $stylesheet_or_template, $skip_cache = false )`** - Gets the raw theme root relative to the content directory with no filters applied.
+        19. **`locale_stylesheet()`** - Displays localized stylesheet link element.
+        20. **`switch_theme( $stylesheet )`** - Switches the theme.
+            - accept one (1) argument: `$stylesheet` of the theme.
+            - also accepts an additional function signature of two (2) arguments: `$template` then `$stylesheet`.
+            - this is for backward compatibility.
+        21. **`validate_current_theme()`** - Checks that the active theme has the required files.
+            - standalone themes need to have a `templates/index.html` or `index.php` template file.
+            - child themes need to have a `Template` header in the `style.css` stylesheet.
+            - does not initially check the default theme, which is the fallback and should alwas exists.
+            - buf if it doesn't exist, it'll fall back to the latest core default theme that does exist.
+            - will switch theme to the fallback theme if active theme does not validate.
+            - you (me) can use the `validate_current_theme` filter to return false to disable this functionality.
+        22. **`validate_theme_requirements( $stylesheet )`** - Validates the theme requirements for WordPress version and PHP version.
+            - uses the information from `Requires at least` and `Requires PHP` headers defined in the theme's `style.css` file.
+        23. **`get_theme_mods()`** - Retrieves all theme modifications.
+        24. **`get_theme_mod( $name, $default = false )`** - Retrieves theme modification value for the active theme.
+            - if the modification name does not exist and `$default` is a string, then the default will be passed through the `sprintf()` PHP function with the template directory URI as the first value and the stylesheet directory URI as the second value.
+        25. **`set_theme_mod( $name, $value )`** - Updates theme modification value for the active theme.
+        26. **`remove_theme_mod( $name )`** - Removes theme modification name from active theme list.
+            - if removing the name also removes all elements, then the entire option will be removed.
+        27. **`remove_theme_mods()`** - Removes theme modifications option for the active theme.
+        28. **`get_header_textcolor()`** - Retrieves the custom header text color in 3- or 6-digit hexadecimal form.
+        29. **`header_textcolor()`** - Displays the custom header text color in 3- or 6-digit hexadecimal form (minus the hash symbol).
+        30. **`display_header_text()`** - Whether to display the header text.
+        31. **`has_header_image()`** - Checks whether a header image is set or not.
+        32. **`get_header_image()`** - Retrieves header image for custom header.
+        33. **`get_header_image_tag( $attr = array() )`** - Creates image tag markup for a custom header image.
+        34. **`the_header_image_tag( $attr = array() )`** - Displays the image markup for a custom header image.
+        35. **`_get_random_header_data()`** - Gets random header image data from registered images in theme.
+        36. **`get_random_header_image()`** - Gets random header image URL from registered images in theme.
+        37. **`is_random_header_image( $type = 'any' )`** - Checks if random header image is in use.
+            - always `TRUE` if user expressly chooses the option in `Appearance > Header`.
+            - also `TRUE` if theme has multiple header images registered, no specific header image is chosen, and theme turns on random headers with `add_theme_support()`.
+        38. **`header_image()`** - Displays header image URL.
+        39. **`get_uploaded_header_images()`** - Gets the header images uploaded for the active theme.
+        40. **`get_custom_header()`** - Gets the header image data.
+        41. **`register_default_headers( $headers )`** - Registers a selection of default headers to be displayed by the custom header admin UI.
+        42. **`unregister_default_headers( $header )`** - Unregisters default headers.
+            - this function **must be called** after `register_default_headers()` has already added the header you (me) want to remove.
+        43. **`has_header_video()`** - Checks whether a header video is set or not.
+        44. **`get_header_video_url()`** - Retrieves header video URL for custom header.
+            - uses a local video if present, or falls back to an external video.
+        45. **`the_header_video_url()`** - Displays header video URL.
+        46. **`get_header_video_settings()`** - Retrieves header video settings.
+        47. **`has_custom_header()`** - Checks whether a custom header is set or not.
+        48. **`is_header_video_active()`** - Checks whether the custom header video is eligible to show on the current page.
+        49. **`get_custom_header_markup()`** - Retrieves the markup for a custom header.
+            - the container `DIV` will always be returned in the `Customizer` preview.
+        50. **`the_custom_header_markup()`** - Prints the markup for a custom header.
+            - a container `DIV` will always be printed in the `Customizer` preview.`
+        51. **`get_background_image()`** - Retrieves background image for custom background.
+        52. **`background_image()`** - Displays background image path.
+        53. **`get_background_color()`** - Retrieves value for custom background color.
+        54. **`background_color()`** - Displays background color value.
+        55. **`_custom_background_cb()`** - Default custom background callback.
+
+                    ?>
+                    <style <?= $type_attr ?> id="custom-backround-css">
+                        body.custom-background { <?= trim( $style ) ?> }
+                    </style>
+                        <?php
+
+        56. **`wp_custom_css_cb()`** - Renders the Custom CSS style element.
+        57. **`wp_get_custom_css_post( $stylesheet = '' )`** - Fetches the `custom_css` post for a given theme.
+        58. **`wp_get_custom_css( $stylesheet = '' )`** - Fetches the saved Custom CSS content for rendering.
+        59. **`wp_update_custom_css_post( $css, $args = array() )`** - Updates the `custom_css` post for a given theme.
+            - inserts a `custom_css` post when one doesn't yet exist.
+        60. **`add_editor_style( $stylesheet = 'editor-style.css' )`** - Adds callback for custom TinyMCE editor stylesheets.
+            - the parameter `$stylesheet` is the name of the stylesheet, relative to the theme root.
+            - it also accepts an array of stylesheets.
+            - it is optional and defaults to `editor-style.css`
+            - this function automatically adds another stylesheet with `-rtl` prefix, e.g. editor-style-rtl.css.
+            - if that file doesn't exist, it is removed befored adding the stylesheet(s) to TinyMCE.
+            - if an array of stylesheets is passed to `add_editor_style()`, RTL is only added for the first stylesheet.
+            - since version 3.4 the TinyMCE body has .rtl CSS class.
+            - it is a better option to use that class and add any RTL styles to the main stylesheet.
+        61. **`remove_editor_styles()`** - Removes all visual editor stylesheets.
+        62. **`get_editor_stylesheets()`** - Retrieves any registered editor stylesheet URLs.
+        63. **`get_theme_starter_content()`** - Expands a theme's starter content configuration using core-provided data.
+        64. **`add_theme_support( $feature, ...$args )`** - Registers theme support for a given feature.
+            - must be called in the theme's `functions.php` file to work.
+            - if attached to a hook, it must be `after_setup_theme`.
+            - the `init` hook may be too late for some features.
+        65. **`_custom_header_background_just_in_time()`** - Registers the internal custom header and background routines.
+        66. **`_custom_logo_header_styles()`** - Adds CSS to hide header text for custom logo, based on `Customizer` setting.
+        67. **`get_theme_support( $feature, ...$args )`** - Gets the theme support arguments passed when registering that support.
+        68. **`remove_theme_support( $feature )`** - Allows a theme to de-register its support of a certain feature.
+            - should be called in the theme's `functions.php` file.
+            - see `add_theme_support()` for the list of possible values.
+        69. **`_remove_theme_support( $feature )`** - Do not use. Removes theme support internally without knowledge of those not used by themes directly.
+        70. **`current_theme_supports( $feature, ...$args )`** - Checks a theme's support for a given feature.
+        71. **`require_if_theme_supports( $feature, $include )`** - Checks a theme's support for a given feature before loading the functions which implement it.
+        72. **`register_theme_feature( $feature, $args = array() )`** - Registers a theme feature for use in `add_theme_support()`
+            - this does not indicate that the active theme supports the feature, it only describes the feature's supported options.
+        73. **`get_registered_theme_features()`** - Gets the list of registered theme features.
+        74. **`get_registered_theme_feature( $feature )`** - Gets the the registration config for a theme feature.
+        75. **`_delete_attachment_theme_mod( $id )`** - Checks an attachment being deleted to see if it's a header or background image.
+            - if `TRUE` it removes the theme modification which would be pointing at the deleted attachment.
+        76. **`check_theme_switched()`** - Checks if a theme has been changed and runs `after_switch_theme` hook on the next WP load.
+        77. **`_wp_customize_include()`** - Includes and instantiates the `WP_Customize_Manager` class.
+            - loads the `Customizer` at `plugins_loaded` when accessing the `customize.php` admin page or when any request includes a `wp_customize=on` param or a `customize_changeset` param (a UUID).
+            - this param is a signal for whether to bootstrap the `Customizer` when WordPress is loading, especially in the `Customizer` preview or when making `Customizer Ajax` requests for widgets or menus.
+        78. **`_wp_customize_publish_changeset( $new_status, $old_status, $changeset_post )`** - Publishes a snapshot's changes.
+        79. **`_wp_customize_changeset_filter_insert_post_data( $post_data, $supplied_post_data )`** - Filters changeset post data upon insert to ensure `post_name` is intact.
+            - this is needed to prevent the `post_name` from being dropped when the post is transitioned into pending status by a contributor.
+        80. **`_wp_customize_loader_settings()`** - Adds settings for the customize-loader script.
+        81. **`wp_customize_url( $stylesheet = '' )`** - Returns a URL to load the `Customizer`.
+        82. **`wp_customize_support_script()`** - Prints a script to check whether or not the `Customizer` is supported, and apply either the no-customize-support or customize-support class to the body.
+            - this function MUST be called inside the body tag.
+            - ideally, call this function immediately after the body tag is opened.
+            - this prevents a flash of unstyled content.
+            - it is also recommended that you (me) add the 'no-customize-support' class to the body tag by default.
+        83. **`is_customize_preview()`** - Whether the site is being previewed in the `Customizer`.
+        84. **`_wp_keep_alive_customize_changeset_dependent_auto_drafts( $new_status, $old_status, $post )`** - Makes sure that auto-draft posts get their `post_date` bumped or status changed to draft to prevent premature garbage-collection.
+            - when a changeset is updated but remains an auto-draft, ensure the `post_date` for the auto-draft posts remains the same so that it will be garbage-collected at the same time by `wp_delete_auto_drafts()`.
+            - otherwise, if the changeset is updated to be a draft then update the posts to have a far-future `post_date` so that they will never be garbage collected unless the changeset post itself is deleted.
+            - when a changeset is updated to be a persistent draft or to be scheduled for publishing, then transition any dependent auto-drafts to a draft status so that they likewise will not be garbage-collected but also so that they can be edited in the admin before publishing since there is not yet a post/page editing flow in the `Customizer`.
+        85. **`create_initial_theme_features()`** - Creates the initial theme features when the `setup_theme` action is fired.
+        86. **`wp_is_block_theme()`** - Returns whether the active theme is a block-based theme or not.
+        87. **`wp_theme_get_element_class_name( $element )`** - Given an element name, returns a class name.
+            - alias of `WP_Theme_JSON::get_element_class_name`.
+        88. **`_add_default_theme_supports()`** - Adds default theme supports for block themes when the `setup_theme` action fires.
 
 NAV-DIR: */wp-includes
 
