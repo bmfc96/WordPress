@@ -767,6 +767,13 @@ END-NAV-DIR: */...
         82. Block templates post type and rendering.
         83. Fluid typography.
         84. User preferences.
+
+19. **`wp-includes/class-wp-site-query.php`**
+    - Site API: WP_Site_Query class (Core class used for querying sites.)
+    - This module contains `WP_Site_Query` class definition
+
+
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
