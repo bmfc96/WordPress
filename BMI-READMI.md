@@ -1407,7 +1407,17 @@ END-NAV-DIR: */...
     - please, use `get_global_settings`, `get_global_styles`, and `get_global_stylesheet` instead.
     - this module contains `WP_Theme_JSON_Resolver` class definition
 
-42. 
+42. **`wp-includes/global-styles-and-settings.php`**
+    - APIs to interact with global settings & styles.
+    - @package WordPress
+    - this module contains the following functions:
+        1. **`wp_get_global_settings( $path = array(), $context = array() )`** - Gets the settings resulting of merging core, theme, and user data.
+        2. **`wp_get_global_styles( $path = array(), $context = array() )`** - Gets the styles resulting of merging core, theme, and user data.
+        3. **`wp_get_global_stylesheet( $types = array() )`** - Returns the stylesheet resulting of merging core, theme, and user data.
+        4. **`wp_get_global_styles_svg_filters()`** - Returns a string containing the SVGs to be referenced as filters (duotone).
+        5. **`wp_get_global_styles_for_blocks()`** - Adds global style rules to the inline style for each block.
+
+43. ...
 
 
 NAV-DIR: */wp-includes
