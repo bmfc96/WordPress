@@ -1386,7 +1386,12 @@ END-NAV-DIR: */...
     - please, use `get_global_settings`, `get_global_styles`, and `get_global_stylesheet` instead.
     - this module contains `wP_Theme_JSON_Schema` class definition
 
-39. ...
+39. **`wp-includes/class-wp-theme-json-data.php`**
+    - WP_Theme_JSON_Data class
+    - class to provide access to update a `theme.json` structure.
+    - this module contains `WP_Theme_JSON_Data` class definition
+
+40. ...
 
 
 NAV-DIR: */wp-includes
