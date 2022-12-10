@@ -961,6 +961,16 @@ END-NAV-DIR: */...
         44. **`translate_settings_using_i18n_schema( $i18n_schema, $settings, $textdomain )`** - Translates the provided settings value using its i18n schema.
         45. **`wp_get_list_item_separator()`** - Retrieves the list item separator based on the locale.
 
+24. **`wp-includes/class-wp-textdomain-registry.php`**
+    - Locale API: WP_Textdomain_Registry class (Core class used for registering text domains.)
+    - this module contains `WP_Textdomain_Registry` class definition
+
+25. **`wp-includes/class-wp-locale.php`**
+    - Locale API: WP_Locale class (Core class used to store translated data for a locale.)
+    - this module contains `WP_Locale` class definition
+
+26. 
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
