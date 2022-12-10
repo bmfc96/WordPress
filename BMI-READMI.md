@@ -4,13 +4,15 @@
 
 *=WordPress
 
-DIR: */...
+DIR:
 
-     */wp-includes
+    */...
 
-     */wp-content
+    */wp-includes
 
-     */wp-admin
+    */wp-content
+
+    */wp-admin
      
     (17 files)
 
