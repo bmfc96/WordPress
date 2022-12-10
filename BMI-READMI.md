@@ -539,6 +539,10 @@ END-NAV-DIR: */...
     - Error Protection API: WP_Recovery_Mode_Key_Service class (Core class used to generate and validate keys used to enter Recovery Mode.)
     - This module contains final `WP_Recovery_Mode_Key_Service` class definition
 
+12. **wp-includes/class-wp-recovery-mode-link-service.php**
+    - Error Protection API: WP_Recovery_Mode_Link_Handler class (Core class used to generate and handle recovery mode links.)
+    - This module contains `WP_Recovery_Mode_Link_Service` class definition
+
 
 
 NAV-DIR: */wp-includes
