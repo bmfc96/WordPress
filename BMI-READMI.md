@@ -481,6 +481,44 @@ END-NAV-DIR: */...
         31. **is_login()**: bool - Determines whether current request is for login screen.
         32. **is_admin()**: bool - Determines whether current request is for an administrative interface page.
         33. **is_blog_admin()**: bool - Determines whether current request is for a site's administrative interface.
+            - Does not check if user is an administrator
+            - current_user_can() - for checking roles and capabilities
+        34. **is_network_admin()**: bool - Determines whether current request is for network administrative interface.
+            - Does not check if user is an admin
+            - current_user_can() - for checking roles and capabilities
+            - is_multisite() - for checking if Multisite is enabled
+        35. **is_user_admin()**: bool - Determines whether current req. is for user admin screen.
+            - Does not check if user is an admin
+            - current_user_can() - for checing roles and capabilities
+        36. **is_multisite()**: bool - Return TRUE if Multisite is enabled
+        37. **get_current_blog_id()**: int - Get current site ID
+        38. **get_current_network_id()**: int - Get current network ID
+        39. **wp_load_translations_early()**: void - Attempt an early load of translations.
+            - Used for errors encountered during the initial loading process, before the locale has been properly detected and loaded.
+            - Designed for unusual load sequences (like setup-config.php) or for when the script will then terminate with an error, otherwise there is a risk that a file can be double-included.
+        40. **wp_installing()**: bool - Check or set whether WP is in 'installation' mode.
+            - if `WP_INSTALLING` constant is defined during bootstrapping, `wp_installing()` will default to `TRUE``
+        41. **is_ssl()**: bool - Determines if SSL is used.
+        42. **wp_convert_hr_to_bytes( $value )**: int - Converts a shorthand byte value to an integer byte value.
+        43. **wp_is_ini_value_changeable( $setting )**: bool - Determines whether a PHP ini value is changeable at runtime.
+        44. **wp_doing_ajax()**: bool - Determines whether current request is a WP AJAX request.
+        45. **wp_using_themes()**: bool - Determines whether current request should use themes.
+        46. **wp_doing_cron()**: bool - Determines whether current request is WP cron request.
+        47. **is_wp_error( $thing )**: bool - Checks whether given var. is a WP Error.
+        48. **wp_is_file_mod_allowed( $context )**: bool - Determines whether file modifications are allowed.
+        49. **wp_start_scraping_edited_file_errors()**: void - Start scraping edited file errors.
+        50. **wp_finalize_scraping_edited_file_errors( $scrape_key )**: void - Finalize scraping for edited file errors.
+        51. **wp_is_json_request()**: bool - Checks whether current request is a JSON request, or is expecting a JSON response.
+        52. **wp_is_jsonp_request()**: bool - Checks whether current request is a JSONP request, or is expecting a JSONP response.
+        53. **wp_is_json_media_type( $media_type )**: bool - Checks whether a string is a valid JSON Media Type.
+        54. **wp_is_xml_request()**: bool - Checks whether current request is an XML request, or is expecting an XML response.
+        55. **wp_is_site_protected_by_basic_auth( $context = '' )**: bool - Checks if this site is protected by HTTP Basic Auth.
+            - At the moment, this merely checks for the present of Basic Auth credentials.
+            - Therefore, calling this function with a context different from the current context may give inaccurate results.
+            - In a future release, this evaluation may be made more robust.
+            - Currently, this is only used by Application Password to prevent a conflict since it also utilizes Basic Auth.
+
+8. 
 
 NAV-DIR: */wp-includes
 
