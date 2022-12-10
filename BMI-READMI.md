@@ -862,6 +862,103 @@ END-NAV-DIR: */...
 
         12. do_action( 'ms_loaded' ) - Fires after the current site and network have been detected and loaded in multisite's bootstrap.
 
+23. **`wp-includes/l10n.php`**
+    - Core Translation API
+    - This module contains the following functions:
+        1. **`get_locale()`** - Get the current locale.
+            - if locale is set, then it will filter the locale in the filter hook and return the value.
+            - if locale is not set, then `WPLANG` constant is used if it is defined.
+            - the it is filtered through the filter hook and the value for the locale global set and the locale is returned.
+            - the process to get the locale should only be done once, but the locale will always be filtered using the hook.
+        2. **`get_user_locale( $user = 0 )`** - Get the locale of a user.
+            - if the user has a locale set to a non-empty string, then it will be returned.
+            - otherwise it return the locale of `get_locale()`
+        3. **`determine_locale()`** - Determines the current locale desired for the request.
+        4. **`translate( $text, $domain = 'default' )`** - Get the translation of `$text`.
+            - if there is no translation, or the text domain isn't loaded, the original text is returned.
+            - don't use `translate()` directly, use `__()` or related functions.
+        5. **`before_last_bar( $text )`** - Removes last item on a pipe-delimited string.
+            - meant for removing the last item in a string, such as 'Role name|User role'.
+            - the original string will be returned if no pipe '|' characters are found in the string.
+        6. **`translate_with_gettext_context( $text, $context, $domain = 'default' )`** - Get the translation of `$text` in the context defined in `$context`.
+            - if there is no translation, or the text domain isn't loaded, the original text is returned.
+            - don't use `translate_with_gettext_context()` directly, use `_x()` or related functions.
+        7. **`__( $text, $domain = 'default' )`** - Get the translation of `$text`.
+            - if there is no translation, or the text domain isn't loaded, the original text is returned.
+        8. **`esc_attr__( $text, $domain = 'default' )`** - Get the translation of `$text` and escapes it for safe use in an attribute.
+            - if there is no translation, or the text domain isn't loaded, the original text is returned.
+        9. **`esc_html__( $text, $domain = 'default' )`** - Get the translation of `$text` and escapes it for safe use in HTML output.
+            - if there is no translation, or the text domain isn't loaded, the original text is escaped and returned.
+        10. **`_e( $text, $domain = 'default' )`** - Displays translated text.
+        11. **`esc_attr_e( $text, $domain = 'default' )`** - Displays translated text that has been escaped for safe use in an attribute.
+            - encodes `< > & " '`.
+            - will never double encode entities.
+            - use `esc_attr__()` if need value for use in PHP.
+        12. **`esc_html_e( $text, $domain = 'default' )`** - Displays translated text that has been escaped for safe use in HTML output.
+            - if there is no translation, or the text domain isn't loaded, the original text is escaped and displayed.
+            - use `esc_html__()` if need value for use in PHP.
+        13. **`_x( $text, $context, $domain = 'default' )`** - Get translated string with gettext context.
+            - quite a few times, there will be collisions with similar translatable text found in more than two places, but with different translated context.
+            - by including the context in the pot file, translators can translate the two strings differently.
+        14. **`_ex( $text, $context, $domain = 'default' )`** - Displays translated string with gettext context.
+        15. **`esc_attr_x( $text, $context, $domain = 'default' )`** - Translates string with gettext context, and escapes it for safe use in an attribute.
+            - if there is no translation, or the text domain isn't loaded, the original text is escaped and returned.
+        16. **`esc_html_x( $text, $context, $domain = 'default' )`** - Translates string with gettext context, and escapes it for safe use in HTML output.
+            - if there is no translation, or the text domain isn't loaded, the original text is escaped and returned.
+        17. **`_n( $single, $plural, $number, $domain = 'default' )`** - Translates and retrieves the singular or plural form based on the supplied number.
+            - used when you want to use the appropriate form of a string based on whether a number is singular or plural.
+        18. **`_nx( $single, $plural, $number, $domain = 'default' )`** - Translates and retrieves the singular or plural form based on the supplied number, with gettext context.
+            - this is a hybrid of `_n()` and `_x()`.
+            - it supports context and plurals.
+            - used when you (me) want to use the appropriate form of a string with context based on whether a number is singular or plural.
+        19. **`_n_noop( $singular, $plural, $domain = null )`** - Registers plural string in POT file, but does not translate them.
+            - used when you (me) want to keep structures with translatable plural strings and use them later when the number is known.
+        20. **`_nx_noop( $singular, $plural, $context, $domain = null )`** - Registers plural strings with gettext context in POT file, but does not translate them.
+            - used when you (me) want to keep structures with translatable plural strings and use them later when the number is known.
+        21. **`translated_nooped_plural( $nooped_plural, $count, $domain = 'default' )`** - Translates and returns the singular or plural form of a string that's been registered with `_n_noop()` or `_nx_noop()`.
+            - used when you want to use a translatable plural string once the number is known.
+        22. **`load_textdomain( $domain, $mofile, $locale = null )`** - Loads a .mo file into the text domain `$domain`.
+            - if the text domain already exists, the translations will be merged.
+            - if both sets have the same string, the translation from the original value will be taken.
+            - on success, the .mo file will be placed in the `$l10n` global by `$domain` and will be a MO object.
+        23. **`unload_textdomain( $domain, $reloadable = false )`** - Unloads translations for a text domain.
+        24. **`load_default_textdomain( $locale = null )`** - Loads default translated strings based on locale.
+            - loads the .mo file in `WP_LANG_DIR` constant path from WordPress root.
+            - the translated (.mo) file is named based on the locale.
+        25. **`load_plugin_textdomain( $domain, $deprecated = false, $plugin_rel_path = false )`** - Loads a plugin's translated strings.
+            - if the path is not given then it will be the root of the plugin directory.
+            - the .mo file should be named based on the text domain with a dash, and then the locale exactly.
+        26. **`load_muplugin_textdomain( $domain, $mu_plugin_rel_path = '' )`** - Loads the translated strings for a plugin residing in the mu-plugins directory.
+        27. **`load_theme_textdomain( $domain, $path = false )`** - Loads the theme's translated strings.
+            - if the current locale exists as a .mo file in the theme's root directory, it will be included in the translated strings by the `$domain`.
+            - the .mo files must be named based on the locale exactly.
+        28. **`load_child_theme_textdomain( $domain, $path = false )`** - Loads the child theme's translated strings.
+            - if the current locale exists as a .mo file in the child theme's root directory, it will be included in the translated strings by the `$domain`.
+            - the .mo files must be named based on the locale exactly.
+        29. **`load_script_textdomain( $handle, $domain = 'default', $path = '' )`** - Loads the script translated strings.
+        30. **`load_script_translations( $file, $handle, $domain )`** - Loads the translation data for the given script handle and text domain.
+        31. **`_load_textdomain_just_in_time( $domain )`** - Loads plugin and theme text domains just-in-time.
+            - when a textdomain is encountered for the first time, we try to load the translation file from `wp-content/languages`, removing the need to call `load_plugin_textdomain()` or `load_theme_textdomain()`.
+        32. **`get_translations_for_domain( $domain )`** - Returns the Translations instance for a text domain.
+            - if there isn't one, returns empty Translations instance.
+        33. **`is_textdomain_loaded( $domain )`** - Determines whether there are translations for the text domain.
+        34. **`translate_user_role( $name, $domain = 'default' )`** - Translates role name.
+            - since the role names are in the database and not in the source there are dummy gettext calls to get them into the POT file and this function properly translates them back.
+            - `before_last_bar()` call is needed, because older installations keep the roles using the old context format: 'Role name|User role' and just skipping the content after the last bar is easier than fixing them in the DB. New installations won't suffer from that problem.
+        35. **`get_available_languages( $dir = null )`** - Gets all available languages based on the presence of *.mo files in a given directory.
+            - the default directory is `WP_LANG_DIR`.
+        36. **`wp_get_installed_translations( $type )`** - Gets installed translations.
+            - looks in the `wp-content/languages` directory for translations of plugins or themes.
+        37. **`wp_get_pomo_file_data( $po_file )`** - Extracts headers from a PO file.
+        38. **`wp_dropdown_languages( $args = array() )`** - Displays or returns a Language selector.
+        39. **`is_rtl()`** - Determines whether the current locale is right-to-left (RTL).
+        40. **`switch_to_locale( $locale )`** - Switches the translations according to the given locale.
+        41. **`restore_previous_locale()`** - Restores the translations according to the previous locale.
+        42. **`restore_current_locale()`** - Restores the translations according to the original locale.
+        43. **`is_locale_switched()`** - Determines whether switch_to_locale() is in effect.
+        44. **`translate_settings_using_i18n_schema( $i18n_schema, $settings, $textdomain )`** - Translates the provided settings value using its i18n schema.
+        45. **`wp_get_list_item_separator()`** - Retrieves the list item separator based on the locale.
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
