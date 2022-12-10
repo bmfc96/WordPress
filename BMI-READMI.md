@@ -1094,7 +1094,20 @@ END-NAV-DIR: */...
                     /* translators: User role for subscribers. */
                     _x( 'Subscriber', 'User role' );
 
+30. **`wp-includes/class-wp-roles.php`**
+    - User API: WP_Roles class (Core class used to implement a user roles API.)
+    - the role option is simple
+    - the structure is organized by role name that store the name in value of the `name` key
+    - capabilities are stored as an array in the value of the `capability` key
 
+            array (
+                'rolename' => array (
+                    'name' => 'rolename',
+                    'capabilities' => array()
+                )
+            )
+
+    - this module contains `WP_Roles` class definition
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
