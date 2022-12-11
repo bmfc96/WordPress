@@ -32,22 +32,22 @@
 - Notes:
     - ABSPATH - a constant defined in 'wp-load.php'
     - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
-<details>
-<summary><h4>FLOW</h4></summary>
+    <details>
+    <summary><h4>FLOW</h4></summary>
 
-1. Load WordPress library (wp-load.php - require-once - _DIR_)
-```php
-require_once( __DIR__ . 'wp-load.php' );
-```
-2. Setup WordPress query
-```php
-wp();
-```
-3. Load THEME template
-```php
-require_once( ABSPATH . WPINC . '/template-loader.php' );
-```    
-</details>
+    1. Load WordPress library (wp-load.php - require-once - _DIR_)
+    ```php
+    require_once( __DIR__ . 'wp-load.php' );
+    ```
+    2. Setup WordPress query
+    ```php
+    wp();
+    ```
+    3. Load THEME template
+    ```php
+    require_once( ABSPATH . WPINC . '/template-loader.php' );
+    ```    
+    </details>
 </details>
 
 3. **`wp-load.php`**
