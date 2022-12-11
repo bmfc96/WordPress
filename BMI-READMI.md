@@ -2361,9 +2361,14 @@ END-NAV-DIR: */...
 <details>
 <summary>50. <b><i>wp-includes/class-wp-user-request.php</i></b></summary>
 
-
 - **NOTES**
     - `WP_User_Request` class.
     - represents user request data loaded from a `WP_Post` object.
     - this module contains final class `WP_User_Request` definition.
+
+    <details>
+    <summary>FUNCTIONS - -</summary>
+
+    ...
+    </details>
 </details>
