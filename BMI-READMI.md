@@ -1628,18 +1628,18 @@ END-NAV-DIR: */...
 
     1. `get_query_template( $type, $templates = array() )` - Retrieves path to a template.
 
-        ```diff
-        + /**
-        + * - used to quickly retrieve the path of a template without including the file extension.
-        + * - will also check the parent theme, if the file exists, with the use of `locate_template()`.
-        + * - allows for more generic template location without the use of the other `get_*_template()` functions.
-        + * 
-        + * @since 1.5.0
-        + * 
-        + * @param string    $type       Filename without extension.
-        + * @param string[]  $templates  An optional list of template candidates.
-        + * @return string Full path to template file.
-        + */
+        ```php
+        /**
+         * - used to quickly retrieve the path of a template without including the file extension.
+         * - will also check the parent theme, if the file exists, with the use of `locate_template()`.
+         * - allows for more generic template location without the use of the other `get_*_template()` functions.
+         * 
+         * @since 1.5.0
+         * 
+         * @param string    $type       Filename without extension.
+         * @param string[]  $templates  An optional list of template candidates.
+         * @return string Full path to template file.
+         */
         ```
 
     2. **`get_index_template()`** - Retrieves path of index template in current or parent template.
