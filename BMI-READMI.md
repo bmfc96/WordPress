@@ -19,7 +19,7 @@
 #### NAV-DIR: */... (17 files)
 
 <details>
-<summary>1. <b>index.php</b> - Front to application, LOAD <code>wp-blog-header.php</code></summary>
+<summary>1. <b><i>index.php</i></b> - Front to application, LOAD <code>wp-blog-header.php</code></summary>
 
 ### FLOW
 1. Define constant `WP_USE_THEMES` as true
