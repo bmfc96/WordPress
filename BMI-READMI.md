@@ -2150,8 +2150,8 @@ END-NAV-DIR: */...
     5.  ```php
         function wp_update_https_detection_errors() {...}
         ```
-        - ###### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
-        - =####=
+        - #### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
+        - ---
         <details>
         <summary>Detail</summary>
 
@@ -2172,7 +2172,7 @@ END-NAV-DIR: */...
         function wp_schedule_https_detection() {...}
         ```
         - ##### Schedules the Cron hook for detecting HTTPS support.
-        - =####=
+        - ---
         <details>
         <summary>Detail</summary>
 
@@ -2183,6 +2183,10 @@ END-NAV-DIR: */...
          */
         ```
         </details>
+
+        ---
+
+    7. ...
     </details>
 </details>
 
