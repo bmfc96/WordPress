@@ -2469,9 +2469,37 @@ END-NAV-DIR: */...
         ---
 
         </details>
+        [//]: # (End f.2)
+
+    -   <h4>3. Authenticates a user using the email and password.</h4>
+
+        ```php
+        function wp_authenticate_email_password( $user, $email, $password ) {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * @since 4.5.0
+         * 
+         * @param WP_User|WP_Error|null $user       WP_User or WP_Error object if a previous
+         *                                          callback failed authentication.
+         * @param string                $email      Email address for authentication.
+         * @param string                $password   Password for authentication.
+         * @return WP_User|WP_Error WP_User on success, WP_Error on failure.
+         */
+        ```
+
+        ---
+
+        </details>
+        [//]: # (End f.3)
 
     -   ...
     </details>
+    [//]: # (End of FUNCTIONS)
 
 ---
 
