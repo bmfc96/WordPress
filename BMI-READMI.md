@@ -2706,14 +2706,37 @@ END-NAV-DIR: */...
 
         [//]: # (End f.10)
 
-    -   ...
+    -   <h4>User option functions.</h4>
+    -   <h4>11. Gets the current user's ID.</h4>
+
+        ```php
+        function get_current_user_id() {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * @since MU (3.0.0)
+         * 
+         * @return int The current user's ID, or 0 if no user is logged in.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.11)
+
     -   <h4>x. ...</h4>
 
         ```php
         ```
 
         <details>
-        <summary>Detail</summary>
+        </summary>Detail</summary>
 
         ```php
         ```
@@ -2723,6 +2746,99 @@ END-NAV-DIR: */...
         </details>
 
         [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   ...
 
     </details>
 
