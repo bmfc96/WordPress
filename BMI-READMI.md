@@ -2165,11 +2165,14 @@ END-NAV-DIR: */...
          */
         ```
         </details>
+
+        ---
+
     6.  ```php
         function wp_schedule_https_detection() {...}
         ```
-        - Schedules the Cron hook for detecting HTTPS support.
-
+        - ##### Schedules the Cron hook for detecting HTTPS support.
+        - =####=
         <details>
         <summary>Detail</summary>
 
