@@ -2145,11 +2145,13 @@ END-NAV-DIR: */...
         ```
         </details>
 
+        ---
+
     5.  ```php
         function wp_update_https_detection_errors() {...}
         ```
-        - Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
-
+        - ###### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
+        - =####=
         <details>
         <summary>Detail</summary>
 
