@@ -2081,18 +2081,18 @@ END-NAV-DIR: */...
         <details>
         <summary>Detail</summary>
 
-            ```php
-            /**
-             * - this is based on whether both the home and site URL are using HTTPS.
-             * 
-             * @since 5.7.0
-             * @see wp_is_home_url_using_https()
-             * @see wp_is_site_url_using_https()
-             * 
-             * @return bool True if using HTTPS, false otherwise.
-             */
-            function wp_is_using_https() {...}
-            ```
+        ```php
+        /**
+         * - this is based on whether both the home and site URL are using HTTPS.
+         * 
+         * @since 5.7.0
+         * @see wp_is_home_url_using_https()
+         * @see wp_is_site_url_using_https()
+         * 
+         * @return bool True if using HTTPS, false otherwise.
+         */
+        function wp_is_using_https() {...}
+        ```
         </details>
     </details>
 </details>
