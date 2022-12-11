@@ -2469,6 +2469,7 @@ END-NAV-DIR: */...
         ---
 
         </details>
+
         [//]: # (End f.2)
 
     -   <h4>3. Authenticates a user using the email and password.</h4>
@@ -2495,10 +2496,12 @@ END-NAV-DIR: */...
         ---
 
         </details>
+        
         [//]: # (End f.3)
 
     -   ...
     </details>
+
     [//]: # (End of FUNCTIONS)
 
 ---
