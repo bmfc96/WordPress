@@ -2129,7 +2129,7 @@ END-NAV-DIR: */...
         
         ---
         
-    4.  #### Checks whether HTTPS is supported for the server and domain.
+    - #### Checks whether HTTPS is supported for the server and domain.
         ```php
         function wp_is_https_supported() {...}
         ```
@@ -2147,7 +2147,7 @@ END-NAV-DIR: */...
 
         ---
 
-    5.  #### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
+    - #### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
         ```php
         function wp_update_https_detection_errors() {...}
         ```
@@ -2167,7 +2167,7 @@ END-NAV-DIR: */...
 
         ---
 
-    6.  #### Schedules the Cron hook for detecting HTTPS support.
+    - #### Schedules the Cron hook for detecting HTTPS support.
         ```php
         function wp_schedule_https_detection() {...}
         ```
@@ -2184,7 +2184,7 @@ END-NAV-DIR: */...
 
         ---
 
-    7.  #### Disables SSL verification if the 'cron_request' arguments include an HTTPS URL.
+    - #### Disables SSL verification if the 'cron_request' arguments include an HTTPS URL.
         ```php
         function wp_cron_conditionally_prevent_sslverify( $request ) {...}
         ```
@@ -2207,7 +2207,7 @@ END-NAV-DIR: */...
 
         ---
 
-    8.  #### Checks whether a given HTML string is likely an output from this WordPress site.
+    - #### Checks whether a given HTML string is likely an output from this WordPress site.
         ```php
         function wp_is_local_html_output( $html ) {...}
         ```
@@ -2231,7 +2231,7 @@ END-NAV-DIR: */...
          */
         ```
         </details>
-    9. ...
+    - ...
 
     </details>
 </details>
