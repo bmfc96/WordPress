@@ -2125,6 +2125,21 @@ END-NAV-DIR: */...
         function wp_is_site_url_using_https() {...}
         ```
         </details>
+    4.  ```php
+        // Checks whether HTTPS is supported for the server and domain.
+        function wp_is_https_supported() {...}
+        ```
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * @since 5.7.0
+         * 
+         * @return bool True if HTTPS is supported, false otherwise.
+         */
+        ```
+        </details>
     </details>
 </details>
 
