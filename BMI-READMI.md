@@ -1619,9 +1619,9 @@ END-NAV-DIR: */...
 
 - **NOTES**
     - Template loading functions.
+    
         @package WordPress
         @subpackage Template
-
 
     <details>
     <summary>FUNCTIONS</summary>
