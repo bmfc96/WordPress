@@ -64,6 +64,77 @@
     </details>
 </details>
 
+<details>
+<summary>3. <b><i>wp-load.php</i></b> - Bootstrapping/Self-starting process file</summary>
+
+- **NOTES**
+    - set `ABSPATH` constant
+    - load `wp-config.php` __(which load `wp-settings.php` which will set up the **WordPress environment**)__
+    - if `wp-config.php` is not found, an error will be displayed **asking the visitor to set up the** `wp-config.php`
+    - will also search `wp-config.php` in **WordPress**' parent directory
+    
+    <details>
+    <summary><h4>FLOW</h4></summary>
+
+    1. Define constant `ABSPATH` as `__DIR__ . '/'`
+        ```php
+        define( 'ABSPATH', __DIR__ . '/' );
+        ```
+
+    2. Check function exist `error_reporting()`, if `TRUE` initialize `error_reporting` to a known set of levels
+    ```php
+    if (function_exists( 'error_reporting' )) {
+        error_reporting();
+    }
+    ```
+
+    3. Check if file exist `ABSPATH . 'wp-config.php'`, if `TRUE` require-once `ABSPATH . 'wp-config.php'`
+        ```php
+        if (file_exists(ABSPATH . 'wp-config.php')) {
+            require_once ABSPATH . 'wp-config.php';
+        }
+        ```
+
+    4. Else...
+        ```php
+        else if (
+                @file_exists( dirname(ABSPATH) . '/wp-config.php' )
+          and ! @file_exists( dirname(ABSPATH) . '/wp-settings.php' )
+        ) {
+
+            require_once dirname(ABSPATH) . '/wp-config.php'
+
+        } else {
+            
+            // 'wp-config.php' doesn't exist
+            define( 'WPINC', 'wp-includes' );
+            
+            require_once ABSPATH . WPINC . '/load.php';
+
+            // Standardize $_SERVER variables across setups
+            wp_fix_server_vars();
+
+            require_once ABSPATH . WPINC . '/functions.php';
+
+            // Check if $_SERVER['REQUEST_URI'] does not contain 'setup-config'
+            // TODO:: ...
+
+            define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
+
+            require_once ABSPATH . WPINC . '/version.php';
+
+            wp_check_php_mysql_versions();
+            wp_load_translations_early();
+
+            // Die with error message... (sprintf())
+            // TODO:: ...
+
+            wp_die();
+        } // END-COND. else
+        ```
+    </details>
+</details>
+
 3. **`wp-load.php`**
     - (Bootstrap / Self-starting process) file for:-
         1. Setting ABSPATH constant
