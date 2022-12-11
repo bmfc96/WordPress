@@ -28,10 +28,10 @@
     <summary><h4>FLOW</h4></summary>
 
     1. Define constant `WP_USE_THEMES` as `TRUE`
-    
     ```php
     define( 'WP_USE_THEMES', true );
     ```
+
     2. Load `/wp-blog-header.php` (require)
     ```php
     require __DIR__ . '/wp-blog-header.php';
