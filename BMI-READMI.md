@@ -2608,22 +2608,38 @@ END-NAV-DIR: */...
         [//]: # (End f.7)
     
     -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>8. Validates the logged-in cookie.</h4>
 
         ```php
+        function wp_validate_logged_in_cookie( $user_id ) {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - checks the logged-in cookie if the previous auth cookie could not be
+         *   validated and parsed.
+         * 
+         * - this is a callback for the {@see 'determine_current_user'} filter,
+         *   rather than API.
+         * 
+         * @since 3.9.0
+         * 
+         * @param int|false $user_id The user ID (or false) as received from
+         *                           the `determine_current_user` filter.
+         * @return int|false User ID if validated, false otherwise.
+         *                   If a user ID from an earlier filter callback is received,
+         *                   that value is returned.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.8)
 
     -   ...
     -   <h4>x. ...</h4>
