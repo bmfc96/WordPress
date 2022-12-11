@@ -2731,22 +2731,42 @@ END-NAV-DIR: */...
 
         [//]: # (End f.11)
 
-    -   <h4>12. ...</h4>
+    -   <h4>12. Retrieves user option that can be either per Site or per Network.</h4>
 
         ```php
+        function get_user_option( $option, $user = 0, $deprecated = '' ) {}
         ```
 
         <details>
         </summary>Detail</summary>
 
         ```php
+        /**
+         * - if the user ID is not given, then the current user will be used instead.
+         * 
+         * - if the user ID is given, then the user data will be retrieved.
+         * 
+         * - the filter for the results, will also pass the original option name and finally,
+         *   the user data object as the third parameter.
+         * 
+         * - the option will first check for the per site name and then the per Network name.
+         * 
+         * @since 2.0.0
+         * 
+         * @global wpdb $wpdb WordPress Database abstraction object.
+         * 
+         * @param string $option     User option name.
+         * @param int    $user       Optional. User ID.
+         * @param string $deprecated Use get_option() to check for an option in the options table.
+         * @return mixed User option value on success, false on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.12)
 
     -   ...
     -   <h4>x. ...</h4>
