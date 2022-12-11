@@ -2231,10 +2231,12 @@ END-NAV-DIR: */...
              */
             ```
             </details>
-
-            ---
-
+        9. ...
     </details>
+</details>
+
+<details>
+    <summary>49. <b><i>wp-includes/</i></b></summary>
 </details>
 
 NAV-DIR: */wp-includes
