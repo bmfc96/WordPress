@@ -2445,7 +2445,32 @@ END-NAV-DIR: */...
 
         </details>
 
-    -   <h4>...</h4>
+    -   <h4>2. Authenticates a user, confirming the username and password are valid.</h4>
+
+        ```php
+        function wp_authenticate_username_password( $user, $username, $password ) {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * @since 2.8.0
+         * 
+         * @param WP_User|WP_Error|null $user       WP_User or WP_Error object from a previous callback.
+         *                                          Default null.
+         * @param string                $username   Username for authentication.
+         * @param string                $password   Password for authentication.
+         * @return WP_User|WP_Error WP_User on success, WP_Error on failure.
+         */
+        ```
+
+        ---
+
+        </details>
+
+    -   ...
     </details>
 
 ---
