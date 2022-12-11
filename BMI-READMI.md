@@ -2403,9 +2403,11 @@ END-NAV-DIR: */...
     <summary>FUNCTIONS - </summary>
 
     -   <h4>1. Authenticates and logs a user in with 'remember' capability.</h4>
+
         ```php
         function wp_signon( $credentials = array(), $secure_cookie = '' ) {}
         ```
+        
         <details>
         <summary>Detail</summary>
 
