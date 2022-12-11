@@ -1622,6 +1622,7 @@ END-NAV-DIR: */...
         @package WordPress
         @subpackage Template
 
+
     <details>
     <summary>FUNCTIONS</summary>
 
