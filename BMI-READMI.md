@@ -2253,7 +2253,7 @@ END-NAV-DIR: */...
         ```
     
     <details>
-    <summary>FUNCTIONS</summary>
+    <summary>FUNCTIONS - 4</summary>
     
     1.  #### Checks whether WordPress should replace old HTTP URLs to the site with their HTTPS counterpart.
         ```php
