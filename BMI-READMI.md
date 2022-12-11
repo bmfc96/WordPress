@@ -2558,8 +2558,127 @@ END-NAV-DIR: */...
 
         [//]: # (End f.5)
 
-    -   ...
+    -   <h4>6. Validates the application password credentials passed via Basic Authentication.</h4>
+
+        ```php
+        function wp_validate_application_password( $input_user ) {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * @since 5.6.0
+         * 
+         * @param int|false $input_user User ID if one has been determined, false otherwise.
+         * @return int|false The authenticated user ID if successfull, false otherwise.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.6)
+
+    -   <h4>7. For Multisite blogs, checks if the authenticated user has been marked as a spammer, or if the user's primary blog has been marked as spam.</h4>
+
+        ```php
+        function wp_authenticate_spam_check( $user ) {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * @since 3.7.0
+         * 
+         * @param WP_User|WP_Error|null $user WP_User or WP_Error object from a previous callback.
+         *                                    Default null.
+         * @return WP_User|WP_Error WP_User on success, WP_Error if the user is considered a spammer.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.7)
     
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
     </details>
 
     [//]: # (End of FUNCTIONS)
