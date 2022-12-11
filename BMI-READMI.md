@@ -2366,6 +2366,16 @@ END-NAV-DIR: */...
     - represents user request data loaded from a `WP_Post` object.
     - this module contains final class `WP_User_Request` definition.
 
+        ```php
+        /**
+         * WP_User_Request class.
+         * ...
+         * @since 4.9.6
+         */
+        #[AllowDynamicProperties]
+        final class WP_User_Request {}
+        ```
+
     <details>
     <summary>FUNCTIONS - -</summary>
 
