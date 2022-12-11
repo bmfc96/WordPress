@@ -2706,7 +2706,7 @@ END-NAV-DIR: */...
 
         [//]: # (End f.10)
 
-    -   <h4>User option functions.</h4>
+    -   <h3>User option functions.</h3>
     -   <h4>11. Gets the current user's ID.</h4>
 
         ```php
@@ -2730,7 +2730,7 @@ END-NAV-DIR: */...
 
         [//]: # (End f.11)
 
-    -   <h4>x. ...</h4>
+    -   <h4>12. ...</h4>
 
         ```php
         ```
