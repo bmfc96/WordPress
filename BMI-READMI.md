@@ -29,7 +29,12 @@
 <details>
 <summary>2. <b>wp-blog-header.php</b> - Loads WordPress ENVIRONMENT & TEMPLATE</summary>
 
-### FLOW
+- Notes:
+    - ABSPATH - a constant defined in 'wp-load.php'
+    - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
+<details>
+<summary>FLOW</summary>
+
 1. Load WordPress library (wp-load.php - require-once - _DIR_)
 ```php
 require_once( __DIR__ . 'wp-load.php' );
@@ -41,11 +46,9 @@ wp();
 3. Load THEME template
 ```php
 require_once( ABSPATH . WPINC . '/template-loader.php' );
-```
+```    
 </details>
-            Notes:
-            - ABSPATH - a constant defined in 'wp-load.php'
-            - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
+</details>
 
 3. **`wp-load.php`**
     - (Bootstrap / Self-starting process) file for:-
