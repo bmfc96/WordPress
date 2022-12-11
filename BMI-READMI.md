@@ -2128,111 +2128,111 @@ END-NAV-DIR: */...
         
         ---
         
-    4.  #### Checks whether HTTPS is supported for the server and domain.
-        ```php
-        function wp_is_https_supported() {...}
-        ```
-        <details>
-        <summary>Detail</summary>
+        4.  #### Checks whether HTTPS is supported for the server and domain.
+            ```php
+            function wp_is_https_supported() {...}
+            ```
+            <details>
+            <summary>Detail</summary>
 
-        ```php
-        /**
-         * @since 5.7.0
-         * 
-         * @return bool True if HTTPS is supported, false otherwise.
-         */
-        ```
-        </details>
+            ```php
+            /**
+             * @since 5.7.0
+             * 
+             * @return bool True if HTTPS is supported, false otherwise.
+             */
+            ```
+            </details>
 
-        ---
+            ---
 
-    5.  #### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
-        ```php
-        function wp_update_https_detection_errors() {...}
-        ```
-        <details>
-        <summary>Detail</summary>
+        5.  #### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
+            ```php
+            function wp_update_https_detection_errors() {...}
+            ```
+            <details>
+            <summary>Detail</summary>
 
-        ```php
-        /**
-         * - this internal function is called by a regular Cron hook to ensure HTTPS support
-         *   is detected and maintained.
-         * 
-         * @since 5.7.0
-         * @access private
-         */
-        ```
-        </details>
+            ```php
+            /**
+             * - this internal function is called by a regular Cron hook to ensure HTTPS support
+             *   is detected and maintained.
+             * 
+             * @since 5.7.0
+             * @access private
+             */
+            ```
+            </details>
 
-        ---
+            ---
 
-    6.  #### Schedules the Cron hook for detecting HTTPS support.
-        ```php
-        function wp_schedule_https_detection() {...}
-        ```
-        <details>
-        <summary>Detail</summary>
+        6.  #### Schedules the Cron hook for detecting HTTPS support.
+            ```php
+            function wp_schedule_https_detection() {...}
+            ```
+            <details>
+            <summary>Detail</summary>
 
-        ```php
-        /**
-         * @since 5.7.0
-         * @access private
-         */
-        ```
-        </details>
+            ```php
+            /**
+             * @since 5.7.0
+             * @access private
+             */
+            ```
+            </details>
 
-        ---
+            ---
 
-    7.  #### Disables SSL verification if the 'cron_request' arguments include an HTTPS URL.
-        ```php
-        function wp_cron_conditionally_prevent_sslverify( $request ) {...}
-        ```
-        <details>
-        <summary>Detail</summary>
+        7.  #### Disables SSL verification if the 'cron_request' arguments include an HTTPS URL.
+            ```php
+            function wp_cron_conditionally_prevent_sslverify( $request ) {...}
+            ```
+            <details>
+            <summary>Detail</summary>
 
-        ```php
-        /**
-         * - this prevents an issue if HTTPS breaks, where there would be a failed attempt
-         *   to verify HTTPS.
-         * 
-         * @since 5.7.0
-         * @access private
-         * 
-         * @param array $request The cron request arguments.
-         * @return array The filtered cron request arguments.
-         */
-        ```
-        </details>
+            ```php
+            /**
+             * - this prevents an issue if HTTPS breaks, where there would be a failed attempt
+             *   to verify HTTPS.
+             * 
+             * @since 5.7.0
+             * @access private
+             * 
+             * @param array $request The cron request arguments.
+             * @return array The filtered cron request arguments.
+             */
+            ```
+            </details>
 
-        ---
+            ---
 
-    8.  #### Checks whether a given HTML string is likely an output from this WordPress site.
-        ```php
-        function wp_is_local_html_output( $html ) {...}
-        ```
-        <details>
-        <summary>Detail</summary>
+        8.  #### Checks whether a given HTML string is likely an output from this WordPress site.
+            ```php
+            function wp_is_local_html_output( $html ) {...}
+            ```
+            <details>
+            <summary>Detail</summary>
 
-        ```php
-        /**
-         * - this function attempts to check for various common WordPress patterns whether
-         *   they are included in the HTML string.
-         * - since any of these actions may be disabled through third-party code, this
-         *   function may also return null to indicate that it was not possible to
-         *   determine ownership.
-         * 
-         * @since 5.7.0
-         * @access private
-         * 
-         * @param string $html Full HTML output string, e.g. from a HTTP response.
-         * @return bool|null True/False for whether HTML was generated by this site,
-         *                   null if unable to determine.
-         */
-        ```
-        </details>
+            ```php
+            /**
+             * - this function attempts to check for various common WordPress patterns whether
+             *   they are included in the HTML string.
+             * - since any of these actions may be disabled through third-party code, this
+             *   function may also return null to indicate that it was not possible to
+             *   determine ownership.
+             * 
+             * @since 5.7.0
+             * @access private
+             * 
+             * @param string $html Full HTML output string, e.g. from a HTTP response.
+             * @return bool|null True/False for whether HTML was generated by this site,
+             *                   null if unable to determine.
+             */
+            ```
+            </details>
 
-        ---
-        
+            ---
+
     </details>
 </details>
 
