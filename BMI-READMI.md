@@ -2066,9 +2066,10 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-<summary>48. <b><i>wp-includes/https-detection.php</i></b></summary>
+    <summary>48. <b><i>wp-includes/https-detection.php</i></b></summary>
 
-1. **NOTES**
+1.  **NOTES**
+
     1. HTTPS detection functions.
 
             @package WordPress
