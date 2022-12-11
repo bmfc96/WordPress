@@ -27,13 +27,13 @@
 </details>
 
 <details>
-<summary>2. <b>wp-blog-header.php</b> - Loads WordPress ENVIRONMENT & TEMPLATE</summary>
+<summary>2. <b><i>wp-blog-header.php</i></b> - Loads WordPress ENVIRONMENT & TEMPLATE</summary>
 
 - Notes:
     - ABSPATH - a constant defined in 'wp-load.php'
     - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
 <details>
-<summary>FLOW</summary>
+<summary><h4>FLOW</h4></summary>
 
 1. Load WordPress library (wp-load.php - require-once - _DIR_)
 ```php
