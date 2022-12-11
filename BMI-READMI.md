@@ -2382,3 +2382,23 @@ END-NAV-DIR: */...
     -   ...
     </details>
 </details>
+
+<details>
+<summary>51. <b><i>wp-includes/user.php</i></b></summary>
+
+- **NOTES**
+    ```php
+    /**
+     * Core User API
+     * 
+     * @package WordPress
+     * @subpackage Users
+     */
+    ```
+
+    <details>
+    <summary>FUNCTIONS - </summary>
+
+    -   ...
+    </details>
+</details>
