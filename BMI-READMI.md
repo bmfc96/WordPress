@@ -18,13 +18,13 @@
 
 #### NAV-DIR: */... (17 files)
 
-<detail>
+<details>
     <summary>1. index.php</summary>
     - Front to application, LOAD `wp-blog-header.php`
     - FLOW:
         1. Define constant WP_USE_THEMES as true
         2. LOAD _DIR_ . '/wp-blog-header.php' (require)
-</detail>
+</details>
 
 2. **`wp-blog-header.php`**
     - Loads WordPress ENVIRONMENT & TEMPLATE
