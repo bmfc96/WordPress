@@ -17,11 +17,14 @@
     (17 files)
 
 #### NAV-DIR: */... (17 files)
-1. **`index.php`**
-    - Front to application, LOAD 'wp-blog-header.php'
+
+<detail>
+    <summary>1. index.php</summary>
+    - Front to application, LOAD `wp-blog-header.php`
     - FLOW:
         1. Define constant WP_USE_THEMES as true
         2. LOAD _DIR_ . '/wp-blog-header.php' (require)
+</detail>
 
 2. **`wp-blog-header.php`**
     - Loads WordPress ENVIRONMENT & TEMPLATE
@@ -1492,7 +1495,8 @@ END-NAV-DIR: */...
             - the auto-draft status indicates a new post, so allow the `WP_Query` instance to return an auto-draft post for template resolution when editing a new post.
         10. **`_resolve_home_block_template()`** - Returns the correct template for the site's home page.
 
-46. ...
+46. **`wp-includes/theme-templates.php`**
+    - ...
 
 
 NAV-DIR: */wp-includes
