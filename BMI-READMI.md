@@ -2676,22 +2676,35 @@ END-NAV-DIR: */...
         [//]: # (End f.9)
 
     -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>10. Gets the number of posts written by a list of users.</h4>
 
         ```php
+        function count_many_users_posts( $users, $post_type = 'post', $public_only = false ) {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.0.0
+         * 
+         * @global wpdb $wpdb WordPress database abstraction object.
+         * 
+         * @param int[]             $users          Array of user IDs.
+         * @param string|string[]   $post_type      Optional. Single post type or array of post types
+         *                                          to check. Defaults to 'post'.
+         * @param bool              $public_only    Optional. Only return counts for public posts.
+         * @return string[] Amount of posts each user has written, as strings,
+         *                  keyed by user ID.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.10)
 
     -   ...
     -   <h4>x. ...</h4>
