@@ -1594,8 +1594,25 @@ END-NAV-DIR: */...
             - the auto-draft status indicates a new post, so allow the `WP_Query` instance to return an auto-draft post for template resolution when editing a new post.
         10. **`_resolve_home_block_template()`** - Returns the correct template for the site's home page.
 
-46. **`wp-includes/theme-templates.php`**
+46. **abc**
     - ...
+
+<details>
+<summary>46. <b><i>wp-includes/theme-templates.php</i></b></summary>
+
+- **NOTES**
+    - this module contains the following functions:
+        1. **`wp_set_unique_slug_on_create_template_part( $post_id )`** - Sets a custom slug when creating auto-draft template parts.
+            - this is only needed for auto-drafts created by the regular WP editor.
+            - if this page is to be removed, this will not be necessary.
+        2. **`wp_filter_wp_template_unique_post_slug( $override_slug, $slug, $post_ID, $post_status, $post_type )`** - Generates a unique slug for templates.
+        3. **`the_block_template_skip_link()`** - Prints the skip-link script & styles.
+        4. **`wp_enable_block_templates()`** - Enables the block templates (editor mode) for themes with `theme.json` by default.
+        
+    <details>
+    <summary><h4>FLOW</h4></summary>
+    </details>
+</details>
 
 
 NAV-DIR: */wp-includes
