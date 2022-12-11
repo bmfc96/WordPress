@@ -1627,6 +1627,7 @@ END-NAV-DIR: */...
     <summary>FUNCTIONS</summary>
 
     1. **`get_query_template( $type, $templates = array() )`** - Retrieves path to a template.
+
         ```php
         /**
          * - used to quickly retrieve the path of a template without including the file extension.
@@ -1640,6 +1641,7 @@ END-NAV-DIR: */...
          * @return string Full path to template file.
          */
         ```
+        
     2. **`get_index_template()`** - Retrieves path of index template in current or parent template.
         ```php
         /**
