@@ -2280,9 +2280,80 @@ END-NAV-DIR: */...
         ---
 
         </details>
+
+    2.  #### Replaces insecure HTTP URLs to the site in the given content, if configured to do so.
+        ```php
+        function wp_replace_insecure_home_url( $content ) {...}
+        ```
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * - this function replaces all occurences of the HTTP version of the site's URL
+         *   with its HTTPS counterpart, if determined via {@see wp_should_replace_insecure_home_url()}
+         * 
+         * @since 5.7.0
+         * 
+         * @param string $content Content to replace URLs in.
+         * @return string Filtered content.
+         */
+        ```
+
+        ---
+
+        </details>
+
+    3.  #### Update the 'home' and 'siteurl' option to use the HTTPS variant of their URL.
+        ```php
+        function wp_update_urls_to_https() {...}
+        ```
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * - if this update does not result in WordPress recognizing that the site is now
+         *   using HTTPS (e.g. due to constants overriding the URLs used), the changes will
+         *   be reverted.
+         * - in such a case, the function will return false.
+         * 
+         * @since 5.7.0
+         * 
+         * @return bool True on success, false on failure.
+         */
+        ```
+
+        ---
+
+        </details>
+
+    4.  #### Updates the 'https_migration_required' option if needed when the given URL has been updated from HTTP to HTTPS.
+        ```php
+        function wp_update_https_migration_required( $old_url, $new_url ) {...}
+        ```
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * - if this is a fresh site, a migration will not be required, so the option will
+         *   be set as `false`.
+         * 
+         * - this is hooked into the {@see 'update_option_home'} action.
+         * 
+         * @since 5.7.0
+         * @access private
+         * 
+         * @param mixed $old_url Previous value of the URL option.
+         * @param mixed $new_url New value of the URL option.
+         */
+        ```
+
+        ---
+
+        </details>
+
+    5.  #### ENDOFUNC.
     </details>
 </details>
-
-NAV-DIR: */wp-includes
-
-END-NAV-DIR: */wp-includes
