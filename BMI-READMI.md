@@ -19,20 +19,27 @@
 #### NAV-DIR: */... (17 files)
 
 <details>
-<summary>1. <b><i>index.php</i></b> - Front to application, LOAD <code>wp-blog-header.php</code></summary>
+<summary>1. <b><i>index.php</i></b> - Front to application, load <code>wp-blog-header.php</code></summary>
 
-### FLOW
-1. Define constant `WP_USE_THEMES` as true
-2. LOAD _DIR_ . `/wp-blog-header.php` (require)
+- **NOTES**
+    - ...
+- **FLOW**
+    1. Define constant `WP_USE_THEMES` as true
+    ```php
+    define( 'WP_USE_THEMES', true );
+    ```
+    2. Load _DIR_ . `/wp-blog-header.php` (require)
+    ```php
+    require __DIR__ . '/wp-blog-header.php';
+    ```
 </details>
 
 <details>
 <summary>2. <b><i>wp-blog-header.php</i></b> - Loads WordPress ENVIRONMENT & TEMPLATE</summary>
 
-- NOTES
+- **NOTES**
     - `ABSPATH` = a constant defined in `wp-load.php`
-    - `WPINC` = a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
-    - more indent
+    - `WPINC` = a constant defined in `wp-load.php` on the event `wp-config.php` doesn't exist
     
     <details>
     <summary><h4>FLOW</h4></summary>
