@@ -2231,13 +2231,55 @@ END-NAV-DIR: */...
          */
         ```
         </details>
+
+        ---
+
     - ...
 
     </details>
 </details>
 
 <details>
-    <summary>49. <b><i>wp-includes/</i></b></summary>
+  <summary>49. <b><i>wp-includes/https-migration.php</i></b></summary>
+
+  - **NOTES**
+    - HTTPS migration functions.
+
+        ```php
+        /**
+         * @package WordPress
+         * @since 5.7.0
+         */
+        ```
+    
+    <details>
+    <summary>FUNCTIONS</summary>
+      1.  #### Checks whether WordPress should replace old HTTP URLs to the site with their HTTPS counterpart.
+          ```php
+          function wp_should_replace_insecure_home_url() {...}
+          ```
+          <details>
+           <summary>Detail</summary>
+
+           ```php
+           /**
+           * - if a WordPress site had its URL changed from HTTP to HTTPS,
+           *   by default this will return `true`, causing WordPress to
+           *   add frontend filters to replace insecure site URLs that may be present
+           *   in older database content.
+           * - the {@see 'wp_should_replace_insecure_home_url'} filter can be used to modify
+           *   that behavior.
+           * 
+           * @since 5.7.0
+           * 
+           * @return bool True if insecure URLs should replaced, false otherwise.
+           */
+           ```
+          
+           ---
+
+        </details>
+    </details>
 </details>
 
 NAV-DIR: */wp-includes
