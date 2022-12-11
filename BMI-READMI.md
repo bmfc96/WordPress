@@ -2257,7 +2257,7 @@ END-NAV-DIR: */...
     
     1.  #### Checks whether WordPress should replace old HTTP URLs to the site with their HTTPS counterpart.
         ```php
-        function wp_should_replace_insecure_home_url() {...}
+        function wp_should_replace_insecure_home_url()
         ```
         <details>
         <summary>Detail</summary>
@@ -2283,7 +2283,7 @@ END-NAV-DIR: */...
 
     2.  #### Replaces insecure HTTP URLs to the site in the given content, if configured to do so.
         ```php
-        function wp_replace_insecure_home_url( $content ) {...}
+        function wp_replace_insecure_home_url( $content )
         ```
         <details>
         <summary>Detail</summary>
@@ -2306,7 +2306,7 @@ END-NAV-DIR: */...
 
     3.  #### Update the 'home' and 'siteurl' option to use the HTTPS variant of their URL.
         ```php
-        function wp_update_urls_to_https() {...}
+        function wp_update_urls_to_https()
         ```
         <details>
         <summary>Detail</summary>
@@ -2330,7 +2330,7 @@ END-NAV-DIR: */...
 
     4.  #### Updates the 'https_migration_required' option if needed when the given URL has been updated from HTTP to HTTPS.
         ```php
-        function wp_update_https_migration_required( $old_url, $new_url ) {...}
+        function wp_update_https_migration_required( $old_url, $new_url )
         ```
         <details>
         <summary>Detail</summary>
