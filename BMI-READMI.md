@@ -2384,6 +2384,9 @@ END-NAV-DIR: */...
 
     -   ...
     </details>
+
+---
+
 </details>
 
 <details>
@@ -2407,7 +2410,7 @@ END-NAV-DIR: */...
         ```php
         function wp_signon( $credentials = array(), $secure_cookie = '' ) {}
         ```
-        
+
         <details>
         <summary>Detail</summary>
 
@@ -2437,6 +2440,14 @@ END-NAV-DIR: */...
          * @return WP_User|WP_Error WP_User on success, WP_Error on failure.
          */
         ```
+
+        ---
+
         </details>
+
+    -   <h4>...</h4>
     </details>
+
+---
+
 </details>
