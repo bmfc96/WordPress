@@ -2125,7 +2125,9 @@ END-NAV-DIR: */...
         function wp_is_site_url_using_https() {...}
         ```
         </details>
+
         ___
+        
     4.  ```php
         // Checks whether HTTPS is supported for the server and domain.
         function wp_is_https_supported() {...}
@@ -2141,11 +2143,14 @@ END-NAV-DIR: */...
          */
         ```
         </details>
+
+        ---
+
     5.  ```php
         function wp_update_https_detection_errors() {...}
         ```
         - Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
-        
+        ___
         <details>
         <summary>Detail</summary>
 
@@ -2154,6 +2159,22 @@ END-NAV-DIR: */...
          * - this internal function is called by a regular Cron hook to ensure HTTPS support
          *   is detected and maintained.
          * 
+         * @since 5.7.0
+         * @access private
+         */
+        ```
+        </details>
+    6.  ```php
+        function wp_schedule_https_detection() {...}
+        ```
+        - Schedules the Cron hook for detecting HTTPS support.
+
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
          * @since 5.7.0
          * @access private
          */
