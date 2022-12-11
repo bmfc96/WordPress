@@ -29,9 +29,11 @@
 <details>
 <summary>2. <b><i>wp-blog-header.php</i></b> - Loads WordPress ENVIRONMENT & TEMPLATE</summary>
 
-- Notes:
+- <h4>NOTES</h4>
     - ABSPATH - a constant defined in 'wp-load.php'
     - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
+        - more indent
+    
     <details>
     <summary><h4>FLOW</h4></summary>
 
