@@ -2065,6 +2065,38 @@ END-NAV-DIR: */...
     </details>
 </details>
 
+<details>
+<summary>48. <b><i>wp-includes/https-detection.php</i></b></summary>
+
+- **NOTES**
+    - HTTPS detection functions.
+
+            @package WordPress
+            @since 5.7.0
+
+    <details>
+    <summary>FUNCTIONS</summary>
+
+    1. `wp_is_using_https()` - Checks whether the website is using HTTPS.
+        <details>
+        <summary>Detail</summary>
+
+            ```php
+            /**
+             * - this is based on whether both the home and site URL are using HTTPS.
+             * 
+             * @since 5.7.0
+             * @see wp_is_home_url_using_https()
+             * @see wp_is_site_url_using_https()
+             * 
+             * @return bool True if using HTTPS, false otherwise.
+             */
+            function wp_is_using_https() {...}
+            ```
+        </details>
+    </details>
+</details>
+
 NAV-DIR: */wp-includes
 
 END-NAV-DIR: */wp-includes
