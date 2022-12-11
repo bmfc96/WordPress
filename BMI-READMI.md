@@ -22,16 +22,27 @@
 <summary>1. <b>index.php</b> - Front to application, LOAD <code>wp-blog-header.php</code></summary>
 
 ### FLOW
-1. Define constant WP_USE_THEMES as true
-2. LOAD _DIR_ . '/wp-blog-header.php' (require)
+1. Define constant `WP_USE_THEMES` as true
+2. LOAD _DIR_ . `/wp-blog-header.php` (require)
 </details>
 
-2. **`wp-blog-header.php`**
-    - Loads WordPress ENVIRONMENT & TEMPLATE
-    - FLOW:
-        1. Load WordPress library (wp-load.php - require-once - _DIR_)
-        2. Setup WordPress query (wp();)
-        3. Load THEME template (ABSPATH . WPINC . '/template-loader.php' - require-once)
+<details>
+<summary>2. <b>wp-blog-header.php</b> - Loads WordPress ENVIRONMENT & TEMPLATE</summary>
+
+### FLOW
+1. Load WordPress library (wp-load.php - require-once - _DIR_)
+```php
+require_once( __DIR__ . 'wp-load.php' );
+```
+2. Setup WordPress query
+```php
+wp();
+```
+3. Load THEME template
+```php
+require_once( ABSPATH . WPINC . '/template-loader.php' );
+```
+</details>
             Notes:
             - ABSPATH - a constant defined in 'wp-load.php'
             - WPINC - a constant defined in 'wp-load.php' on the event 'wp-config.php' doesn't exist
