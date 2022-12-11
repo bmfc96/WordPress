@@ -2092,7 +2092,7 @@ END-NAV-DIR: */...
          * 
          * @return bool True if using HTTPS, false otherwise.
          */
-        function wp_is_using_https() {...}
+        function wp_is_using_https() {}
         ```
         </details>
     2. `wp_is_home_url_using_https()` - Checks whether the current site URL is using HTTPS.
@@ -2106,7 +2106,7 @@ END-NAV-DIR: */...
          * 
          * @return bool True if using HTTPS, false otherwise.
          */
-        function wp_is_home_url_using_https() {...}
+        function wp_is_home_url_using_https() {}
         ```
         </details>
     3. `wp_is_site_url_using_https()` - Checks whether the current site's URL where WordPress is stored is using HTTPS.
@@ -2123,7 +2123,7 @@ END-NAV-DIR: */...
          * 
          * @return bool True if using HTTPS, false otherwise.
          */
-        function wp_is_site_url_using_https() {...}
+        function wp_is_site_url_using_https() {}
         ```
         </details>
         
@@ -2131,7 +2131,7 @@ END-NAV-DIR: */...
         
     - #### Checks whether HTTPS is supported for the server and domain.
         ```php
-        function wp_is_https_supported() {...}
+        function wp_is_https_supported() {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2149,7 +2149,7 @@ END-NAV-DIR: */...
 
     - #### Runs a remote HTTPS request to detect whether HTTPS supported, and stores potential errors.
         ```php
-        function wp_update_https_detection_errors() {...}
+        function wp_update_https_detection_errors() {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2169,7 +2169,7 @@ END-NAV-DIR: */...
 
     - #### Schedules the Cron hook for detecting HTTPS support.
         ```php
-        function wp_schedule_https_detection() {...}
+        function wp_schedule_https_detection() {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2186,7 +2186,7 @@ END-NAV-DIR: */...
 
     - #### Disables SSL verification if the 'cron_request' arguments include an HTTPS URL.
         ```php
-        function wp_cron_conditionally_prevent_sslverify( $request ) {...}
+        function wp_cron_conditionally_prevent_sslverify( $request ) {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2209,7 +2209,7 @@ END-NAV-DIR: */...
 
     - #### Checks whether a given HTML string is likely an output from this WordPress site.
         ```php
-        function wp_is_local_html_output( $html ) {...}
+        function wp_is_local_html_output( $html ) {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2257,7 +2257,7 @@ END-NAV-DIR: */...
     
     1.  #### Checks whether WordPress should replace old HTTP URLs to the site with their HTTPS counterpart.
         ```php
-        function wp_should_replace_insecure_home_url()
+        function wp_should_replace_insecure_home_url() {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2283,7 +2283,7 @@ END-NAV-DIR: */...
 
     2.  #### Replaces insecure HTTP URLs to the site in the given content, if configured to do so.
         ```php
-        function wp_replace_insecure_home_url( $content )
+        function wp_replace_insecure_home_url( $content ) {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2306,7 +2306,7 @@ END-NAV-DIR: */...
 
     3.  #### Update the 'home' and 'siteurl' option to use the HTTPS variant of their URL.
         ```php
-        function wp_update_urls_to_https()
+        function wp_update_urls_to_https() {}
         ```
         <details>
         <summary>Detail</summary>
@@ -2330,7 +2330,7 @@ END-NAV-DIR: */...
 
     4.  #### Updates the 'https_migration_required' option if needed when the given URL has been updated from HTTP to HTTPS.
         ```php
-        function wp_update_https_migration_required( $old_url, $new_url )
+        function wp_update_https_migration_required( $old_url, $new_url ) {}
         ```
         <details>
         <summary>Detail</summary>
