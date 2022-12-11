@@ -2240,9 +2240,9 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-  <summary>49. <b><i>wp-includes/https-migration.php</i></b></summary>
+<summary>49. <b><i>wp-includes/https-migration.php</i></b></summary>
 
-  - **NOTES**
+- **NOTES**
     - HTTPS migration functions.
 
         ```php
@@ -2254,6 +2254,7 @@ END-NAV-DIR: */...
     
     <details>
     <summary>FUNCTIONS</summary>
+    
     1.  #### Checks whether WordPress should replace old HTTP URLs to the site with their HTTPS counterpart.
         ```php
         function wp_should_replace_insecure_home_url() {...}
