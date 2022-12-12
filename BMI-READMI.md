@@ -2735,7 +2735,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -2772,7 +2772,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -2811,7 +2811,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-
+        <summary>Detail</summary>
 
         ```php
         /**
