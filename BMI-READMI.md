@@ -3499,23 +3499,30 @@ END-NAV-DIR: */...
 
         [//]: # (End f.32)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>33. Cleans all user caches.</h4>
 
         ```php
+        function clean_user_cache( $user ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.0.0
+         * @since 4.4.0 'clean_user_cache' action was added.
+         * @since 6.2.0 User metadata caches are now cleared.
+         * 
+         * @param WP_User|int $user User object or ID to be cleaned from the cache
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.33)
 
     -   ...
     -   <h4>x. ...</h4>
