@@ -4047,23 +4047,28 @@ END-NAV-DIR: */...
 
         [//]: # (End f.49)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>50. Retrieves the current session token from the logged_in cookie.</h4>
 
         ```php
+        function wp_get_session_token(): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.0.0
+         * 
+         * @return string Token.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.50)
 
     -   ...
     -   <h4>x. ...</h4>
