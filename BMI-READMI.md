@@ -4753,6 +4753,15 @@
         class WP_User_Query {}
         ```
 
+    <details>
+    <summary>FUNCTIONS (-) User API :: class-wp-user-query.php</summary>
+
+    ```php
+    ```
+
+    ---
+
+    </details>
 ---
 
 </details>
