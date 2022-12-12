@@ -5212,23 +5212,26 @@
 
         [//]: # (End f.9)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>10. Provides a simple login form for use anywhere within WordPress.</h4>
 
         ```php
+        function wp_login_form( $args = array() ): void|string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - the login ... TODO::
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.10)
 
     -   ...
     -   <h4>x. ...</h4>
