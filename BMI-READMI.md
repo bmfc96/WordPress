@@ -2240,7 +2240,7 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-<summary>49. <small>wp-includes/https-migration.php</small></summary>
+<summary>49. wp-includes/<b>https-migration.php</b></summary>
 
 - **NOTES**
     - HTTPS migration functions.
