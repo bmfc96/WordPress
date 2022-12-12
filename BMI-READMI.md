@@ -4604,16 +4604,24 @@ END-NAV-DIR: */...
 
         [//]: # (End f.71)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>x. Checks if Application Passwords is supported.</h4>
 
         ```php
+        function wp_is_application_password_supported(): bool {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - Application Passwords is supported only by sites using SSL or local environments but
+         *   may be made available using the {@see 'wp_is_application_password_available'} filter.
+         * 
+         * @since 5.9.0
+         * 
+         * @return bool
+         */
         ```
 
         ---
