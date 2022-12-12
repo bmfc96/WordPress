@@ -5163,23 +5163,31 @@
 
         [//]: # (End f.7)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>8. Retrieves the login URL.</h4>
 
         ```php
+        function wp_login_url( $redirect = '', $force_reauth = false ): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 2.7.0
+         * 
+         * @param string $redirect      Path to redirect to on log in.
+         * @param bool   $force_reauth  Whether to force reauthorization, even if a cookie is present.
+         *                              Default false.
+         * @return string The login URL. Not HTML-encoded.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.8)
 
     -   ...
     -   <h4>x. ...</h4>
