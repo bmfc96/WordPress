@@ -4395,23 +4395,30 @@ END-NAV-DIR: */...
 
         [//]: # (End f.63)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>64. Notifies the user when their erasure request is fulfilled.</h4>
 
         ```php
+        function _wp_privacy_send_erasure_fulfillment_notification( $request_id ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - without this, the user would never know if their data was actually erased.
+         * 
+         * @since 4.9.6
+         * 
+         * @param int $request_id The privacy request post ID associated with this request.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.64)
 
     -   ...
     -   <h4>x. ...</h4>
