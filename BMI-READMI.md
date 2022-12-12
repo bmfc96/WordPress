@@ -4918,7 +4918,7 @@
         ```
 
         <details>
-        <summary>Detail</summary
+        <summary>Detail</summary>
 
         ```php
         /**
