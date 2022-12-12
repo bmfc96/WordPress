@@ -2811,7 +2811,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+
 
         ```php
         /**
