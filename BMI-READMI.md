@@ -5327,23 +5327,31 @@
 
         [//]: # (End f.12)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>13. Theme container function for the 'wp_meta' action.</h4>
 
         ```php
+        function wp_meta(): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - {@see 'wp_meta'} action can have several purposes, depending on how it is used,
+         *   but one purpose might have been to allow for theme switching.
+         * 
+         * @since 1.5.0
+         * 
+         * @link https://core.trac.wordpress.org/ticket/1458 Explanation of 'wp_meta' action.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.13)
 
     -   ...
     -   <h4>x. ...</h4>
