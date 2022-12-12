@@ -4420,23 +4420,30 @@ END-NAV-DIR: */...
 
         [//]: # (End f.64)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>65. Returns request confirmation message HTML.</h4>
 
         ```php
+        function _wp_privacy_account_request_confirmed_message( $request_id ): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.9.6
+         * @access private
+         * 
+         * @param int $request_id The request ID being confirmed.
+         * @return string The confirmation message.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.65)
 
     -   ...
     -   <h4>x. ...</h4>
