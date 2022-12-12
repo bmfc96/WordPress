@@ -3552,23 +3552,33 @@ END-NAV-DIR: */...
 
         [//]: # (End f.34)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>35. Determines whether the given email exists.</h4>
 
         ```php
+        function email_exists( $email ): int|false {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - for more information on this and similar theme functions, check out the
+         *   {@link https://developer.wordpress.org/themes/basics/conditional-tags/ Conditional Tags}
+         *   article in the Theme Developer Handbook.
+         * 
+         * @since 2.1.0
+         * 
+         * @param string $email The email to check for existence.
+         * @return int|false The user ID on success, false on failure.
+         */
         ```
 
         ---
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.35)
 
     -   ...
     -   <h4>x. ...</h4>
