@@ -3273,23 +3273,32 @@ END-NAV-DIR: */...
 
         [//]: # (End f.27)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>28. Determines whether the site has a large number of users.</h4>
 
         ```php
+        function wp_is_large_user_count( $network_id = null ): bool {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - the default criteria for a large site is more than 10,000 users.
+         * 
+         * @since 6.0.0
+         * 
+         * @param int|null $network_id ID of the network.
+         *                             Defaults to the current network.
+         * @return bool Whether the site has a large number of users.
+         */
         ```
 
         ---
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.28)
 
     </details>
 
