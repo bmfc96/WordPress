@@ -2839,23 +2839,33 @@ END-NAV-DIR: */...
 
         [//]: # (End f.14)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>15. Retrieves list of users matching criteria.</h4>
 
         ```php
+        function get_users( $args = array() ): array {}
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.1.0
+         * 
+         * @see WP_User_Query
+         * 
+         * @param array $args Optional. Arguments to retrieve users.
+         *                    {@see 'WP_User_Query::prepare_query()'} for more
+         *                    information on accepted arguments.
+         * @return array List of users.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.15)
 
     -   ...
     -   <h4>x. ...</h4>
