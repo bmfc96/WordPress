@@ -3580,23 +3580,30 @@ END-NAV-DIR: */...
 
         [//]: # (End f.35)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>36. Checks whether a username is valid.</h4>
 
         ```php
+        function validate_username( $username ): bool {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 2.0.1
+         * @since 4.4.0 Empty sanitized usernames are now considered invalid.
+         * 
+         * @param string $username Username.
+         * @return bool Whether username given is valid.
+         */
         ```
 
         ---
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.36)
 
     -   ...
     -   <h4>x. ...</h4>
