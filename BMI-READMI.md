@@ -3765,23 +3765,33 @@ END-NAV-DIR: */...
 
         [//]: # (End f.39)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>40. Returns a list of meta keys to be (maybe) populated in <code>wp_update_user()</code>.</h4>
 
         ```php
+        function _get_additional_user_keys( $user ): string[] {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - the list of keys returned via this function are dependent on the presence
+         *   of those keys in the user meta data to be set.
+         * 
+         * @since 3.3.0
+         * @access private
+         * 
+         * @param WP_User $user WP_User instance.
+         * @return string[] List of user keys to be populated in wp_update_user().
+         */
         ```
 
         ---
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.40)
 
     </details>
 
