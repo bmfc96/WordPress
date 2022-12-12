@@ -3052,41 +3052,80 @@ END-NAV-DIR: */...
 
         [//]: # (End f.20)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>21. Retrieves user meta field for a user.</h4>
 
         ```php
+        function get_user_meta( $user_id, $key = '', $single = false ): mixed {}
         ```
 
         <details>
         </summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.0.0
+         * 
+         * @link https://developer.wordpress.org/reference/functions/get_user_meta/
+         * 
+         * @param int    $user_id User ID.
+         * @param string $key     Optional. The meta key to retrieve.
+         *                        By default, returns data for all keys.
+         * @param bool   $single  Optional. Whether to return a single value.
+         *                        This parameter has no effect if `$key` is not specified.
+         *                        Default false.
+         * @return mixed An array of values if `$single` is false.
+         *               The value of meta data field if `$single` is true.
+         *               False for an invalid `$user_id` (non-numeric, zero, or negative value).
+         *               An empty string if a valid but non-existing user ID is passed.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.21)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>22. Updates user meta field based on user ID.</h4>
 
         ```php
+        function update_user_meta( $user_id, $meta_key, $meta_value, $prev_value = '' ): int|bool {}
         ```
 
         <details>
         </summary>Detail</summary>
 
         ```php
+        /**
+         * - use the `$prev_value` parameter to differentiate between meta fields with
+         *   the same key and user ID.
+         * 
+         * - if the meta field for the user does not exist, it will be added.
+         * 
+         * @since 3.0.0
+         * 
+         * @link https://developer.wordpress.org/reference/functions/update_user_meta/
+         * 
+         * @param int    $user_id    User ID.
+         * @param string $meta_key   Metadata key.
+         * @param mixed  $meta_value Metadata value.
+         *                           Must be serializable if non-scalar.
+         * @param mixed  $prev_value Optional. Previous value to check before updating.
+         *                           If specified, only update existing metadata entries with
+         *                           this value. Otherwise, update all entries.
+         *                           Default empty.
+         * @return int|bool Meta ID if the key didn't exist,
+         *                  TRUE on successfull update,
+         *                  FALSE on failure or if the value passed to the function
+         *                  is the same as the one that is already in the database.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.22)
 
     -   ...
     -   <h4>x. ...</h4>
