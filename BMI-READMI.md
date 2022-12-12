@@ -2403,7 +2403,7 @@ END-NAV-DIR: */...
     ```
 
     <details>
-    <summary><h3>FUNCTIONS - Core User API :: user.php</h3></summary>
+    <summary><h3>FUNCTIONS (75) - Core User API :: user.php</h3></summary>
 
     -   <h4>1. Authenticates and logs a user in with 'remember' capability.</h4>
 
