@@ -4687,185 +4687,33 @@ END-NAV-DIR: */...
 
         [//]: # (End f.74)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>75. Registers the user meta property for persisted preferences.</h4>
 
         ```php
+        function wp_register_persisted_preferences_meta(): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - this property is used to store user preferences across page reloads and is
+         *   currently used by the block editor for preferences like 'fullscreenMode' and
+         *   'fixedToolbar'.
+         * 
+         * @since 6.1.0
+         * @access private
+         * 
+         * @global wpdb $wpdb WordPress database abstraction object.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
-
-    -   ...
-    -   <h4>x. ...</h4>
-
-        ```php
-        ```
-
-        <details>
-        <summary>Detail</summary>
-
-        ```php
-        ```
-
-        ---
-
-        </details>
-
-        [//]: # (End f.x)
+        [//]: # (End f.75)
 
     </details>
 
