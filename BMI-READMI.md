@@ -5108,23 +5108,34 @@
 
         [//]: # (End f.5)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>6. Displays the Log In/Out link.</h4>
 
         ```php
+        function wp_loginout( $redirect = '', $display = true ): void|string {}
         ```
 
         <details>
-        <summary>Detail</summary
+        <summary>Detail</summary>
 
         ```php
+        /**
+         * - displays a link, which allows users to navigate to the Log In page
+         *   to log in or log out depending on whether they are currently logged in.
+         * 
+         * @since 1.5.0
+         * 
+         * @param string $redirect  Optional path to redirect to on login/logout.
+         * @param bool   $display   Default to echo and not return the link.
+         * @return void|string Void if `$display` argument is true,
+         *                     log in/out link if `$display` is false.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.6)
 
     </details>
 
