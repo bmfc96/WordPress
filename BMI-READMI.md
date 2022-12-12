@@ -2390,7 +2390,7 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-<summary>51. <b><i>wp-includes/user.php</i></b></summary>
+<summary>51. <code>wp-includes/user.php</code></summary>
 
 - **NOTES**
     ```php
@@ -3605,8 +3605,7 @@ END-NAV-DIR: */...
 
         [//]: # (End f.36)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>37. ...</h4>
 
         ```php
         ```
@@ -3621,7 +3620,7 @@ END-NAV-DIR: */...
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.37)
 
     -   ...
     -   <h4>x. ...</h4>
