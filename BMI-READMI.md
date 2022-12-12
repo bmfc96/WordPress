@@ -4182,23 +4182,44 @@ END-NAV-DIR: */...
 
         [//]: # (End f.55)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>56. Retrieves the current user object.</h4>
 
         ```php
+        function _wp_get_current_user(): WP_User {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - will set the current user, if the current user is not set.
+         * 
+         * - the current user will be set to the logged-in person.
+         * 
+         * - if no user is logged-in, then it will set the current user to 0,
+         *   which is invalid and won't have any permissions.
+         * 
+         * - this function is used by the pluggable functions
+         *   wp_get_current_user() and get_currentuserinfo(),
+         *   the latter of which is deprecated but used for backward compatibility.
+         * 
+         * @since 4.5.0
+         * @access private
+         * 
+         * @see wp_get_current_user()
+         * @see get_currentuserinfo()
+         * @global WP_User $current_user Checks if the current user is set.
+         * 
+         * @return WP_User Current WP_User instance.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.56)
 
     -   ...
     -   <h4>x. ...</h4>
