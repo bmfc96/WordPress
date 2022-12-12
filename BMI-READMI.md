@@ -4555,7 +4555,6 @@ END-NAV-DIR: */...
 
         [//]: # (End f.69)
 
-    -   ...
     -   <h4>70. Validates a user request by comparing the key with the request's key.</h4>
 
         ```php
@@ -4581,23 +4580,29 @@ END-NAV-DIR: */...
 
         [//]: # (End f.70)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>71. Returns the user request object for the specified request ID.</h4>
 
         ```php
+        function wp_get_user_request( $request_id ): WP_User_Request|false {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.9.6
+         * 
+         * @param int $request_id  The ID of the user request.
+         * @return WP_User_Request|false
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.71)
 
     -   ...
     -   <h4>x. ...</h4>
