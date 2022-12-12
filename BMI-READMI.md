@@ -4531,23 +4531,29 @@ END-NAV-DIR: */...
 
         [//]: # (End f.68)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>69. Returns a confirmation key for a user action and stores the hashed version for future comparison.</h4>
 
         ```php
+        function wp_generate_user_request_key( $request_id ): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.9.6
+         * 
+         * @param int $request_id Request ID.
+         * @return string Confirmation key.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.69)
 
     </details>
 
