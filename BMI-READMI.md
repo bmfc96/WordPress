@@ -2240,7 +2240,7 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-<summary>49. <b><i>wp-includes/https-migration.php</i></b></summary>
+<summary>49. <small>wp-includes/https-migration.php</small></summary>
 
 - **NOTES**
     - HTTPS migration functions.
@@ -2362,7 +2362,7 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-<summary>50. <b><i>wp-includes/class-wp-user-request.php</i></b></summary>
+<summary>50. wp-includes/class-wp-user-request.php</summary>
 
 - **NOTES**
     - `WP_User_Request` class.
