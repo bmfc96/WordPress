@@ -2769,22 +2769,44 @@ END-NAV-DIR: */...
         [//]: # (End f.12)
 
     -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>13. Updates user option with global blog capability.</h4>
 
         ```php
+        function update_user_option( $user_id, $option_name, $newvalue, $global = false ) {}
         ```
 
         <details>
         </summary>Detail</summary>
 
         ```php
+        /**
+         * - user options are just like user metadata except that they have support for
+         *   global blog options.
+         * 
+         * - if the 'global' parameter is false, which it is by default,
+         *   it will prepend the WordPress table prefix to the option name.
+         * 
+         * - deletes the user option if `$newvalue` is empty
+         * 
+         * @since 2.0.0
+         * 
+         * @global wpdb $wpdb WordPress database abstraction object.
+         * 
+         * @param int    $user_id     User ID.
+         * @param string $option_name User option name.
+         * @param mixed  $newvalue    User option value.
+         * @param bool   $global      Optional. Whether option name is global or blog specific.
+         *                            Default false (blog specific).
+         * @return int|bool User meta ID if the option didn't exist, true on successfull update
+         *                  false on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.13)
 
     -   ...
     -   <h4>x. ...</h4>
