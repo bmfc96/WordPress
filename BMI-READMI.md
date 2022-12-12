@@ -3300,6 +3300,134 @@ END-NAV-DIR: */...
 
         [//]: # (End f.28)
 
+    <br>
+    <blockquote><h3>Private helper functions.</h3></blockquote>
+
+    -   <h4>29. Sets up global user vars.</h4>
+
+        ```php
+        function setup_userdata( $for_user_id = 0 ): void {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * - used by `wp_set_current_user()` for back compat.
+         * - might be deprecated in the future.
+         * 
+         * @since 2.0.4
+         * 
+         * @global string  $user_login    The user username for logging in.
+         * @global WP_User $userdata      User data.
+         * @global int     $user_level    The level of the user.
+         * @global int     $user_ID       The ID of the user.
+         * @global string  $user_email    The email address of the user.
+         * @global string  $user_url      The url in the user's profile.
+         * @global string  $user_identity The display name of the user.
+         * 
+         * @param int      $for_user_id   Optional. User ID to set up global data.
+         *                                Default 0.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.29)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
     </details>
 
     [//]: # (End of FUNCTIONS)
