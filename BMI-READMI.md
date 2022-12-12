@@ -3460,9 +3460,9 @@ END-NAV-DIR: */...
          * 
          * @since 2.3.0
          * 
-         * @param string $field The user Object field name.
-         * @param mixed $value The user Object value.
-         * @param int $user_id User ID.
+         * @param string $field   The user Object field name.
+         * @param mixed  $value   The user Object value.
+         * @param int    $user_id User ID.
          * @param string $context How to sanitize user fields.
          *                        Looks for 'raw', 'edit', 'db', 'display', 'attribute' and 'js'.
          * @return mixed Sanitized value.
@@ -3475,23 +3475,29 @@ END-NAV-DIR: */...
 
         [//]: # (End f.31)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>32. Updates all user caches.</h4>
 
         ```php
+        function update_user_caches( $user ): void|false {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.0.0
+         * 
+         * @param object|WP_User $user User object or database row to be cached
+         * @return void|false Void on success, false on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.32)
 
     -   ...
     -   <h4>x. ...</h4>
