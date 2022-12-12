@@ -4445,23 +4445,39 @@ END-NAV-DIR: */...
 
         [//]: # (End f.65)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>66. Creates and logs a user request to perform a specific action.</h4>
 
         ```php
+        function wp_create_user_request( $email_address = '', $action_name = '', $request_data = array(), $status = 'pending'): int|WP_Error {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - requests are stored inside a post type named `user_request` since
+         *   they can apply to both users on the site, or guests without a user account.
+         * 
+         * @since 4.9.6
+         * @since 5.7.0 Added the `$status` parameter.
+         * 
+         * @param string $email_address  User email address. This can be the address of
+         *                               a registered or non-registered user.
+         * @param string $action_name    Name of the action that is being confirmed. Required.
+         * @param array  $request_data   Misc data you want to send with the verification request
+         *                               and pass to the action once the request is confirmed.
+         * @param string $status         Optional request status (pending or confirmed).
+         *                               Default 'pending'.
+         * @return int|WP_Error Returns the request ID if successful, or a WP_Error object on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.66)
 
     -   ...
     -   <h4>x. ...</h4>
