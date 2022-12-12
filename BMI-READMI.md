@@ -3202,22 +3202,30 @@ END-NAV-DIR: */...
         [//]: # (End f.24)
 
     -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>25. Updates the total count of users on the site if live user counting is enabled.</h4>
 
         ```php
+        function wp_maybe_update_user_counts( $network_id = null ): bool {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 6.0.0
+         * 
+         * @param int|null $network_id ID of the network.
+         *                             Defaults to the current network.
+         * @return bool Whether the update was successful.
+         */
         ```
 
         ---
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.25)
 
     -   ...
     -   <h4>x. ...</h4>
