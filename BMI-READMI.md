@@ -3524,6 +3524,34 @@ END-NAV-DIR: */...
 
         [//]: # (End f.33)
 
+    -   <h4>34. Determines whether the given username exists.</h4>
+
+        ```php
+        function username_exists( $username ): int|false {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * - for more information on this and similar theme functions, check out the
+         *   {@link https://developer.wordpress.org/themes/basics/conditional-tags/ Conditional Tags}
+         *   article in the Theme Developer Handbook.
+         * 
+         * @since 2.0.0
+         * 
+         * @param string $username The username to check for existence.
+         * @return int|false The user ID on success, false on failure.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.34)
+
     -   ...
     -   <h4>x. ...</h4>
 
@@ -3537,7 +3565,97 @@ END-NAV-DIR: */...
         ```
 
         ---
+        
+        </details>
 
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
         </details>
 
         [//]: # (End f.x)
