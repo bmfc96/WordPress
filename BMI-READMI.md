@@ -5013,41 +5013,100 @@
 
         [//]: # (End f.3)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>4. Loads a template part into a template.</h4>
 
         ```php
+        function get_template_part( $slug, $name = null, $args = array() ): void|false {}
         ```
 
         <details>
         <summary>Detail</summary
 
         ```php
+        /**
+         * - provides a simple mechanism for child themes to overload reusable sections of code
+         *   in the theme.
+         * 
+         * - includes the named template part for a theme or if a name is specified then
+         *   a specialised part will be included.
+         *   If the theme contains no {slug}.php file
+         *   then no template will be included.
+         * 
+         * - the template is included using require, not require_once, so you may include the
+         *   same template part multiple times.
+         * 
+         * - for the `$name` parameter, if the file is called "{slug}-special.php"
+         *   then specify "special".
+         * 
+         * @since 3.0.0
+         * @since 5.5.0 A return value was added.
+         * @since 5.5.0 The `$args` parameter was added.
+         * 
+         * @param string $slug  The slug name for the generic template.
+         * @param string $name  The name of the specialised template.
+         * @param array  $args  Optional. Additional arguments passed to the template.
+         *                      Default empty array.
+         * @return void|false Void on success, false if the template does not exist.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.4)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>5. Displays search form.</h4>
 
         ```php
+        function get_search_form( $args = array() ): void|string {}
         ```
 
         <details>
         <summary>Detail</summary
 
         ```php
+        /**
+         * - will first attempt to locate the searchform.php file in either the child,
+         *   or the parent, then load it.
+         *   If it doesn't exist, then the default search form will be displayed.
+         *   The default search form is HTML, which will be displayed.
+         *   There is a filter applied to the search form HTML in order to edit or
+         *   replace it. The filter is
+         *   {@see 'get_search_form'}.
+         * 
+         * - this function is primarily used by themes which want to hardcode the search
+         *   form into the sidebar and also by the search widget in WordPress.
+         * 
+         * - there is also an action that is called whenever the function is run called,
+         *   {@see 'pre_get_search_form'}.
+         *   This can be useful for outputting JavaScript that the search relies on
+         *   or various formatting that applies to the beginning of the search.
+         *   To give a few examples of what it can be used for.
+         * 
+         * @since 2.7.0
+         * @since 5.2.0 The `$args` array parameter was added in place of an `$echo` boolean flag.
+         * 
+         * @param array $args {
+         *      Optional. Array of display arguments.
+         * 
+         *      @type bool   $echo        Whether to echo or return the form.
+         *                                Default true.
+         *      @type string $aria_label  ARIA label for the search form.
+         *                                Useful to distinguish multiple search forms on
+         *                                the same page and improve accessibility.
+         *                                Default empty.
+         * }
+         * @return void|string Void if 'echo' argument is true,
+         *                     search form HTML if 'echo' is false.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.5)
 
     -   ...
     -   <h4>x. ...</h4>
