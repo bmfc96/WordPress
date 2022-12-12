@@ -5273,23 +5273,29 @@
 
         [//]: # (End f.10)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>11. Returns the URL that allows the user to reset the lost password.</h4>
 
         ```php
+        function wp_lostpassword_url( $redirect = '' ): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 2.8.0
+         * 
+         * @param string $redirect  Path to redirect to on login.
+         * @return string Lost password URL.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.11)
 
     -   ...
     -   <h4>x. ...</h4>
