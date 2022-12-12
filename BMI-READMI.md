@@ -2607,7 +2607,6 @@ END-NAV-DIR: */...
 
         [//]: # (End f.7)
     
-    -   ...
     -   <h4>8. Validates the logged-in cookie.</h4>
 
         ```php
@@ -2641,7 +2640,6 @@ END-NAV-DIR: */...
 
         [//]: # (End f.8)
 
-    -   ...
     -   <h4>9. Gets the number of posts a user has written.</h4>
 
         ```php
@@ -2675,7 +2673,6 @@ END-NAV-DIR: */...
 
         [//]: # (End f.9)
 
-    -   ...
     -   <h4>10. Gets the number of posts written by a list of users.</h4>
 
         ```php
@@ -2768,7 +2765,6 @@ END-NAV-DIR: */...
 
         [//]: # (End f.12)
 
-    -   ...
     -   <h4>13. Updates user option with global blog capability.</h4>
 
         ```php
@@ -2808,23 +2804,40 @@ END-NAV-DIR: */...
 
         [//]: # (End f.13)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>14. Deletes user option with global blog capability.</h4>
 
         ```php
+        function delete_user_option( $user_id, $option_name, $global = false ) {}
         ```
 
         <details>
         </summary>Detail</summary>
 
         ```php
+        /**
+         * - user options are just like user metadata except that they have support for
+         *   global blog options.
+         * 
+         * - if the 'global' parameter is false, which it is by default,
+         *   it will prepend the WordPress table prefix to the option name.
+         * 
+         * @since 3.0.0
+         * 
+         * @global wpdb $wpdb WordPress database abstraction object.
+         * 
+         * @param int    $user_id     User ID.
+         * @param string $option_name User option name.
+         * @param bool   $global      Optional. Whether option name is global or blog specific.
+         *                            Default false (blog specific).
+         * @return bool True on success, false on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.14)
 
     -   ...
     -   <h4>x. ...</h4>
