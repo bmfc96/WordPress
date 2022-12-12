@@ -4070,23 +4070,28 @@ END-NAV-DIR: */...
 
         [//]: # (End f.50)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>51. Retrieves a list of sessions for the current user.</h4>
 
         ```php
+        function wp_get_all_sessions(): array {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.0.0
+         * 
+         * @return array Array of sessions.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.51)
 
     -   ...
     -   <h4>x. ...</h4>
