@@ -4345,23 +4345,29 @@ END-NAV-DIR: */...
 
         [//]: # (End f.61)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>62. Updates log when privacy request is confirmed.</h4>
 
         ```php
+        function _wp_privacy_account_request_confirmed( $request_id ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.9.6
+         * @access private
+         * 
+         * @param int $request_id ID of the request.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.62)
 
     -   ...
     -   <h4>x. ...</h4>
