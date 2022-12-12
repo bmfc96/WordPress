@@ -3021,7 +3021,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -3059,7 +3059,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -3093,7 +3093,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -3127,23 +3127,50 @@ END-NAV-DIR: */...
 
         [//]: # (End f.22)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>23. Counts number of users who have each of the user roles.</h4>
 
         ```php
+        function count_users( $strategy = 'time', $site_id = null ): array {}
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
+        /**
+         * - assumes there are neither duplicated nor orphaned capabilities meta_values.
+         * - assumes role names are unique phrases.
+         * - same assumption made by WP_User_Query::prepare_query()
+         * - using `$strategy = 'time'` this is CPU-intensive and should handle around
+         *   10^7 users.
+         * - using `$strategy = 'memory'` this is memory-intensive and should handle around
+         *   10^5 users, but see WP Bug #12257
+         * 
+         * @since 3.0.0
+         * @since 4.4.0 The number of users with no role is now included in the `none` element.
+         * @since 4.9.0 The `$site_id` parameter was added to support multisite.
+         * 
+         * @global wpdb $wpdb WordPress database abstraction object.
+         * 
+         * @param string $strategy Optional. The computational strategy to use when counting the users.
+         *                         Accepts either 'time' or 'memory'.
+         *                         Default 'time'.
+         * @param int|null $site_id Optional. The site ID to count users for.
+         *                          Defaults to the current site.
+         * @return array {
+         *      User counts.
+         * 
+         *      @type int   $total_users Total number of users on the site.
+         *      @type int[] $avail_roles Array of user counts keyed by user role.
+         * }
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.23)
 
     </details>
 
