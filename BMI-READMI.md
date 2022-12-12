@@ -5353,23 +5353,30 @@
 
         [//]: # (End f.13)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>14. Displays information about the current site.</h4>
 
         ```php
+        function bloginfo( $show = '' ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 0.71
+         * 
+         * @see get_bloginfo() For possible `$show` values
+         * 
+         * @param string $show  Optional. Site information to display. Default empty.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.14)
 
     -   ...
     -   <h4>x. ...</h4>
