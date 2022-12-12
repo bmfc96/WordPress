@@ -4246,23 +4246,30 @@ END-NAV-DIR: */...
 
         [//]: # (End f.57)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>58. Adds an admin notice alerting the user to check for confirmation request email after email address change.</h4>
 
         ```php
+        function new_user_email_admin_notice(): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.0.0
+         * @since 4.9.0 This function was moved from 'wp-admin/includes/ms.php'
+         *              so it's no longer Multisite specific.
+         * 
+         * @global string $pagenow The filename of the current screen.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.58)
 
     </details>
 
