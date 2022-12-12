@@ -4894,3 +4894,436 @@
 </details>
 
 [//]: # (End 55)
+
+<details>
+<summary>56. wp-includes/<code>general-template.php</code></summary>
+
+- **NOTES**
+    - <h4>General template tags that can go anywhere in a template.</h4>
+
+        ```php
+        /**
+         * @package WordPress
+         * @subpackage Template
+         */
+        ```
+
+    <details>
+    <summary><h3>FUNCTIONS (-) - General template tags :: general-template.php</h3></summary>
+
+    -   <h4>1. Loads header template.</h4>
+
+        ```php
+        function get_header( $name = null, $args = array() ): void|false {}
+        ```
+
+        <details>
+        <summary>Detail</summary
+
+        ```php
+        /**
+         * - includes the header template for a theme or if a name is specified then
+         *   a specialised header will be included.
+         * 
+         * - for the parameter, if the file is called "header-special.php" then specify
+         *   "special".
+         * 
+         * @since 1.5.0
+         * @since 5.5.0 A return value was added.
+         * @since 5.5.0 The `$args` parameter was added.
+         * 
+         * @param string $name  The name of the specialised header.
+         * @param array  $args  Optional. Additional arguments passed to the header template.
+         *                      Default empty array.
+         * @return void|false Void on success, false if the template does not exist.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.1)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    </details>
+
+---
+
+</details>
+
+[//]: # (End 56)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
+
+<details>
+<summary>x. wp-includes/<code>...</code></summary>
+
+- **NOTES**
+    - <h4>...</h4>
+    - ...
+
+    <details>
+    <summary>~-~</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End x)
