@@ -549,7 +549,7 @@
             and instantiated.
             AJAX requests should use wp-admin/admin-ajax.php
             admin-ajax.php can handle requests for users not logged in
-END-NAV-DIR: */...
+
 
 6. **`wp-includes/versions.php`**
     - This module is responsible on:
@@ -4722,3 +4722,39 @@ END-NAV-DIR: */...
 ---
 
 </details>
+
+[//]: # (End 51)
+
+<details>
+<summary>52. wp-includes/<code>class-wp-user-query.php</code></summary>
+
+- **NOTES**
+    - `WP_User_Query` class.
+    - core class used for querying users.
+    - this module contains `WP_User_Query` class definition.
+    
+        ```php
+        /**
+         * User API: WP_User_Query class
+         * 
+         * @package WordPress
+         * @subpackage Users
+         * @since 4.4.0
+         */
+
+        /**
+         * Core class used for querying users.
+         * 
+         * @since 3.1.0
+         * 
+         * @see WP_User_Query::prepare_query() for information on accepted arguments.
+         */
+        #[AllowDynamicProperties]
+        class WP_User_Query {}
+        ```
+
+---
+
+</details>
+
+[//]: # (End 52)
