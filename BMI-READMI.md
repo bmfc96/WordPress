@@ -4114,23 +4114,26 @@ END-NAV-DIR: */...
 
         [//]: # (End f.52)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>53. Removes all but the current session token for the current user for the database.</h4>
 
         ```php
+        function wp_destroy_other_sessions(): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.0.0
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.53)
 
     -   ...
     -   <h4>x. ...</h4>
