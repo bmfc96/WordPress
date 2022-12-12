@@ -3989,23 +3989,30 @@ END-NAV-DIR: */...
 
         [//]: # (End f.47)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>48. Handles registering a new user.</h4>
 
         ```php
+        function register_new_user( $user_login, $user_email ): int|WP_Error {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 2.5.0
+         * 
+         * @param string $user_login  User's username for logging in.
+         * @param string $user_email  User's email address to send password and add.
+         * @return int|WP_Error Either user's ID or WP_Error on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.48)
 
     -   ...
     -   <h4>x. ...</h4>
