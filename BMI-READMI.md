@@ -4767,3 +4767,40 @@
 </details>
 
 [//]: # (End 52)
+
+<details>
+<summary>53. wp-includes/<code>class-wp-session-tokens.php</code></summary>
+
+- **NOTES**
+    - `WP_Session_Tokens` abstract class.
+    - abstract class for managing user session tokens.
+
+        ```php
+        /**
+         * Session API: WP_Session_Tokens class
+         * 
+         * @package WordPress
+         * @subpackage Session
+         * @since 4.7.0
+         */
+
+        /**
+         * Abstract class for managing user session tokens.
+         * 
+         * @since 4.0.0
+         */
+        #[AllowDynamicProperties]
+        abstract class WP_Session_Tokens {}
+        ```
+    
+    <details>
+    <summary>FUNCTIONS (-)</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End 53)
