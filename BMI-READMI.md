@@ -2390,7 +2390,7 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-<summary>51. <code>wp-includes/user.php</code></summary>
+<summary>51. wp-includes/<code>user.php</code></summary>
 
 - **NOTES**
     ```php
