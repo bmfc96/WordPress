@@ -2362,7 +2362,7 @@ END-NAV-DIR: */...
 </details>
 
 <details>
-<summary>50. wp-includes/class-wp-user-request.php</summary>
+<summary>50. wp-includes/<code>class-wp-user-request.php</code></summary>
 
 - **NOTES**
     - `WP_User_Request` class.
