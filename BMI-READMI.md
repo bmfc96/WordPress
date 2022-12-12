@@ -4503,23 +4503,33 @@ END-NAV-DIR: */...
 
         [//]: # (End f.67)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>68. Send a confirmation request email to confirm an action.</h4>
 
         ```php
+        function wp_send_user_request( $request_id ): true|WP_Error {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - if the request is not already pending, it will be updated.
+         * 
+         * @since 4.9.6
+         * 
+         * @see wp_create_user_request()
+         * 
+         * @param string $request_id ID of the request created via wp_create_user_request().
+         * @return true|WP_Error True on success, WP_Error on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.68)
 
     -   ...
     -   <h4>x. ...</h4>
