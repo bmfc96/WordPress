@@ -4604,7 +4604,7 @@ END-NAV-DIR: */...
 
         [//]: # (End f.71)
 
-    -   <h4>x. Checks if Application Passwords is supported.</h4>
+    -   <h4>72. Checks if Application Passwords is supported.</h4>
 
         ```php
         function wp_is_application_password_supported(): bool {}
@@ -4628,25 +4628,35 @@ END-NAV-DIR: */...
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.72)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>73. Checks uf Application Password is globally available.</h4>
 
         ```php
+        function wp_is_application_passwords_available(): bool {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - by default, Application Passwords is available to all sites using SSL or to local
+         *   environments.
+         * 
+         * - use the {@see 'wp_is_application_passwords_available'} filter to adjust its availability.
+         * 
+         * @since 5.6.0
+         * 
+         * @return bool
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.73)
 
     -   ...
     -   <h4>x. ...</h4>
