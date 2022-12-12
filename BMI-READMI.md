@@ -2703,7 +2703,9 @@ END-NAV-DIR: */...
 
         [//]: # (End f.10)
 
+    <br>
     <blockquote><h3>User option functions.</h3></blockquote>
+    <br>
 
     -   <h4>11. Gets the current user's ID.</h4>
 
