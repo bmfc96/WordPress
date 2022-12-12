@@ -5189,23 +5189,28 @@
 
         [//]: # (End f.8)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>9. Returns the URL that allows the user to register on the site.</h4>
 
         ```php
+        function wp_registration_url(): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.6.0
+         * 
+         * @return string User registration URL.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.9)
 
     -   ...
     -   <h4>x. ...</h4>
