@@ -4093,23 +4093,26 @@ END-NAV-DIR: */...
 
         [//]: # (End f.51)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>52. Removes the current session token from the database.</h4>
 
         ```php
+        function wp_destroy_current_session(): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.0.0
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.52)
 
     -   ...
     -   <h4>x. ...</h4>
