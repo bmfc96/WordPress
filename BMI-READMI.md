@@ -3821,23 +3821,34 @@ END-NAV-DIR: */...
 
         [//]: # (End f.41)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>42. The old private function for setting up user contact methods.</h4>
 
         ```php
+        function _wp_get_user_contactmethods( $user = null ) {
+            return wp_get_user_contact_methods( $user );
+        }
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - use {@see wp_get_user_contact_methods()} instead.
+         * 
+         * @since 2.9.0
+         * @access private
+         * 
+         * @param WP_User|null $user Optional. WP_User object. Default null.
+         * @return string[] Array of contact method labels keyed by contact method.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.42)
 
     -   ...
     -   <h4>x. ...</h4>
