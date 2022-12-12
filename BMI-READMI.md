@@ -3965,6 +3965,228 @@ END-NAV-DIR: */...
 
         [//]: # (End f.46)
 
+    -   <h4>47. Handles resetting the user's password.</h4>
+
+        ```php
+        function reset_password( $user, $new_pass ): void {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * @since 2.5.0
+         * 
+         * @param WP_User $user     The user.
+         * @param string  $new_pass New password for the user in plaintext.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.47)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
     </details>
 
     [//]: # (End of FUNCTIONS)
