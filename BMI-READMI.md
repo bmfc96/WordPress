@@ -4295,23 +4295,29 @@ END-NAV-DIR: */...
 
         [//]: # (End f.59)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>60. Registers the personal data exporter for users.</h4>
 
         ```php
+        function wp_register_user_personal_data_exporter( $exporters ): array[] {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.9.6
+         * 
+         * @param array[] $exporters An array of personal data exporters.
+         * @return array[] An array of personal data exporters.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.60)
 
     -   ...
     -   <h4>x. ...</h4>
