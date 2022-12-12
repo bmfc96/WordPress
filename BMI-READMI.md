@@ -2987,23 +2987,32 @@ END-NAV-DIR: */...
 
         [//]: # (End f.18)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>19. Adds meta data to a user.</h4>
 
         ```php
+        function add_user_meta( $user_id, $meta_key, $meta_value, $unique = false ): int|false {}
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 3.0.0
+         * @param int    $user_id    User ID.
+         * @param string $meta_key   Metadata name.
+         * @param mixed  $meta_value Metadata value. Must be serializable if non-scalar.
+         * @param bool   $unique     Optional. Whether the same key should not be added.
+         *                           Default false.
+         * @return int|false Meta ID on success, false on failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.19)
 
     -   ...
     -   <h4>x. ...</h4>
