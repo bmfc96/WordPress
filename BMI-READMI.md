@@ -5137,6 +5137,392 @@
 
         [//]: # (End f.6)
 
+    -   <h4>7. Retrieves the logout URL.</h4>
+
+        ```php
+        function wp_logout_url( $redirect = '' ): string {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * - returns the URL that allows the user to log out of the site.
+         * 
+         * @since 2.7.0
+         * 
+         * @param string $redirect  Path to redirect to on logout.
+         * @return string The logout URL. Note: HTML-encoded via esc_html() in wp_nonce_url().
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.7)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
     </details>
 
 ---
