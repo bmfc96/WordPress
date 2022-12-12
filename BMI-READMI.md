@@ -2927,6 +2927,38 @@ END-NAV-DIR: */...
         [//]: # (End f.16)
 
     -   ...
+    -   <h4>17. Gets the sites a user belongs to.</h4>
+
+        ```php
+        function get_blogs_of_user( $user_id, $all = false ): object[] {}
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        /**
+         * @since 3.0.0
+         * @since 4.7.0 Converted to use `get_sites()`.
+         * 
+         * @global wpdb $wpdb WordPress database abstraction object.
+         * 
+         * @param int  $user_id User ID.
+         * @param bool $all     Whether to retrieve all sites, or only sites
+         *                      that are not marked as deleted, archived, or spam.
+         * @return object[] A list of the user's sites.
+         *                  An empty array if the user doesn't exist
+         *                  or belongs to no sites.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.17)
+
+    -   ...
     -   <h4>x. ...</h4>
 
         ```php
@@ -2945,7 +2977,94 @@ END-NAV-DIR: */...
         [//]: # (End f.x)
 
     -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
     -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        </summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.x)
 
     </details>
 
