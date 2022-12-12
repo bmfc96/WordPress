@@ -3226,15 +3226,24 @@ END-NAV-DIR: */...
 
         [//]: # (End f.25)
 
-    -   <h4>26. ...</h4>
+    -   <h4>26. Updates the total count of users on the site.</h4>
 
         ```php
+        function wp_update_user_counts( $network_id = null ): bool {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @global wpdb $wpdb WordPress database abstraction object.
+         * @since 6.0.0
+         * 
+         * @param int|null $network_id ID of the network.
+         *                             Defaults to the current network.
+         * @return bool Whether the update was successful.
+         */
         ```
 
         ---
@@ -3243,23 +3252,26 @@ END-NAV-DIR: */...
 
         [//]: # (End f.26)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>27. Schedules a recurring recalculation of the total count of users.</h4>
 
         ```php
+        function wp_schedule_update_user_counts(): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 6.0.0
+         */
         ```
 
         ---
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.27)
 
     -   ...
     -   <h4>x. ...</h4>
