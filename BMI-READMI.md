@@ -3850,23 +3850,28 @@ END-NAV-DIR: */...
 
         [//]: # (End f.42)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>43. Gets the text suggesting how to create strong password.</h4>
 
         ```php
+        function wp_get_password_hint(): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.1.0
+         * 
+         * @return string The password hint text.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.43)
 
     -   ...
     -   <h4>x. ...</h4>
