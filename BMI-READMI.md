@@ -3873,23 +3873,32 @@ END-NAV-DIR: */...
 
         [//]: # (End f.43)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>44. Creates, stores, then returns a password reset key for user.</h4>
 
         ```php
+        function get_password_reset_key( $user ): string|WP_Error {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.4.0
+         * 
+         * @global PasswordHash $wp_hasher Portable PHP password hashing framework.
+         * 
+         * @param WP_User $user User to retrieve password reset key for.
+         * @return string|WP_Error Password reset key on success.
+         *                         WP_Error on error.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.44)
 
     -   ...
     -   <h4>x. ...</h4>
