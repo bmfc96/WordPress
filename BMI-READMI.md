@@ -4630,7 +4630,7 @@ END-NAV-DIR: */...
 
         [//]: # (End f.72)
 
-    -   <h4>73. Checks uf Application Password is globally available.</h4>
+    -   <h4>73. Checks if Application Password is globally available.</h4>
 
         ```php
         function wp_is_application_passwords_available(): bool {}
@@ -4658,23 +4658,34 @@ END-NAV-DIR: */...
 
         [//]: # (End f.73)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>74. Checks if Application Passwords is available for a specific user.</h4>
 
         ```php
+        function wp_is_application_passwords_available_for_user( $user ): bool {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - by default, all users can use Application Passwords.
+         * 
+         * - use {@see 'wp_is_application_passwords_available_for_user'}
+         *   filter to restrict availability to certain users.
+         * 
+         * @since 5.6.0
+         * 
+         * @param int|WP_User $user  The user to check.
+         * @return bool
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.74)
 
     -   ...
     -   <h4>x. ...</h4>
