@@ -4369,23 +4369,31 @@ END-NAV-DIR: */...
 
         [//]: # (End f.62)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>63. Notifies the site administrator via email when a request is confirmed.</h4>
 
         ```php
+        function _wp_privacy_send_request_confirmation_notification( $request_id ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - without this, the admin would have to manually check the site to see
+         *   if any action was needed on their part yet.
+         * 
+         * @since 4.9.6
+         * 
+         * @param int $request_id The ID of the request.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.63)
 
     -   ...
     -   <h4>x. ...</h4>
