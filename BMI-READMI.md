@@ -4804,3 +4804,39 @@
 </details>
 
 [//]: # (End 53)
+
+<details>
+<summary>54. wp-includes/<code>class-wp-user-meta-session-tokens.php</code></summary>
+
+- **NOTES**
+    - <h4>Session API: WP_User_Meta_Session_Tokens class</h4>
+    - this module contains class `WP_User_Meta_Session_Tokens` extends `WP_Session_Tokens` class definition.
+
+        ```php
+        /**
+         * @package WordPress
+         * @subpackage Session
+         * @since 4.7.0
+         */
+
+        /**
+         * Meta-based user session token manager.
+         * 
+         * @since 4.0.0
+         * 
+         * @see WP_Session_Tokens
+         */
+        class WP_User_Meta_Session_Tokens extends WP_Session_Tokens {}
+        ```
+
+    <details>
+    <summary>FUNCTIONS (-)</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
+
+[//]: # (End 54)
