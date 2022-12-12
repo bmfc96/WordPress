@@ -2874,7 +2874,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -2926,7 +2926,6 @@ END-NAV-DIR: */...
 
         [//]: # (End f.16)
 
-    -   ...
     -   <h4>17. Gets the sites a user belongs to.</h4>
 
         ```php
@@ -2934,7 +2933,7 @@ END-NAV-DIR: */...
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -2958,23 +2957,34 @@ END-NAV-DIR: */...
 
         [//]: # (End f.17)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>18. Finds out whether a user is a member of a given blog.</h4>
 
         ```php
+        function is_user_member_of_blog( $user_id = 0, $blog_id = 0 ): bool {}
         ```
 
         <details>
-        </summary>Detail</summary>
+        <summary>Detail</summary>
 
         ```php
+        /**
+         * @since MU (3.0.0)
+         * 
+         * @global wpdb $wpdb WordPress database abstraction object.
+         * 
+         * @param int $user_id Optional. The unique ID of the user.
+         *                     Defaults to the current user.
+         * @param int $blog_id Optional. ID of the blog to check.
+         *                     Defaults to the current site.
+         * @return bool
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.18)
 
     -   ...
     -   <h4>x. ...</h4>
