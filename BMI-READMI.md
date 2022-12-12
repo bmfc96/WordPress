@@ -3201,7 +3201,6 @@ END-NAV-DIR: */...
 
         [//]: # (End f.24)
 
-    -   ...
     -   <h4>25. Updates the total count of users on the site if live user counting is enabled.</h4>
 
         ```php
@@ -3227,8 +3226,7 @@ END-NAV-DIR: */...
 
         [//]: # (End f.25)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>26. ...</h4>
 
         ```php
         ```
@@ -3243,7 +3241,7 @@ END-NAV-DIR: */...
         
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.26)
 
     -   ...
     -   <h4>x. ...</h4>
