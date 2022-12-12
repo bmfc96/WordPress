@@ -3936,23 +3936,34 @@ END-NAV-DIR: */...
 
         [//]: # (End f.45)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>46. Handles sending a password retrieval email to a user.</h4>
 
         ```php
+        function retrieve_password( $user_login = null ): true|WP_Error {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 2.5.0
+         * @since 5.7.0 Added `$user_login` parameter.
+         * 
+         * @global wpdb         $wpdb       WordPress database abstraction object.
+         * @global PasswordHash $wp_hasher  Portable PHP password hashing framework instance.
+         * 
+         * @param string $user_login  Optional. Username to send a password retrieval email for.
+         *                            Defaults to `$_POST['user_login']` if not set.
+         * @return true|WP_Error True when finished, WP_Error object on error.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.46)
 
     </details>
 
