@@ -4479,23 +4479,29 @@ END-NAV-DIR: */...
 
         [//]: # (End f.66)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>67. Gets action description from the name and return a string.</h4>
 
         ```php
+        function wp_user_request_action_description( $action_name ): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.9.6
+         * 
+         * @param string $action_name Action name of the request.
+         * @return string Human readable action name.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.67)
 
     -   ...
     -   <h4>x. ...</h4>
