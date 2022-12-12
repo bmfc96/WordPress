@@ -4952,7 +4952,7 @@
         ```
 
         <details>
-        <summary>Detail</summary
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -4986,7 +4986,7 @@
         ```
 
         <details>
-        <summary>Detail</summary
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -5020,7 +5020,7 @@
         ```
 
         <details>
-        <summary>Detail</summary
+        <summary>Detail</summary>
 
         ```php
         /**
@@ -5063,7 +5063,7 @@
         ```
 
         <details>
-        <summary>Detail</summary
+        <summary>Detail</summary>
 
         ```php
         /**
