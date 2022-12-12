@@ -3172,6 +3172,107 @@ END-NAV-DIR: */...
 
         [//]: # (End f.23)
 
+    -   <h4>24. Returns the number of active users in your installation.</h4>
+
+        ```php
+        function get_user_count( $network_id = null ): int {}
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        /**
+         * - note that on a large site the count may be cached and only updated twice daily.
+         * 
+         * @since MU (3.0.0)
+         * @since 4.8.0 The `$network_id` parameter has been added.
+         * @since 6.0.0 Moved to wp-includes/user.php.
+         * 
+         * @param int|null $network_id ID of the network.
+         *                             Defaults to the current network.
+         * @return int Number of active users on the network.
+         */
+        ```
+
+        ---
+
+        </details>
+
+        [//]: # (End f.24)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
+    -   ...
+    -   <h4>x. ...</h4>
+
+        ```php
+        ```
+
+        <details>
+        <summary>Detail</summary>
+
+        ```php
+        ```
+
+        ---
+        
+        </details>
+
+        [//]: # (End f.x)
+
     </details>
 
     [//]: # (End of FUNCTIONS)
