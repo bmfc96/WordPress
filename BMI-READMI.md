@@ -4840,3 +4840,26 @@
 </details>
 
 [//]: # (End 54)
+
+<details>
+<summary>55. wp-includes/<code>class-wp-metadata-lazyloader.php</code></summary>
+
+- **NOTES**
+    - <h4>Meta API: WP_Metadata_Lazyloader class</h4>
+    - this module contains class `WP_Metadata_Lazyloader` definition.
+
+        ```php
+        /**
+         * 
+         */
+        ```
+
+    <details>
+    <summary>FUNCTIONS (-)</summary>
+
+    ...
+    </details>
+
+---
+
+</details>
