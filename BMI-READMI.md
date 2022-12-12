@@ -4156,23 +4156,31 @@ END-NAV-DIR: */...
 
         [//]: # (End f.54)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>55. Gets the user IDs of all users with no role on this site.</h4>
 
         ```php
+        function wp_get_users_with_no_role( $site_id = null ): string[] {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.4.0
+         * @since 4.9.0 The `$site_id` parameter was added to support multisite.
+         * 
+         * @param int|null $site_id Optional. The site ID to get users with no role for.
+         *                          Defaults to the current site.
+         * @return string[] Array of user IDs as strings.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.55)
 
     -   ...
     -   <h4>x. ...</h4>
