@@ -5878,41 +5878,55 @@
 
         [//]: # (End f.30)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>31. Displays the archive title based on the queried object.</h4>
 
         ```php
+        function the_archive_title( $before = '', $after = '' ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.1.0
+         * 
+         * @see get_the_archive_title()
+         * 
+         * @param string $before  Optional. Content to prepend to the title. Default empty.
+         * @param string $after   Optional. Content to append  to the title. Default empty.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.31)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>32. Retrieves the archive title based on the queried object.</h4>
 
         ```php
+        function get_the_archive_title(): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.1.0
+         * @since 5.5.0 The title part is wrapped in a `<span>` element.
+         * 
+         * @return string Archive title.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.32)
 
     -   ...
     -   <h4>x. ...</h4>
