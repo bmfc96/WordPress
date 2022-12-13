@@ -5692,23 +5692,38 @@
 
         [//]: # (End f.24)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>25. Displays or retrieves page title for post.</h4>
 
         ```php
+        function single_post_title( $prefix = '', $display = true ): string|void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - this is optimized for `single.php` template file for displaying the post title.
+         * 
+         * - it does not support placing the separator after the title, but by leaving the
+         *   prefix parameter empty, you can set the title separator manually.
+         *   The prefix does not automatically place a space between the prefix, so if there
+         *   should be a space, the parameter value will need to have it at the end.
+         * 
+         * @since 0.71
+         * 
+         * @param string $prefix   Optional. What to display before the title.
+         * @param bool   $display  Optional. Whether to display or retrieve title.
+         *                         Default true.
+         * @return string|void Title when retrieving.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.25)
 
     -   ...
     -   <h4>x. ...</h4>
