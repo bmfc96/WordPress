@@ -5624,23 +5624,29 @@
 
         [//]: # (End f.22)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>23. Displays title tag with content.</h4>
 
         ```php
+        function _wp_render_title_tag(): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @ignore
+         * @since 4.1.0
+         * @since 4.4.0 Improved title output replaced `wp_title()`.
+         * @access private
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.23)
 
     -   ...
     -   <h4>x. ...</h4>
