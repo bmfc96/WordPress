@@ -5443,23 +5443,32 @@
 
         [//]: # (End f.15)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>16. Returns the Site Icon URL.</h4>
 
         ```php
+        function get_site_icon_url( $size = 512, $url = '', $blog_id = 0 ): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.3.0
+         * 
+         * @param int    $size     Optional. Size of the site icon. Default 512 (pixels).
+         * @param string $url      Optional. Fallback url if no site icon is found. Default empty.
+         * @param int    $blog_id  Optional. ID of the blog to get the site icon for.
+         *                         Default current blog.
+         * @return string Site Icon URL.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.16)
 
     -   ...
     -   <h4>x. ...</h4>
