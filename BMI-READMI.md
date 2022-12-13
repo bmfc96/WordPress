@@ -5928,41 +5928,58 @@
 
         [//]: # (End f.32)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>33. Displays category, tag, term, or author description.</h4>
 
         ```php
+        function the_archive_description( $before = '', $after = '' ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.1.0
+         * 
+         * @see get_the_archive_description()
+         * 
+         * @param string $before  Optional. Content to prepend to the description. Default empty.
+         * @param string $after   Optional. Content to append  to the description. Default empty.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.33)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>34. Retrieves the description for an author, post type, or term archive.</h4>
 
         ```php
+        function get_the_archive_description(): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.1.0
+         * @since 4.7.0 Added support for author archives.
+         * @since 4.9.0 Added support for post type archives.
+         * 
+         * @see term_description()
+         * 
+         * @return string Archive description.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.34)
 
     -   ...
     -   <h4>x. ...</h4>
