@@ -5574,23 +5574,29 @@
 
         [//]: # (End f.20)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>21. Displays a custom logo, linked to home unless the theme supports removing the link on the home page.</h4>
 
         ```php
+        function the_custom_logo( $blog_id = 0 ): void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.5.0
+         * 
+         * @param int $blog_id  Optional. ID of the blog in question.
+         *                      Default is the ID of the current blog.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.21)
 
     -   ...
     -   <h4>x. ...</h4>
