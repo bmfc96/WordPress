@@ -5598,23 +5598,31 @@
 
         [//]: # (End f.21)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>22. Returns document title for the current page.</h4>
 
         ```php
+        function wp_get_document_title(): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.4.0
+         * 
+         * @global int $page   Page number of a single post.
+         * @global int $paged  Page number of a list of posts.
+         * 
+         * @return string Tag with the document title.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.22)
 
     -   ...
     -   <h4>x. ...</h4>
