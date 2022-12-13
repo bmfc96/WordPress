@@ -5725,23 +5725,34 @@
 
         [//]: # (End f.25)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>26. Displays or retrieves title for a post type archive.</h4>
 
         ```php
+        function post_type_archive_title( $prefix = '', $display = true ): string|void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - this is optimized for `archive.php` and `archive-{$post_type}.php`
+         *   template files for displaying the title of the post type.
+         * 
+         * @since 3.1.0
+         * 
+         * @param string $prefix   Optional. What to display before the title.
+         * @param bool   $display  Optional. Whether to display or retrieve title.
+         *                         Default true.
+         * @return string|void Title when retrieving, null when displaying or failure.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.26)
 
     -   ...
     -   <h4>x. ...</h4>
