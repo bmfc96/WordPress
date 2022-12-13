@@ -5545,23 +5545,34 @@
 
         [//]: # (End f.19)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>20. Returns a custom logo, linked to home unless the theme supports removing the link on the home page.</h4>
 
         ```php
+        function get_custom_logo( $blog_id = 0 ): string {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * @since 4.5.0
+         * @since 5.5.0 Added option to remove the link on the home page with
+         *              `unlink-homepage-logo` theme support for the
+         *              `custom-logo` theme feature.
+         * @since 5.5.1 Disabled lazy-loading by default.
+         * 
+         * @param int $blog_id  Optional. ID of the blog in question.
+         *                      Default is the ID of the current blog.
+         * @return string Custom logo markup.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.20)
 
     -   ...
     -   <h4>x. ...</h4>
