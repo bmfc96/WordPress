@@ -5648,23 +5648,49 @@
 
         [//]: # (End f.23)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>24. Displays or retrieves page title for all areas of blog.</h4>
 
         ```php
+        function wp_title( $sep = '&raquo;', $display = true, $seplocation = '' ): string|void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - by default, the page title will display the separator before the page title,
+         *   so that the blog title will be before the page title.
+         *   This is not good for title display, since the blog title shows up on most tabs
+         *   and not what is important, which is the page that the user is looking at.
+         * 
+         * - there are also SEO benefits to having the blog title after or to the 'right'
+         *   of the page title.
+         *   However, it is mostly common sense to have the blog title to the right with
+         *   most browsers supporting tabs.
+         *   You can achieve this by using the seplocation parameter and setting the value
+         *   to 'right'.
+         *   This change was introduced around 2.5.0, in case backward compatibility of
+         *   themes is important.
+         * 
+         * @since 1.0.0
+         * 
+         * @global WP_Locale $wp_locale  WordPress date and time locale object.
+         * 
+         * @param string $sep          Optional. How to separate the various items within
+         *                             the page title. Default '&raquo;'.
+         * @param bool   $display      Optional. Whether to display or retrieve title.
+         *                             Default true.
+         * @param string $seplocation  Optional. Location of the separator ('left' or 'right').
+         * @return string|void String when `$display` is false, nothing otherwise.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.24)
 
     -   ...
     -   <h4>x. ...</h4>
