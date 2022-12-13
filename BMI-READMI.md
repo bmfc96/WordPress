@@ -5814,23 +5814,35 @@
 
         [//]: # (End f.28)
 
-    -   ...
-    -   <h4>x. ...</h4>
+    -   <h4>29. Displays or retrieves page title for taxonomy term archive.</h4>
 
         ```php
+        function single_term_title( $prefix = '', $display = true ): string|void {}
         ```
 
         <details>
         <summary>Detail</summary>
 
         ```php
+        /**
+         * - useful for taxonomy term template files for displaying the taxonomy term page title.
+         *   The prefix does not automatically place a space between the prefix, so if there should
+         *   be a space, the parameter value will need to have it at the end.
+         * 
+         * @since 3.1.0
+         * 
+         * @param string $prefix   Optional. What to display before the title.
+         * @param bool   $display  Optional. Whether to display or retrieve title.
+         *                         Default true.
+         * @return string|void Title when retrieving.
+         */
         ```
 
         ---
 
         </details>
 
-        [//]: # (End f.x)
+        [//]: # (End f.29)
 
     -   ...
     -   <h4>x. ...</h4>
